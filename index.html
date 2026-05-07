@@ -756,7 +756,8 @@ SERVICES SECTION WITH THIS
     <div class="primary-services-grid">
 
       <!-- ARCHITECTURAL -->
-      <div class="primary-service-card">
+      <div class="primary-service-card"
+style="background-image:url('https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778132435/Architecture_Services_yj0qep.jpg');">
 
         <div class="primary-service-number">
           01
@@ -775,7 +776,8 @@ SERVICES SECTION WITH THIS
       </div>
 
       <!-- ENGINEERING -->
-      <div class="primary-service-card">
+      <div class="primary-service-card"
+style="background-image:url('https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778132609/Engineering_Services_bggh7s.jpg');">
 
         <div class="primary-service-number">
           02
@@ -794,7 +796,8 @@ SERVICES SECTION WITH THIS
       </div>
 
       <!-- DESIGN BUILD -->
-      <div class="primary-service-card">
+      <div class="primary-service-card"
+style="background-image:url('https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778132836/Design_Build_Services_pyoctd.jpg');">
 
         <div class="primary-service-number">
           03
@@ -813,7 +816,8 @@ SERVICES SECTION WITH THIS
       </div>
 
       <!-- RENOVATION -->
-      <div class="primary-service-card">
+      <div class="primary-service-card"
+style="background-image:url('https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778133000/Renovation_Services_xeojpb.jpg');">
 
         <div class="primary-service-number">
           04
@@ -928,13 +932,67 @@ PRIMARY SERVICES
 }
 
 .primary-service-card{
-  background:#fff;
+  position:relative;
+  
+  min-height:420px;
 
   padding:55px;
 
-  border:1px solid rgba(0,0,0,0.04);
+  overflow:hidden;
 
-  transition:.35s ease;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  color:#fff;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  transition:.4s ease;
+
+  background-size:105%;
+  background-position:center;
+}
+  
+  
+/* DARK OVERLAY */
+.primary-service-card::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,0.78),
+    rgba(0,0,0,0.28)
+  );
+
+  z-index:1;
+
+  transition:.4s ease;
+}
+
+/* CONTENT */
+.primary-service-card *{
+  position:relative;
+  z-index:2;
+}
+
+/* HOVER */
+.primary-service-card:hover{
+  transform:translateY(-6px);
+  background-size:110%;
+}
+
+.primary-service-card:hover::before{
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,0.72),
+    rgba(0,0,0,0.18)
+  );
 }
 
 .primary-service-card:hover{
@@ -944,7 +1002,7 @@ PRIMARY SERVICES
 .primary-service-number{
   font-size:12px;
   letter-spacing:3px;
-  color:#999;
+  color:rgba(255,255,255,0.65);
 
   margin-bottom:22px;
 }
@@ -958,7 +1016,7 @@ PRIMARY SERVICES
 }
 
 .primary-service-card p{
-  color:#666;
+  color:rgba(255,255,255,0.82);
   line-height:1.9;
 }
 
