@@ -847,44 +847,291 @@ PROJECTS
 CALCULATOR
 ========================= -->
 
+<!-- =========================
+ARCHITECTURAL CALCULATOR
+ADD THIS INSIDE:
+<section class="calculator-section">
+========================= -->
+
 <section class="calculator-section">
 
   <div class="container">
 
+    <!-- HEADER -->
     <div class="section-header">
 
       <div class="section-label">
-        Architectural Calculator
+        Preliminary Project Estimator
       </div>
 
       <h2 class="section-title">
-        Preliminary Cost Estimator
+        Plan Your Project With Confidence
       </h2>
 
       <p class="section-description">
-        Estimate your project's probable construction cost
-        based on floor area and project type.
+        Explore a preliminary estimate for construction and professional
+        design services based on your project requirements.
       </p>
 
     </div>
 
-    <div class="calculator-box">
+    <!-- CALCULATOR LAYOUT -->
+    <div class="calculator-layout">
 
-      <div>
+      <!-- =========================
+      LEFT PANEL
+      ========================= -->
+      <div class="calculator-inputs">
 
-        <h3 style="font-size:32px;font-weight:300;margin-bottom:20px;">
-          Estimate Your Project
-        </h3>
+        <!-- FLOOR AREA -->
+        <div class="calc-card">
 
-        <p style="color:#666;line-height:1.9;">
-          This section will later include the architectural
-          cost estimation logic and project computation system.
-        </p>
+          <div class="calc-label">
+            Estimated Floor Area
+          </div>
+
+          <div class="sqm-input-wrapper">
+
+            <button class="sqm-btn" onclick="changeArea(-10)">
+              −
+            </button>
+
+            <div class="sqm-display">
+              <span id="sqmValue">200</span>
+              <small>sqm</small>
+            </div>
+
+            <button class="sqm-btn" onclick="changeArea(10)">
+              +
+            </button>
+
+          </div>
+
+          <input
+            type="range"
+            min="50"
+            max="1000"
+            step="10"
+            value="200"
+            id="sqmSlider"
+            oninput="updateArea(this.value)"
+          >
+
+        </div>
+
+        <!-- FINISH LEVEL -->
+        <div class="calc-card">
+
+          <div class="calc-label">
+            Select Finish Level
+          </div>
+
+          <div class="finish-grid">
+
+            <!-- BARE -->
+            <div class="finish-card active"
+                 onclick="selectFinish(this,22000,'Bare Finish')">
+
+              <img src="hero.png">
+
+              <div class="finish-content">
+
+                <div class="finish-name">
+                  Bare Finish
+                </div>
+
+                <div class="finish-price">
+                  ₱22,000/sqm
+                </div>
+
+                <div class="finish-description">
+                  Essential structural and basic finishing works
+                  prepared for future customization and phased improvements.
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- STANDARD -->
+            <div class="finish-card"
+                 onclick="selectFinish(this,34000,'Standard Finish')">
+
+              <img src="hero.png">
+
+              <div class="finish-content">
+
+                <div class="finish-name">
+                  Standard Finish
+                </div>
+
+                <div class="finish-price">
+                  ₱34,000/sqm
+                </div>
+
+                <div class="finish-description">
+                  Functional modern finishes designed for comfortable
+                  everyday residential living.
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- ELEGANT -->
+            <div class="finish-card"
+                 onclick="selectFinish(this,45000,'Elegant Finish')">
+
+              <img src="hero.png">
+
+              <div class="finish-content">
+
+                <div class="finish-name">
+                  Elegant Finish
+                </div>
+
+                <div class="finish-price">
+                  ₱45,000/sqm
+                </div>
+
+                <div class="finish-description">
+                  Refined architectural detailing paired with upgraded
+                  materials and thoughtfully curated finishes.
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- LUXURY -->
+            <div class="finish-card"
+                 onclick="selectFinish(this,65000,'Luxury Finish')">
+
+              <img src="hero.png">
+
+              <div class="finish-content">
+
+                <div class="finish-name">
+                  Luxury Finish
+                </div>
+
+                <div class="finish-price">
+                  ₱65,000/sqm
+                </div>
+
+                <div class="finish-description">
+                  Bespoke architectural execution featuring premium materials,
+                  custom detailing, and elevated spatial experience.
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
-      <div class="calculator-placeholder">
-        Calculator Placeholder
+      <!-- =========================
+      RIGHT PANEL
+      ========================= -->
+      <div class="estimate-panel">
+
+        <!-- CONSTRUCTION COST -->
+        <div class="estimate-card">
+
+          <div class="estimate-label">
+            Estimated Construction Cost
+          </div>
+
+          <div class="estimate-price" id="constructionCost">
+            ₱4,400,000
+          </div>
+
+          <div class="estimate-computation">
+            200 sqm × ₱22,000/sqm
+          </div>
+
+          <div class="estimate-divider"></div>
+
+          <div class="estimate-subtitle">
+            Includes
+          </div>
+
+          <ul class="estimate-list">
+            <li>Structural Works</li>
+            <li>Architectural Works</li>
+            <li>Standard MEPF Works</li>
+          </ul>
+
+          <div class="estimate-subtitle excluded">
+            Exclusions
+          </div>
+
+          <ul class="estimate-list muted">
+            <li>Permits & Licenses</li>
+            <li>Fence Construction</li>
+            <li>Modular Cabinetry</li>
+            <li>Furniture & Furnishing</li>
+            <li>Hardscape & Landscape</li>
+          </ul>
+
+        </div>
+
+        <!-- PROFESSIONAL FEES -->
+        <div class="estimate-card">
+
+          <div class="estimate-label">
+            Professional Design & Engineering Services
+          </div>
+
+          <div class="estimate-price" id="designFee">
+            ₱360,000
+          </div>
+
+          <div class="estimate-computation">
+            200 sqm × ₱1,800/sqm
+          </div>
+
+          <div class="estimate-divider"></div>
+
+          <ul class="estimate-list">
+            <li>Architectural Plans</li>
+            <li>Structural Plans</li>
+            <li>Electrical Plans</li>
+            <li>Plumbing Plans</li>
+          </ul>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="estimate-cta">
+
+          <h3>
+            Let’s Discuss Your Project
+          </h3>
+
+          <p>
+            Request a consultation or detailed proposal
+            based on your preliminary estimate.
+          </p>
+
+          <div class="estimate-buttons">
+
+            <a href="#contact" class="estimate-btn primary">
+              Request Consultation
+            </a>
+
+            <a href="#contact" class="estimate-btn secondary">
+              Request Proposal
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
 
     </div>
@@ -892,6 +1139,360 @@ CALCULATOR
   </div>
 
 </section>
+
+<!-- =========================
+ADD THIS CSS
+========================= -->
+
+<style>
+
+.calculator-section{
+  background:#ece7df;
+}
+
+.calculator-layout{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  align-items:start;
+}
+
+.calc-card{
+  background:#fff;
+  padding:40px;
+  margin-bottom:24px;
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+.calc-label{
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+  color:#777;
+}
+
+/* =========================
+SQM
+========================= */
+
+.sqm-input-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
+  margin-bottom:25px;
+}
+
+.sqm-btn{
+  width:48px;
+  height:48px;
+  border:none;
+  background:#f5f1eb;
+  cursor:pointer;
+  font-size:26px;
+  transition:.3s;
+}
+
+.sqm-btn:hover{
+  background:#ddd5ca;
+}
+
+.sqm-display{
+  text-align:center;
+}
+
+.sqm-display span{
+  font-size:56px;
+  font-weight:300;
+}
+
+.sqm-display small{
+  display:block;
+  color:#777;
+  margin-top:4px;
+}
+
+#sqmSlider{
+  width:100%;
+}
+
+/* =========================
+FINISH CARDS
+========================= */
+
+.finish-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.finish-card{
+  background:#faf8f5;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:.35s;
+  overflow:hidden;
+}
+
+.finish-card:hover{
+  transform:translateY(-4px);
+}
+
+.finish-card.active{
+  border:1px solid #8a6a4a;
+}
+
+.finish-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.finish-content{
+  padding:22px;
+}
+
+.finish-name{
+  font-size:22px;
+  font-weight:300;
+  margin-bottom:10px;
+}
+
+.finish-price{
+  color:#8a6a4a;
+  margin-bottom:16px;
+}
+
+.finish-description{
+  color:#666;
+  line-height:1.8;
+  font-size:14px;
+}
+
+/* =========================
+ESTIMATE PANEL
+========================= */
+
+.estimate-panel{
+  position:sticky;
+  top:120px;
+}
+
+.estimate-card{
+  background:#fff;
+  padding:40px;
+  margin-bottom:24px;
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+.estimate-label{
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#777;
+  margin-bottom:18px;
+}
+
+.estimate-price{
+  font-size:48px;
+  font-weight:300;
+  line-height:1.1;
+  margin-bottom:12px;
+}
+
+.estimate-computation{
+  color:#777;
+  margin-bottom:28px;
+}
+
+.estimate-divider{
+  height:1px;
+  background:#eee;
+  margin-bottom:24px;
+}
+
+.estimate-subtitle{
+  margin-bottom:15px;
+  font-weight:500;
+}
+
+.estimate-subtitle.excluded{
+  margin-top:30px;
+}
+
+.estimate-list{
+  padding-left:18px;
+  color:#444;
+  line-height:2;
+}
+
+.estimate-list.muted{
+  color:#888;
+}
+
+/* =========================
+CTA
+========================= */
+
+.estimate-cta{
+  background:#1b1b1b;
+  color:#fff;
+  padding:40px;
+}
+
+.estimate-cta h3{
+  font-size:34px;
+  font-weight:300;
+  margin-bottom:18px;
+}
+
+.estimate-cta p{
+  color:#bbb;
+  line-height:1.8;
+  margin-bottom:28px;
+}
+
+.estimate-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.estimate-btn{
+  padding:14px 22px;
+  font-size:13px;
+  letter-spacing:1px;
+  transition:.3s;
+}
+
+.estimate-btn.primary{
+  background:#fff;
+  color:#111;
+}
+
+.estimate-btn.secondary{
+  border:1px solid rgba(255,255,255,0.2);
+}
+
+.estimate-btn:hover{
+  transform:translateY(-2px);
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:1000px){
+
+  .calculator-layout{
+    grid-template-columns:1fr;
+  }
+
+  .estimate-panel{
+    position:relative;
+    top:0;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .finish-grid{
+    grid-template-columns:1fr;
+  }
+
+  .calc-card,
+  .estimate-card,
+  .estimate-cta{
+    padding:28px;
+  }
+
+  .estimate-price{
+    font-size:38px;
+  }
+
+  .sqm-display span{
+    font-size:44px;
+  }
+
+}
+
+</style>
+
+<!-- =========================
+ADD THIS JS BEFORE </body>
+========================= -->
+
+<script>
+
+let currentArea = 200;
+let currentRate = 22000;
+let currentFinish = "Bare Finish";
+
+function formatPeso(num){
+  return "₱" + num.toLocaleString();
+}
+
+function updateEstimate(){
+
+  const construction = currentArea * currentRate;
+  const designFee = currentArea * 1800;
+
+  document.getElementById("constructionCost").innerText =
+    formatPeso(construction);
+
+  document.getElementById("designFee").innerText =
+    formatPeso(designFee);
+
+  document.querySelectorAll(".estimate-computation")[0].innerText =
+    currentArea + " sqm × ₱" + currentRate.toLocaleString() + "/sqm";
+
+  document.querySelectorAll(".estimate-computation")[1].innerText =
+    currentArea + " sqm × ₱1,800/sqm";
+
+}
+
+function updateArea(val){
+
+  currentArea = parseInt(val);
+
+  document.getElementById("sqmValue").innerText = currentArea;
+
+  document.getElementById("sqmSlider").value = currentArea;
+
+  updateEstimate();
+
+}
+
+function changeArea(change){
+
+  currentArea += change;
+
+  if(currentArea < 50) currentArea = 50;
+  if(currentArea > 1000) currentArea = 1000;
+
+  updateArea(currentArea);
+
+}
+
+function selectFinish(el,rate,name){
+
+  document.querySelectorAll(".finish-card")
+    .forEach(card => card.classList.remove("active"));
+
+  el.classList.add("active");
+
+  currentRate = rate;
+  currentFinish = name;
+
+  updateEstimate();
+
+}
+
+updateEstimate();
+
+</script>
 
 <!-- =========================
 CTA
