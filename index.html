@@ -584,7 +584,114 @@ MOBILE
   }
 
 }
+/* =========================
+GALLERY MODAL
+========================= */
 
+.gallery-modal{
+  position:fixed;
+  inset:0;
+
+  background:rgba(8,8,8,0.96);
+
+  z-index:9999;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:.4s ease;
+}
+
+.gallery-modal.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.gallery-modal img{
+  width:88%;
+  max-width:1500px;
+  max-height:82vh;
+
+  object-fit:contain;
+
+  animation:galleryFade .4s ease;
+}
+
+@keyframes galleryFade{
+  from{
+    opacity:0;
+    transform:scale(.98);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+.gallery-close{
+  position:absolute;
+  top:28px;
+  right:38px;
+
+  font-size:38px;
+  color:#fff;
+
+  cursor:pointer;
+}
+
+.gallery-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+
+  color:#fff;
+
+  font-size:38px;
+
+  cursor:pointer;
+
+  padding:20px;
+}
+
+.gallery-arrow.left{
+  left:20px;
+}
+
+.gallery-arrow.right{
+  right:20px;
+}
+
+.gallery-info{
+  position:absolute;
+  bottom:40px;
+  left:50px;
+
+  color:#fff;
+}
+
+.gallery-counter{
+  font-size:12px;
+  letter-spacing:3px;
+
+  margin-bottom:18px;
+
+  color:rgba(255,255,255,0.65);
+}
+
+.gallery-info h3{
+  font-size:34px;
+  font-weight:300;
+
+  margin-bottom:8px;
+}
+
+.gallery-info p{
+  color:rgba(255,255,255,0.72);
+}
 </style>
 </head>
 
@@ -1140,43 +1247,161 @@ PROJECTS
 
     </div>
 
-    <div class="projects-grid">
+<div class="projects-grid">
 
-      <div class="project-large project-placeholder">
+  <!-- =========================
+  FEATURED PROJECT
+  ========================= -->
 
-        <img src="hero.png">
+  <div class="project-large project-placeholder"
+       onclick="openGallery(0)">
 
-        <div class="project-overlay">
-          Modern Tropical Residence
+    <img src="https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138822/a_hyper_realistic_high_resolution_exterior_archit_sgflw6.png">
+
+    <div class="project-overlay">
+
+      <div>
+
+        <div class="project-category">
+          Residential • Design-Build
         </div>
+
+        <h3 class="project-title">
+          Modern Tropical Residence
+        </h3>
+
+        <p class="project-description">
+          A contemporary tropical residence designed to maximize natural light,
+          ventilation, and spatial openness through warm materiality and
+          minimalist detailing.
+        </p>
 
       </div>
 
-      <div class="project-stack">
+    </div>
 
-        <div class="project-small project-placeholder">
+  </div>
 
-          <img src="hero.png">
+  <!-- =========================
+  SIDE PROJECTS
+  ========================= -->
 
-          <div class="project-overlay">
-            Residential Design
+  <div class="project-stack">
+
+    <!-- PLACEHOLDER 1 -->
+    <div class="project-small placeholder-project">
+
+      <img src="hero.png">
+
+      <div class="project-overlay">
+
+        <div>
+
+          <div class="project-category">
+            Selected Work
           </div>
 
-        </div>
-
-        <div class="project-small project-placeholder">
-
-          <img src="hero.png">
-
-          <div class="project-overlay">
-            Design-Build Project
-          </div>
+          <h3 class="placeholder-title">
+            Contemporary Residence
+          </h3>
 
         </div>
 
       </div>
 
     </div>
+
+    <!-- PLACEHOLDER 2 -->
+    <div class="project-small placeholder-project">
+
+      <img src="hero.png">
+
+      <div class="project-overlay">
+
+        <div>
+
+          <div class="project-category">
+            Selected Work
+          </div>
+
+          <h3 class="placeholder-title">
+            Interior Fit-Out
+          </h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- =========================
+SECOND ROW
+========================= -->
+
+<div class="projects-secondary-grid">
+
+  <!-- PLACEHOLDER -->
+  <div class="secondary-project">
+
+    <img src="hero.png">
+
+    <div class="secondary-overlay">
+
+      <div class="project-category">
+        Residential Project
+      </div>
+
+      <h3>
+        Courtyard House
+      </h3>
+
+    </div>
+
+  </div>
+
+  <!-- PLACEHOLDER -->
+  <div class="secondary-project">
+
+    <img src="hero.png">
+
+    <div class="secondary-overlay">
+
+      <div class="project-category">
+        Future Project
+      </div>
+
+      <h3>
+        Modern Extension
+      </h3>
+
+    </div>
+
+  </div>
+
+  <!-- PLACEHOLDER -->
+  <div class="secondary-project">
+
+    <img src="hero.png">
+
+    <div class="secondary-overlay">
+
+      <div class="project-category">
+        Residential Project
+      </div>
+
+      <h3>
+        Tropical Minimal Home
+      </h3>
+
+    </div>
+
+  </div>
+
+</div>
 
   </div>
 
@@ -1756,13 +1981,183 @@ MOBILE
   }
 
 }
+/* =========================
+PROJECT PLACEHOLDERS
+========================= */
 
+.placeholder-project{
+  position:relative;
+  overflow:hidden;
+}
+
+.placeholder-project img{
+  filter:grayscale(20%) brightness(.72);
+}
+
+.placeholder-title{
+  font-size:28px;
+  font-weight:300;
+}
+
+/* =========================
+SECONDARY PROJECT GRID
+========================= */
+
+.projects-secondary-grid{
+  margin-top:24px;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.secondary-project{
+  position:relative;
+  height:320px;
+
+  overflow:hidden;
+
+  cursor:pointer;
+}
+
+.secondary-project img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  filter:brightness(.72);
+
+  transition:.6s ease;
+}
+
+.secondary-project:hover img{
+  transform:scale(1.04);
+}
+
+.secondary-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,0.72),
+    rgba(0,0,0,0.08)
+  );
+
+  display:flex;
+  align-items:flex-end;
+
+  padding:28px;
+
+  color:#fff;
+}
+
+.secondary-overlay h3{
+  font-size:24px;
+  font-weight:300;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:1000px){
+
+  .projects-secondary-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .secondary-project{
+    height:240px;
+  }
+
+  .placeholder-title{
+    font-size:22px;
+  }
+
+}
 </style>
 
-<!-- =========================
-ADD THIS JS BEFORE </body>
-========================= -->
+<script>
 
+const galleryImages = [
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138822/a_hyper_realistic_high_resolution_exterior_archit_sgflw6.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138827/a_wide_angle_photorealistic_interior_of_a_modern_ihxqvy.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138826/a_photorealistic_modern_industrial_minimal_bedroom_usdgwo.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138821/a_photorealistic_modern_minimalist_bedroom_interi_es1uy2.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138822/a_clean_detailed_isometric_3d_architectural_rende_kwybqq.png"
+
+];
+
+let currentGalleryIndex = 0;
+
+function updateGallery(){
+
+  document.getElementById("galleryImage").src =
+    galleryImages[currentGalleryIndex];
+
+  document.getElementById("galleryCounter").innerText =
+    String(currentGalleryIndex + 1).padStart(2,'0')
+    + " / " +
+    String(galleryImages.length).padStart(2,'0');
+
+}
+
+function openGallery(index){
+
+  currentGalleryIndex = index;
+
+  document.getElementById("galleryModal")
+    .classList.add("active");
+
+  updateGallery();
+
+}
+
+function closeGallery(){
+
+  document.getElementById("galleryModal")
+    .classList.remove("active");
+
+}
+
+function nextImage(){
+
+  currentGalleryIndex++;
+
+  if(currentGalleryIndex >= galleryImages.length){
+    currentGalleryIndex = 0;
+  }
+
+  updateGallery();
+
+}
+
+function prevImage(){
+
+  currentGalleryIndex--;
+
+  if(currentGalleryIndex < 0){
+    currentGalleryIndex = galleryImages.length - 1;
+  }
+
+  updateGallery();
+
+}
+
+</script>
+
+  
 <script>
 
 let currentArea = 200;
@@ -1879,7 +2274,49 @@ CTA
     </div>
 
   </div>
+<!-- FULLSCREEN PROJECT MODAL -->
 
+<div class="gallery-modal" id="galleryModal">
+
+  <!-- CLOSE -->
+  <div class="gallery-close"
+       onclick="closeGallery()">
+    ×
+  </div>
+
+  <!-- PREV -->
+  <div class="gallery-arrow left"
+       onclick="prevImage()">
+    ←
+  </div>
+
+  <!-- NEXT -->
+  <div class="gallery-arrow right"
+       onclick="nextImage()">
+    →
+  </div>
+
+  <!-- IMAGE -->
+  <img id="galleryImage">
+
+  <!-- INFO -->
+  <div class="gallery-info">
+
+    <div class="gallery-counter" id="galleryCounter">
+      01 / 05
+    </div>
+
+    <h3>
+      Modern Tropical Residence
+    </h3>
+
+    <p>
+      Residential • Design-Build
+    </p>
+
+  </div>
+
+</div>
 </section>
 
 <!-- =========================
