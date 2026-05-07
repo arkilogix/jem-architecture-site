@@ -692,6 +692,578 @@ GALLERY MODAL
 .gallery-info p{
   color:rgba(255,255,255,0.72);
 }
+  
+.calculator-section{
+  background:#ece7df;
+}
+
+.calculator-layout{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  align-items:start;
+}
+
+.calc-card{
+  background:#fff;
+  padding:40px;
+  margin-bottom:24px;
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+.calc-label{
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+  color:#777;
+}
+
+/* =========================
+SQM
+========================= */
+
+.sqm-input-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
+  margin-bottom:25px;
+}
+
+.sqm-btn{
+  width:48px;
+  height:48px;
+  border:none;
+  background:#f5f1eb;
+  cursor:pointer;
+  font-size:26px;
+  transition:.3s;
+}
+
+.sqm-btn:hover{
+  background:#ddd5ca;
+}
+
+.sqm-display{
+  text-align:center;
+}
+
+.sqm-display span{
+  font-size:56px;
+  font-weight:300;
+}
+
+.sqm-display small{
+  display:block;
+  color:#777;
+  margin-top:4px;
+}
+
+#sqmSlider{
+  width:100%;
+}
+
+/* =========================
+FINISH CARDS
+========================= */
+
+.finish-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.finish-card{
+  background:#faf8f5;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:.35s;
+  overflow:hidden;
+}
+
+.finish-card:hover{
+  transform:translateY(-4px);
+}
+
+.finish-card.active{
+  border:1px solid #8a6a4a;
+}
+
+.finish-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.finish-content{
+  padding:22px;
+}
+
+.finish-name{
+  font-size:22px;
+  font-weight:300;
+  margin-bottom:10px;
+}
+
+.finish-price{
+  color:#8a6a4a;
+  margin-bottom:16px;
+}
+
+.finish-description{
+  color:#666;
+  line-height:1.8;
+  font-size:14px;
+}
+
+/* =========================
+ESTIMATE PANEL
+========================= */
+
+.estimate-panel{
+  position:sticky;
+  top:120px;
+}
+
+.estimate-card{
+  background:#fff;
+  padding:40px;
+  margin-bottom:24px;
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+.estimate-label{
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#777;
+  margin-bottom:18px;
+}
+
+.estimate-price{
+  font-size:48px;
+  font-weight:300;
+  line-height:1.1;
+  margin-bottom:12px;
+}
+
+.estimate-computation{
+  color:#777;
+  margin-bottom:28px;
+}
+
+.estimate-divider{
+  height:1px;
+  background:#eee;
+  margin-bottom:24px;
+}
+
+.estimate-subtitle{
+  margin-bottom:15px;
+  font-weight:500;
+}
+
+.estimate-subtitle.excluded{
+  margin-top:30px;
+}
+
+.estimate-list{
+  padding-left:18px;
+  color:#444;
+  line-height:2;
+}
+
+.estimate-list.muted{
+  color:#888;
+}
+
+/* =========================
+CTA
+========================= */
+
+.estimate-cta{
+  background:#1b1b1b;
+  color:#fff;
+  padding:40px;
+}
+
+.estimate-cta h3{
+  font-size:34px;
+  font-weight:300;
+  margin-bottom:18px;
+}
+
+.estimate-cta p{
+  color:#bbb;
+  line-height:1.8;
+  margin-bottom:28px;
+}
+
+.estimate-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.estimate-btn{
+  padding:14px 22px;
+  font-size:13px;
+  letter-spacing:1px;
+  transition:.3s;
+}
+
+.estimate-btn.primary{
+  background:#fff;
+  color:#111;
+}
+
+.estimate-btn.secondary{
+  border:1px solid rgba(255,255,255,0.2);
+}
+
+.estimate-btn:hover{
+  transform:translateY(-2px);
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:1000px){
+
+  .calculator-layout{
+    grid-template-columns:1fr;
+  }
+
+  .estimate-panel{
+    position:relative;
+    top:0;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .finish-grid{
+    grid-template-columns:1fr;
+  }
+
+  .calc-card,
+  .estimate-card,
+  .estimate-cta{
+    padding:28px;
+  }
+
+  .estimate-price{
+    font-size:38px;
+  }
+
+  .sqm-display span{
+    font-size:44px;
+  }
+
+}
+/* =========================
+PROJECT PLACEHOLDERS
+========================= */
+
+.placeholder-project{
+  position:relative;
+  overflow:hidden;
+}
+
+.placeholder-project img{
+  filter:grayscale(20%) brightness(.72);
+}
+
+.placeholder-title{
+  font-size:28px;
+  font-weight:300;
+}
+
+/* =========================
+SECONDARY PROJECT GRID
+========================= */
+
+.projects-secondary-grid{
+  margin-top:24px;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.secondary-project{
+  position:relative;
+  height:320px;
+
+  overflow:hidden;
+
+  cursor:pointer;
+}
+
+.secondary-project img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  filter:brightness(.72);
+
+  transition:.6s ease;
+}
+
+.secondary-project:hover img{
+  transform:scale(1.04);
+}
+
+.secondary-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,0.72),
+    rgba(0,0,0,0.08)
+  );
+
+  display:flex;
+  align-items:flex-end;
+
+  padding:28px;
+
+  color:#fff;
+}
+
+.secondary-overlay h3{
+  font-size:24px;
+  font-weight:300;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:1000px){
+
+  .projects-secondary-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .secondary-project{
+    height:240px;
+  }
+
+  .placeholder-title{
+    font-size:22px;
+  }
+
+}
+
+  
+/* =========================
+PRIMARY SERVICES
+========================= */
+
+.primary-services-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:26px;
+  margin-bottom:120px;
+}
+
+.primary-service-card{
+  position:relative;
+  
+  min-height:420px;
+
+  padding:55px;
+
+  overflow:hidden;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  color:#fff;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  transition:.4s ease;
+
+  background-size:105%;
+  background-position:center;
+}
+  
+  
+/* DARK OVERLAY */
+.primary-service-card::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,0.78),
+    rgba(0,0,0,0.28)
+  );
+
+  z-index:1;
+
+  transition:.4s ease;
+}
+
+/* CONTENT */
+.primary-service-card *{
+  position:relative;
+  z-index:2;
+}
+
+/* HOVER */
+.primary-service-card:hover{
+  transform:translateY(-6px);
+  background-size:110%;
+}
+
+.primary-service-card:hover::before{
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,0.72),
+    rgba(0,0,0,0.18)
+  );
+}
+
+.primary-service-card:hover{
+  transform:translateY(-6px);
+}
+
+.primary-service-number{
+  font-size:12px;
+  letter-spacing:3px;
+  color:rgba(255,255,255,0.65);
+
+  margin-bottom:22px;
+}
+
+.primary-service-card h3{
+  font-size:34px;
+  line-height:1.2;
+  font-weight:300;
+
+  margin-bottom:22px;
+}
+
+.primary-service-card p{
+  color:rgba(255,255,255,0.82);
+  line-height:1.9;
+}
+
+/* =========================
+EXPERTISE
+========================= */
+
+.expertise-wrapper{
+  border-top:1px solid rgba(0,0,0,0.08);
+  padding-top:80px;
+}
+
+.expertise-title{
+  font-size:40px;
+  font-weight:300;
+  margin-bottom:60px;
+}
+
+.expertise-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+.expertise-column{
+  background:rgba(255,255,255,0.55);
+
+  padding:38px;
+
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+.expertise-category{
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  margin-bottom:26px;
+
+  color:#8a6a4a;
+}
+
+.expertise-column ul{
+  list-style:none;
+}
+
+.expertise-column li{
+  color:#555;
+  line-height:2.2;
+
+  position:relative;
+  padding-left:18px;
+}
+
+.expertise-column li::before{
+  content:"";
+  width:5px;
+  height:5px;
+
+  border-radius:50%;
+
+  background:#8a6a4a;
+
+  position:absolute;
+  left:0;
+  top:15px;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:1000px){
+
+  .primary-services-grid,
+  .expertise-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .primary-service-card{
+    padding:34px;
+  }
+
+  .primary-service-card h3{
+    font-size:28px;
+  }
+
+  .expertise-title{
+    font-size:34px;
+  }
+
+  .expertise-column{
+    padding:30px;
+  }
+
+}
+
 </style>
 </head>
 
@@ -1020,212 +1592,7 @@ style="background-image:url('https://res.cloudinary.com/dwvl1wbp4/image/upload/v
 
 </section>
 
-<!-- =========================
-ADD THIS CSS
-RIGHT BEFORE </style>
-========================= -->
 
-<style>
-
-/* =========================
-PRIMARY SERVICES
-========================= */
-
-.primary-services-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:26px;
-  margin-bottom:120px;
-}
-
-.primary-service-card{
-  position:relative;
-  
-  min-height:420px;
-
-  padding:55px;
-
-  overflow:hidden;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-
-  color:#fff;
-
-  border:1px solid rgba(255,255,255,0.08);
-
-  transition:.4s ease;
-
-  background-size:105%;
-  background-position:center;
-}
-  
-  
-/* DARK OVERLAY */
-.primary-service-card::before{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-  linear-gradient(
-    to top,
-    rgba(0,0,0,0.78),
-    rgba(0,0,0,0.28)
-  );
-
-  z-index:1;
-
-  transition:.4s ease;
-}
-
-/* CONTENT */
-.primary-service-card *{
-  position:relative;
-  z-index:2;
-}
-
-/* HOVER */
-.primary-service-card:hover{
-  transform:translateY(-6px);
-  background-size:110%;
-}
-
-.primary-service-card:hover::before{
-  background:
-  linear-gradient(
-    to top,
-    rgba(0,0,0,0.72),
-    rgba(0,0,0,0.18)
-  );
-}
-
-.primary-service-card:hover{
-  transform:translateY(-6px);
-}
-
-.primary-service-number{
-  font-size:12px;
-  letter-spacing:3px;
-  color:rgba(255,255,255,0.65);
-
-  margin-bottom:22px;
-}
-
-.primary-service-card h3{
-  font-size:34px;
-  line-height:1.2;
-  font-weight:300;
-
-  margin-bottom:22px;
-}
-
-.primary-service-card p{
-  color:rgba(255,255,255,0.82);
-  line-height:1.9;
-}
-
-/* =========================
-EXPERTISE
-========================= */
-
-.expertise-wrapper{
-  border-top:1px solid rgba(0,0,0,0.08);
-  padding-top:80px;
-}
-
-.expertise-title{
-  font-size:40px;
-  font-weight:300;
-  margin-bottom:60px;
-}
-
-.expertise-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:40px;
-}
-
-.expertise-column{
-  background:rgba(255,255,255,0.55);
-
-  padding:38px;
-
-  border:1px solid rgba(0,0,0,0.04);
-}
-
-.expertise-category{
-  font-size:14px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-
-  margin-bottom:26px;
-
-  color:#8a6a4a;
-}
-
-.expertise-column ul{
-  list-style:none;
-}
-
-.expertise-column li{
-  color:#555;
-  line-height:2.2;
-
-  position:relative;
-  padding-left:18px;
-}
-
-.expertise-column li::before{
-  content:"";
-  width:5px;
-  height:5px;
-
-  border-radius:50%;
-
-  background:#8a6a4a;
-
-  position:absolute;
-  left:0;
-  top:15px;
-}
-
-/* =========================
-MOBILE
-========================= */
-
-@media(max-width:1000px){
-
-  .primary-services-grid,
-  .expertise-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .primary-service-card{
-    padding:34px;
-  }
-
-  .primary-service-card h3{
-    font-size:28px;
-  }
-
-  .expertise-title{
-    font-size:34px;
-  }
-
-  .expertise-column{
-    padding:30px;
-  }
-
-}
-
-</style>
 
 <!-- =========================
 PROJECTS
@@ -1708,381 +2075,6 @@ ADD THIS INSIDE:
 ADD THIS CSS
 ========================= -->
 
-<style>
-
-.calculator-section{
-  background:#ece7df;
-}
-
-.calculator-layout{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:40px;
-  align-items:start;
-}
-
-.calc-card{
-  background:#fff;
-  padding:40px;
-  margin-bottom:24px;
-  border:1px solid rgba(0,0,0,0.04);
-}
-
-.calc-label{
-  font-size:13px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:25px;
-  color:#777;
-}
-
-/* =========================
-SQM
-========================= */
-
-.sqm-input-wrapper{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:30px;
-  margin-bottom:25px;
-}
-
-.sqm-btn{
-  width:48px;
-  height:48px;
-  border:none;
-  background:#f5f1eb;
-  cursor:pointer;
-  font-size:26px;
-  transition:.3s;
-}
-
-.sqm-btn:hover{
-  background:#ddd5ca;
-}
-
-.sqm-display{
-  text-align:center;
-}
-
-.sqm-display span{
-  font-size:56px;
-  font-weight:300;
-}
-
-.sqm-display small{
-  display:block;
-  color:#777;
-  margin-top:4px;
-}
-
-#sqmSlider{
-  width:100%;
-}
-
-/* =========================
-FINISH CARDS
-========================= */
-
-.finish-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.finish-card{
-  background:#faf8f5;
-  border:1px solid transparent;
-  cursor:pointer;
-  transition:.35s;
-  overflow:hidden;
-}
-
-.finish-card:hover{
-  transform:translateY(-4px);
-}
-
-.finish-card.active{
-  border:1px solid #8a6a4a;
-}
-
-.finish-card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-}
-
-.finish-content{
-  padding:22px;
-}
-
-.finish-name{
-  font-size:22px;
-  font-weight:300;
-  margin-bottom:10px;
-}
-
-.finish-price{
-  color:#8a6a4a;
-  margin-bottom:16px;
-}
-
-.finish-description{
-  color:#666;
-  line-height:1.8;
-  font-size:14px;
-}
-
-/* =========================
-ESTIMATE PANEL
-========================= */
-
-.estimate-panel{
-  position:sticky;
-  top:120px;
-}
-
-.estimate-card{
-  background:#fff;
-  padding:40px;
-  margin-bottom:24px;
-  border:1px solid rgba(0,0,0,0.04);
-}
-
-.estimate-label{
-  font-size:13px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#777;
-  margin-bottom:18px;
-}
-
-.estimate-price{
-  font-size:48px;
-  font-weight:300;
-  line-height:1.1;
-  margin-bottom:12px;
-}
-
-.estimate-computation{
-  color:#777;
-  margin-bottom:28px;
-}
-
-.estimate-divider{
-  height:1px;
-  background:#eee;
-  margin-bottom:24px;
-}
-
-.estimate-subtitle{
-  margin-bottom:15px;
-  font-weight:500;
-}
-
-.estimate-subtitle.excluded{
-  margin-top:30px;
-}
-
-.estimate-list{
-  padding-left:18px;
-  color:#444;
-  line-height:2;
-}
-
-.estimate-list.muted{
-  color:#888;
-}
-
-/* =========================
-CTA
-========================= */
-
-.estimate-cta{
-  background:#1b1b1b;
-  color:#fff;
-  padding:40px;
-}
-
-.estimate-cta h3{
-  font-size:34px;
-  font-weight:300;
-  margin-bottom:18px;
-}
-
-.estimate-cta p{
-  color:#bbb;
-  line-height:1.8;
-  margin-bottom:28px;
-}
-
-.estimate-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-}
-
-.estimate-btn{
-  padding:14px 22px;
-  font-size:13px;
-  letter-spacing:1px;
-  transition:.3s;
-}
-
-.estimate-btn.primary{
-  background:#fff;
-  color:#111;
-}
-
-.estimate-btn.secondary{
-  border:1px solid rgba(255,255,255,0.2);
-}
-
-.estimate-btn:hover{
-  transform:translateY(-2px);
-}
-
-/* =========================
-MOBILE
-========================= */
-
-@media(max-width:1000px){
-
-  .calculator-layout{
-    grid-template-columns:1fr;
-  }
-
-  .estimate-panel{
-    position:relative;
-    top:0;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .finish-grid{
-    grid-template-columns:1fr;
-  }
-
-  .calc-card,
-  .estimate-card,
-  .estimate-cta{
-    padding:28px;
-  }
-
-  .estimate-price{
-    font-size:38px;
-  }
-
-  .sqm-display span{
-    font-size:44px;
-  }
-
-}
-/* =========================
-PROJECT PLACEHOLDERS
-========================= */
-
-.placeholder-project{
-  position:relative;
-  overflow:hidden;
-}
-
-.placeholder-project img{
-  filter:grayscale(20%) brightness(.72);
-}
-
-.placeholder-title{
-  font-size:28px;
-  font-weight:300;
-}
-
-/* =========================
-SECONDARY PROJECT GRID
-========================= */
-
-.projects-secondary-grid{
-  margin-top:24px;
-
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-
-.secondary-project{
-  position:relative;
-  height:320px;
-
-  overflow:hidden;
-
-  cursor:pointer;
-}
-
-.secondary-project img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-
-  filter:brightness(.72);
-
-  transition:.6s ease;
-}
-
-.secondary-project:hover img{
-  transform:scale(1.04);
-}
-
-.secondary-overlay{
-  position:absolute;
-  inset:0;
-
-  background:
-  linear-gradient(
-    to top,
-    rgba(0,0,0,0.72),
-    rgba(0,0,0,0.08)
-  );
-
-  display:flex;
-  align-items:flex-end;
-
-  padding:28px;
-
-  color:#fff;
-}
-
-.secondary-overlay h3{
-  font-size:24px;
-  font-weight:300;
-}
-
-/* =========================
-MOBILE
-========================= */
-
-@media(max-width:1000px){
-
-  .projects-secondary-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .secondary-project{
-    height:240px;
-  }
-
-  .placeholder-title{
-    font-size:22px;
-  }
-
-}
-</style>
-
 <script>
 
 const galleryImages = [
@@ -2274,49 +2266,7 @@ CTA
     </div>
 
   </div>
-<!-- FULLSCREEN PROJECT MODAL -->
 
-<div class="gallery-modal" id="galleryModal">
-
-  <!-- CLOSE -->
-  <div class="gallery-close"
-       onclick="closeGallery()">
-    ×
-  </div>
-
-  <!-- PREV -->
-  <div class="gallery-arrow left"
-       onclick="prevImage()">
-    ←
-  </div>
-
-  <!-- NEXT -->
-  <div class="gallery-arrow right"
-       onclick="nextImage()">
-    →
-  </div>
-
-  <!-- IMAGE -->
-  <img id="galleryImage">
-
-  <!-- INFO -->
-  <div class="gallery-info">
-
-    <div class="gallery-counter" id="galleryCounter">
-      01 / 05
-    </div>
-
-    <h3>
-      Modern Tropical Residence
-    </h3>
-
-    <p>
-      Residential • Design-Build
-    </p>
-
-  </div>
-
-</div>
 </section>
 
 <!-- =========================
@@ -2370,6 +2320,48 @@ FOOTER
 <footer>
   © 2022 JE Magpantay Architecture + Engineering
 </footer>
+<!-- FULLSCREEN PROJECT MODAL -->
 
+<div class="gallery-modal" id="galleryModal">
+
+  <!-- CLOSE -->
+  <div class="gallery-close"
+       onclick="closeGallery()">
+    ×
+  </div>
+
+  <!-- PREV -->
+  <div class="gallery-arrow left"
+       onclick="prevImage()">
+    ←
+  </div>
+
+  <!-- NEXT -->
+  <div class="gallery-arrow right"
+       onclick="nextImage()">
+    →
+  </div>
+
+  <!-- IMAGE -->
+  <img id="galleryImage">
+
+  <!-- INFO -->
+  <div class="gallery-info">
+
+    <div class="gallery-counter" id="galleryCounter">
+      01 / 05
+    </div>
+
+    <h3>
+      Modern Tropical Residence
+    </h3>
+
+    <p>
+      Residential • Design-Build
+    </p>
+
+  </div>
+
+</div>
 </body>
 </html>
