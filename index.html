@@ -647,13 +647,9 @@ GALLERY MODAL
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-
   color:#fff;
-
   font-size:38px;
-
   cursor:pointer;
-
   padding:20px;
 }
 
@@ -669,7 +665,6 @@ GALLERY MODAL
   position:absolute;
   bottom:40px;
   left:50px;
-
   color:#fff;
 }
 
@@ -685,7 +680,6 @@ GALLERY MODAL
 .gallery-info h3{
   font-size:34px;
   font-weight:300;
-
   margin-bottom:8px;
 }
 
@@ -1654,28 +1648,29 @@ PROJECTS
 
   <div class="project-stack">
 
-    <!-- PLACEHOLDER 1 -->
-    <div class="project-small placeholder-project">
+<!-- MEDITERRANEAN PROJECT -->
+<div class="project-small project-placeholder"
+     onclick="openMediterraneanGallery(0)">
 
-      <img src="hero.png">
+  <img src="https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213706/Masilang_-_Exterior_qaawtd.png">
 
-      <div class="project-overlay">
+  <div class="project-overlay">
 
-        <div>
+    <div>
 
-          <div class="project-category">
-            Selected Work
-          </div>
-
-          <h3 class="placeholder-title">
-            Contemporary Residence
-          </h3>
-
-        </div>
-
+      <div class="project-category">
+        Residential • Architectural Design
       </div>
 
+      <h3 class="placeholder-title">
+        Modern Mediterranean Residence
+      </h3>
+
     </div>
+
+  </div>
+
+</div>
 
     <!-- PLACEHOLDER 2 -->
     <div class="project-small placeholder-project">
@@ -2145,7 +2140,80 @@ function prevImage(){
   updateGallery();
 
 }
+/* =========================
+MEDITERRANEAN GALLERY
+========================= */
 
+const mediterraneanImages = [
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213706/Masilang_-_Exterior_qaawtd.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213697/Masilang_-_Living_Area_fnzxih.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213695/Masilang_-Kitchen_obf2kb.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213696/Masilang_-_Family_Den_vrltbu.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213690/Masilang_-_Master_Bdrm_prabei.png"
+
+];
+
+let currentMediterraneanIndex = 0;
+
+function updateMediterraneanGallery(){
+
+  document.getElementById("mediterraneanImage").src =
+    mediterraneanImages[currentMediterraneanIndex];
+
+  document.getElementById("mediterraneanCounter").innerText =
+    String(currentMediterraneanIndex + 1).padStart(2,'0')
+    + " / " +
+    String(mediterraneanImages.length).padStart(2,'0');
+
+}
+
+function openMediterraneanGallery(index){
+
+  currentMediterraneanIndex = index;
+
+  document.getElementById("mediterraneanModal")
+    .classList.add("active");
+
+  updateMediterraneanGallery();
+
+}
+
+function closeMediterraneanGallery(){
+
+  document.getElementById("mediterraneanModal")
+    .classList.remove("active");
+
+}
+
+function nextMediterraneanImage(){
+
+  currentMediterraneanIndex++;
+
+  if(currentMediterraneanIndex >= mediterraneanImages.length){
+    currentMediterraneanIndex = 0;
+  }
+
+  updateMediterraneanGallery();
+
+}
+
+function prevMediterraneanImage(){
+
+  currentMediterraneanIndex--;
+
+  if(currentMediterraneanIndex < 0){
+    currentMediterraneanIndex =
+      mediterraneanImages.length - 1;
+  }
+
+  updateMediterraneanGallery();
+
+}
 </script>
 
   
@@ -2362,5 +2430,53 @@ FOOTER
   </div>
 
 </div>
+
+  <!-- MEDITERRANEAN MODAL -->
+
+<div class="gallery-modal"
+     id="mediterraneanModal">
+
+  <!-- CLOSE -->
+  <div class="gallery-close"
+       onclick="closeMediterraneanGallery()">
+    ×
+  </div>
+
+  <!-- PREV -->
+  <div class="gallery-arrow left"
+       onclick="prevMediterraneanImage()">
+    ←
+  </div>
+
+  <!-- NEXT -->
+  <div class="gallery-arrow right"
+       onclick="nextMediterraneanImage()">
+    →
+  </div>
+
+  <!-- IMAGE -->
+  <img id="mediterraneanImage">
+
+  <!-- INFO -->
+  <div class="gallery-info">
+
+    <div class="gallery-counter"
+         id="mediterraneanCounter">
+      01 / 05
+    </div>
+
+    <h3>
+      Modern Mediterranean Residence
+    </h3>
+
+    <p>
+      Residential • Architectural Design
+    </p>
+
+  </div>
+
+</div>
+
+  
 </body>
 </html>
