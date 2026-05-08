@@ -623,6 +623,33 @@ AREA WARNINGS
   grid-template-columns:1fr;
   gap:28px;
 }
+
+  /* =========================================
+ADD SPACE BUTTON
+========================================= */
+
+.add-space-btn{
+  margin-top:24px;
+
+  border:none;
+
+  background:#f5f1eb;
+
+  padding:16px 22px;
+
+  font-size:13px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+}
+
+.add-space-btn:hover{
+  background:#1b1b1b;
+  color:#fff;
+}
 }
 /* =========================
 GALLERY MODAL
@@ -2501,9 +2528,9 @@ INTERACTIVE ARCHITECTURAL PLANNER
         Lot Area
       </div>
 
-      <div class="summary-value">
-        200 sqm
-      </div>
+    <div class="summary-value builder-main-value">
+      200 sqm
+    </div>
 
     </div>
 
@@ -3046,18 +3073,23 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
           <div class="planner-actions">
 
-            <button class="ghost-button">
+            <button class="add-space-btn"
+                    id="addBedroomBtn">
+            
               + Add Bedroom
+            
             </button>
 
             <button class="ghost-button">
               + Add Custom Space
             </button>
-
+            
+            
           </div>
 
         </div>
-
+        <div class="space-card-grid"
+           id="extraBedrooms">
       </div>
 
       <!-- THIRD FLOOR (HIDDEN DEFAULT) -->
@@ -3747,7 +3779,11 @@ finishCards.forEach((card,index)=>{
 ROOM TOGGLE
 ========================================= */
 
-allCards.forEach(card=>{
+/* =========================================
+INITIALIZE CARD
+========================================= */
+
+function initializeCard(card){
 
   const toggle =
     card.querySelector(".space-toggle");
@@ -3755,12 +3791,18 @@ allCards.forEach(card=>{
   const value =
     card.querySelector(".space-value");
 
-  const original =
+  const minusBtn =
+    card.querySelector(".minus-btn");
+
+  const plusBtn =
+    card.querySelector(".plus-btn");
+
+  let original =
     parseInt(value.dataset.value);
 
-  toggle.addEventListener("click",()=>{
+  /* TOGGLE */
 
-    /* TURN OFF */
+  toggle.addEventListener("click",()=>{
 
     if(toggle.classList.contains("active")){
 
@@ -3774,11 +3816,7 @@ allCards.forEach(card=>{
 
       value.innerText = "0 sqm";
 
-    }
-
-    /* TURN ON */
-
-    else{
+    }else{
 
       toggle.classList.add("active");
 
@@ -3797,22 +3835,7 @@ allCards.forEach(card=>{
 
   });
 
-});
-  
-/* =========================================
-PLUS / MINUS
-========================================= */
-
-allCards.forEach(card=>{
-
-  const minusBtn =
-    card.querySelector(".minus-btn");
-
-  const plusBtn =
-    card.querySelector(".plus-btn");
-
-  const value =
-    card.querySelector(".space-value");
+  /* PLUS */
 
   plusBtn.addEventListener("click",()=>{
 
@@ -3821,13 +3844,18 @@ allCards.forEach(card=>{
 
     current += 2;
 
+    original = current;
+
     value.dataset.value = current;
 
-    value.innerText = current + " sqm";
+    value.innerText =
+      current + " sqm";
 
     updatePlanner();
 
   });
+
+  /* MINUS */
 
   minusBtn.addEventListener("click",()=>{
 
@@ -3840,16 +3868,25 @@ allCards.forEach(card=>{
       current = 0;
     }
 
+    original = current;
+
     value.dataset.value = current;
 
-    value.innerText = current + " sqm";
+    value.innerText =
+      current + " sqm";
 
     updatePlanner();
 
   });
 
-});
+}
 
+/* INIT EXISTING */
+
+allCards.forEach(card=>{
+  initializeCard(card);
+});
+  
 /* =========================================
 MAIN COMPUTATION
 ========================================= */
@@ -3978,7 +4015,111 @@ if(secondArea > upperLimit){
 /* =========================================
 INITIALIZE
 ========================================= */
+/* =========================================
+ADD BEDROOM
+========================================= */
 
+const addBedroomBtn =
+  document.getElementById(
+    "addBedroomBtn"
+  );
+
+const extraBedrooms =
+  document.getElementById(
+    "extraBedrooms"
+  );
+
+let bedroomCount = 1;
+
+addBedroomBtn.addEventListener("click",()=>{
+
+  bedroomCount++;
+
+  const bedroom =
+  document.createElement("div");
+
+  bedroom.className =
+    "space-card";
+
+  bedroom.dataset.floor =
+    "second";
+
+  bedroom.dataset.space =
+    "bedroom";
+
+  bedroom.innerHTML = `
+
+    <div class="space-card-top">
+
+      <div class="space-info">
+
+        <div class="space-icon">
+
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor">
+
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 7.5h16.5v9h-1.5v-3h-13.5v3h-1.5v-9Zm3 3h10.5"/>
+
+          </svg>
+
+        </div>
+
+        <div>
+
+          <div class="space-name">
+            Bedroom ${bedroomCount}
+          </div>
+
+          <div class="space-guide">
+            Recommended: 12–20 sqm
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="space-toggle active">
+        ON
+      </div>
+
+    </div>
+
+    <div class="space-controls">
+
+      <button class="minus-btn">
+        -
+      </button>
+
+      <div class="space-value"
+           data-value="16">
+
+        16 sqm
+
+      </div>
+
+      <button class="plus-btn">
+        +
+      </button>
+
+    </div>
+
+  `;
+
+  extraBedrooms.appendChild(
+    bedroom
+  );
+
+  initializeCard(bedroom);
+
+  updatePlanner();
+
+});
+  
 updatePlanner();
   
 </script>
