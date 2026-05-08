@@ -855,11 +855,6 @@ FINISH CARDS
 ESTIMATE PANEL
 ========================= */
 
-.estimate-panel{
-  position:sticky;
-  top:120px;
-}
-
 .estimate-card{
   background:#fff;
   padding:40px;
@@ -965,7 +960,11 @@ MOBILE
 ========================= */
 
 @media(max-width:1000px){
-
+.planner-summary-wrapper{
+  position:relative;
+  top:auto;
+}
+  
   .calculator-layout{
     grid-template-columns:1fr;
   }
@@ -1441,8 +1440,22 @@ SPACE PLANNER UI
 
 .planner-layout{
   display:grid;
-  grid-template-columns:1.1fr .9fr;
+
+  grid-template-columns:
+  minmax(0,1.2fr)
+  minmax(340px,.8fr);
+
   gap:40px;
+
+  align-items:start;
+}
+  .planner-summary-wrapper{
+  position:sticky;
+  top:120px;
+
+  display:flex;
+  flex-direction:column;
+  gap:24px;
 }
 
 .planner-card,
