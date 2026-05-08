@@ -583,6 +583,13 @@ MOBILE
     padding:32px;
   }
 
+  .floor-stepper{
+  width:100%;
+}
+  .lot-size-card{
+  grid-template-columns:1fr;
+  gap:28px;
+}
 }
 /* =========================
 GALLERY MODAL
@@ -1823,6 +1830,81 @@ MOBILE
   }
 
 }
+/* =========================================
+LOT CONFIG
+========================================= */
+
+.lot-size-card{
+  display:grid;
+
+  grid-template-columns:
+  .7fr
+  .9fr
+  1.2fr;
+
+  gap:40px;
+
+  align-items:center;
+}
+
+.lot-block,
+.floor-config,
+.lot-slider-wrapper{
+  width:100%;
+}
+
+.lot-slider{
+  width:100%;
+  accent-color:#1b1b1b;
+}
+  /* =========================================
+FLOOR CONFIG
+========================================= */
+
+.floor-config{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.floor-stepper{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.floor-stepper button{
+  width:42px;
+  height:42px;
+
+  border:none;
+
+  background:#f5f1eb;
+
+  font-size:18px;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+}
+
+.floor-stepper button:hover{
+  background:#1b1b1b;
+  color:#fff;
+}
+
+.floor-count{
+  font-size:22px;
+  font-weight:300;
+}
+
+/* =========================================
+HIDDEN FLOORS
+========================================= */
+
+.hidden-floor{
+  display:none;
+}
 </style>
 </head>
 
@@ -2370,24 +2452,67 @@ INTERACTIVE ARCHITECTURAL PLANNER
       ========================================= -->
       <div class="planner-inputs">
 
-        <!-- LOT AREA -->
-        <div class="planner-card">
+<!-- LOT + FLOOR CONFIG -->
+<div class="planner-card">
 
-          <div class="planner-label">
-            Lot Size
-          </div>
+  <div class="planner-label">
+    Project Configuration
+  </div>
 
-          <div class="lot-input">
+  <div class="lot-size-card">
 
-            <input type="number"
-                   value="200">
+    <!-- LOT AREA -->
+    <div class="lot-block">
 
-            <span>sqm</span>
+      <div class="summary-label">
+        Lot Area
+      </div>
 
-          </div>
+      <div class="summary-value">
+        200 sqm
+      </div>
 
+    </div>
+
+    <!-- FLOOR LEVELS -->
+    <div class="floor-config">
+
+      <div class="summary-label">
+        Floor Levels
+      </div>
+
+      <div class="floor-stepper">
+
+        <button>-</button>
+
+        <div class="floor-count">
+          2 Storeys
         </div>
 
+        <button>+</button>
+
+      </div>
+
+    </div>
+
+    <!-- SLIDER -->
+    <div class="lot-slider-wrapper">
+
+      <div class="summary-label">
+        Adjust Lot Size
+      </div>
+
+      <input type="range"
+             min="80"
+             max="600"
+             value="200"
+             class="lot-slider">
+
+    </div>
+
+  </div>
+
+</div>
         <!-- =========================================
         GROUND FLOOR
         ========================================= -->
@@ -2445,6 +2570,63 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
   </div>
 
+<!-- STAIRCASE -->
+<div class="space-card">
+
+  <div class="space-card-top">
+
+    <div class="space-info">
+
+      <div class="space-icon">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke-width="1.5"
+             stroke="currentColor">
+
+          <path stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 18.75h15M6.75 15.75h2.25v-3h2.25v-3h2.25v-3h2.25"/>
+
+        </svg>
+
+      </div>
+
+      <div>
+
+        <div class="space-name">
+          Staircase
+        </div>
+
+        <div class="space-guide">
+          Recommended: 14–20 sqm
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="space-toggle active">
+      ON
+    </div>
+
+  </div>
+
+  <div class="space-controls">
+
+    <button>-</button>
+
+    <div class="space-value">
+      18 sqm
+    </div>
+
+    <button>+</button>
+
+  </div>
+
+</div>
+  
   <!-- LIVING -->
   <div class="space-card">
 
@@ -2578,6 +2760,63 @@ INTERACTIVE ARCHITECTURAL PLANNER
 <!-- SPACE CARDS -->
 <div class="space-card-grid">
 
+  <!-- STAIRCASE -->
+<div class="space-card">
+
+  <div class="space-card-top">
+
+    <div class="space-info">
+
+      <div class="space-icon">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke-width="1.5"
+             stroke="currentColor">
+
+          <path stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4.5 18.75h15M6.75 15.75h2.25v-3h2.25v-3h2.25v-3h2.25"/>
+
+        </svg>
+
+      </div>
+
+      <div>
+
+        <div class="space-name">
+          Staircase
+        </div>
+
+        <div class="space-guide">
+          Recommended: 14–20 sqm
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="space-toggle active">
+      ON
+    </div>
+
+  </div>
+
+  <div class="space-controls">
+
+    <button>-</button>
+
+    <div class="space-value">
+      18 sqm
+    </div>
+
+    <button>+</button>
+
+  </div>
+
+</div>
+  
   <!-- MASTER BEDROOM -->
   <div class="space-card">
 
@@ -2660,6 +2899,29 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
       </div>
 
+      <!-- THIRD FLOOR (HIDDEN DEFAULT) -->
+
+<div class="builder-floor-section hidden-floor">
+
+  <div class="builder-floor-header">
+
+    <div>
+
+      <div class="builder-floor-label">
+        Third Floor
+      </div>
+
+      <div class="builder-floor-rule">
+        Additional upper floor configuration
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+      
       <!-- =========================================
       RIGHT SIDE
       ========================================= -->
