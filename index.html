@@ -960,9 +960,16 @@ MOBILE
 ========================= */
 
 @media(max-width:1000px){
-.planner-summary-wrapper{
-  position:relative;
-  top:auto;
+
+  .planner-layout{
+    grid-template-columns:1fr;
+  }
+
+  .planner-summary-wrapper{
+    position:relative;
+    top:auto;
+  }
+
 }
   
   .calculator-layout{
@@ -1443,21 +1450,32 @@ SPACE PLANNER UI
 
   grid-template-columns:
   minmax(0,1.2fr)
-  minmax(340px,.8fr);
+  420px;
 
   gap:40px;
 
   align-items:start;
+
+  overflow:visible;
 }
-  .planner-summary-wrapper{
+.planner-summary-wrapper{
   position:sticky;
   top:120px;
+
+  align-self:start;
+
+  height:max-content;
 
   display:flex;
   flex-direction:column;
   gap:24px;
 }
-
+  
+.space-planner-section,
+.container{
+  overflow:visible;
+}
+  
 .planner-card,
 .planner-summary-card{
   background:#fff;
