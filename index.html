@@ -539,6 +539,39 @@ MOBILE
 
 }
 
+  /* =========================================
+SPACE OFF STATE
+========================================= */
+
+.space-card.inactive{
+  opacity:.45;
+}
+
+.space-card.inactive .space-controls{
+  pointer-events:none;
+}
+
+.space-card.inactive .space-toggle{
+  background:#ece7df;
+  color:#888;
+}
+  
+/* =========================================
+AREA WARNINGS
+========================================= */
+
+.warning-area{
+  color:#9f5f5f !important;
+}
+
+.warning-card{
+  border:1px solid
+  rgba(159,95,95,0.25);
+
+  background:
+  rgba(159,95,95,0.03);
+}
+  
 @media(max-width:768px){
 
   section{
@@ -3711,6 +3744,62 @@ finishCards.forEach((card,index)=>{
 });
 
 /* =========================================
+ROOM TOGGLE
+========================================= */
+
+allCards.forEach(card=>{
+
+  const toggle =
+    card.querySelector(".space-toggle");
+
+  const value =
+    card.querySelector(".space-value");
+
+  const original =
+    parseInt(value.dataset.value);
+
+  toggle.addEventListener("click",()=>{
+
+    /* TURN OFF */
+
+    if(toggle.classList.contains("active")){
+
+      toggle.classList.remove("active");
+
+      toggle.innerText = "OFF";
+
+      card.classList.add("inactive");
+
+      value.dataset.value = 0;
+
+      value.innerText = "0 sqm";
+
+    }
+
+    /* TURN ON */
+
+    else{
+
+      toggle.classList.add("active");
+
+      toggle.innerText = "ON";
+
+      card.classList.remove("inactive");
+
+      value.dataset.value = original;
+
+      value.innerText =
+        original + " sqm";
+
+    }
+
+    updatePlanner();
+
+  });
+
+});
+  
+/* =========================================
 PLUS / MINUS
 ========================================= */
 
@@ -3826,7 +3915,50 @@ function updatePlanner(){
 
   overallTotal.innerText =
     totalArea + " sqm";
+/* =========================================
+VALIDATION UI
+========================================= */
 
+/* RESET */
+
+groundTotal.classList.remove(
+  "warning-area"
+);
+
+secondTotal.classList.remove(
+  "warning-area"
+);
+
+/* LIMITS */
+
+const lotArea =
+  parseInt(lotSlider.value);
+
+const groundLimit =
+  lotArea * 0.8;
+
+const upperLimit =
+  lotArea * 0.9;
+
+/* GROUND */
+
+if(groundArea > groundLimit){
+
+  groundTotal.classList.add(
+    "warning-area"
+  );
+
+}
+
+/* UPPER */
+
+if(secondArea > upperLimit){
+
+  secondTotal.classList.add(
+    "warning-area"
+  );
+
+}
   /* COST */
 
   const construction =
