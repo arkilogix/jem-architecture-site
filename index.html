@@ -2539,39 +2539,75 @@ INTERACTIVE ARCHITECTURAL PLANNER
 <div class="space-card-grid">
 
   <!-- GARAGE -->
-  <div class="space-card">
+<div class="space-card"
+     data-floor="ground"
+     data-space="garage">
 
-    <div class="space-card-top">
+  <div class="space-card-top">
 
-      <div class="space-info">
+    <div class="space-info">
 
-        <div class="space-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0m3 0h7.5m3 0a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0m3 0V9.75a1.5 1.5 0 0 0-.44-1.06l-2.25-2.25A1.5 1.5 0 0 0 14.25 6h-6a1.5 1.5 0 0 0-1.06.44L4.94 8.69A1.5 1.5 0 0 0 4.5 9.75v9"/>
-          </svg>
+      <div class="space-icon">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke-width="1.5"
+             stroke="currentColor">
+
+          <path stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 18.75a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0m3 0h7.5m3 0a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0m3 0V9.75a1.5 1.5 0 0 0-.44-1.06l-2.25-2.25A1.5 1.5 0 0 0 14.25 6h-6a1.5 1.5 0 0 0-1.06.44L4.94 8.69A1.5 1.5 0 0 0 4.5 9.75v9"/>
+
+        </svg>
+
+      </div>
+
+      <div>
+
+        <div class="space-name">
+          Garage
         </div>
 
-        <div>
-          <div class="space-name">Garage</div>
-          <div class="space-guide">Recommended: 18–36 sqm</div>
+        <div class="space-guide">
+          Recommended: 18–36 sqm
         </div>
 
       </div>
 
-      <div class="space-toggle active">ON</div>
-
     </div>
 
-    <div class="space-controls">
-      <button>-</button>
-      <div class="space-value">24 sqm</div>
-      <button>+</button>
+    <div class="space-toggle active">
+      ON
     </div>
 
   </div>
 
+  <div class="space-controls">
+
+    <button class="minus-btn">
+      -
+    </button>
+
+    <div class="space-value"
+         data-value="24">
+
+      24 sqm
+
+    </div>
+
+    <button class="plus-btn">
+      +
+    </button>
+
+  </div>
+
+</div>
+
 <!-- STAIRCASE -->
-<div class="space-card">
+  <div class="space-card"
+     data-floor="ground"
+     data-space="staircase">
 
   <div class="space-card-top">
 
@@ -2613,22 +2649,31 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
   </div>
 
-  <div class="space-controls">
+<div class="space-controls">
 
-    <button>-</button>
+  <button class="minus-btn">
+    -
+  </button>
 
-    <div class="space-value">
-      18 sqm
-    </div>
+  <div class="space-value"
+       data-value="18">
 
-    <button>+</button>
+    18 sqm
 
   </div>
+
+  <button class="plus-btn">
+    +
+  </button>
+
+</div>
 
 </div>
   
   <!-- LIVING -->
-  <div class="space-card">
+    <div class="space-card"
+     data-floor="ground"
+     data-space="living">
 
     <div class="space-card-top">
 
@@ -2651,16 +2696,31 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
     </div>
 
-    <div class="space-controls">
-      <button>-</button>
-      <div class="space-value">20 sqm</div>
-      <button>+</button>
-    </div>
+<div class="space-controls">
+
+  <button class="minus-btn">
+    -
+  </button>
+
+  <div class="space-value"
+       data-value="20">
+
+    20 sqm
+
+  </div>
+
+  <button class="plus-btn">
+    +
+  </button>
+
+</div>
 
   </div>
 
   <!-- KITCHEN -->
-  <div class="space-card">
+    <div class="space-card"
+     data-floor="ground"
+     data-space="kitchen">
 
     <div class="space-card-top">
 
@@ -2683,16 +2743,31 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
     </div>
 
-    <div class="space-controls">
-      <button>-</button>
-      <div class="space-value">14 sqm</div>
-      <button>+</button>
-    </div>
+<div class="space-controls">
+
+  <button class="minus-btn">
+    -
+  </button>
+
+  <div class="space-value"
+       data-value="14">
+
+    14 sqm
+
+  </div>
+
+  <button class="plus-btn">
+    +
+  </button>
+
+</div>
 
   </div>
 
   <!-- DINING -->
-  <div class="space-card">
+    <div class="space-card"
+     data-floor="ground"
+     data-space="dining">
 
     <div class="space-card-top">
 
@@ -2715,11 +2790,24 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
     </div>
 
-    <div class="space-controls">
-      <button>-</button>
-      <div class="space-value">12 sqm</div>
-      <button>+</button>
-    </div>
+<div class="space-controls">
+
+  <button class="minus-btn">
+    -
+  </button>
+
+  <div class="space-value"
+       data-value="12">
+
+    12 sqm
+
+  </div>
+
+  <button class="plus-btn">
+    +
+  </button>
+
+</div>
 
   </div>
 
@@ -2738,7 +2826,8 @@ INTERACTIVE ARCHITECTURAL PLANNER
         <!-- =========================================
         SECOND FLOOR
         ========================================= -->
-        <div class="planner-card">
+        <div class="planner-card"
+           id="secondFloor">
 
           <div class="planner-floor-header">
 
@@ -2761,7 +2850,9 @@ INTERACTIVE ARCHITECTURAL PLANNER
 <div class="space-card-grid">
 
   <!-- STAIRCASE -->
-<div class="space-card">
+  <div class="space-card"
+     data-floor="second"
+     data-space="staircase">
 
   <div class="space-card-top">
 
@@ -2803,22 +2894,31 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
   </div>
 
-  <div class="space-controls">
+<div class="space-controls">
 
-    <button>-</button>
+  <button class="minus-btn">
+    -
+  </button>
 
-    <div class="space-value">
-      18 sqm
-    </div>
+  <div class="space-value"
+       data-value="18">
 
-    <button>+</button>
+    18 sqm
 
   </div>
+
+  <button class="plus-btn">
+    +
+  </button>
+
+</div>
 
 </div>
   
   <!-- MASTER BEDROOM -->
-  <div class="space-card">
+    <div class="space-card"
+     data-floor="second"
+     data-space="master-bedroom">
 
     <div class="space-card-top">
 
@@ -2841,16 +2941,31 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
     </div>
 
-    <div class="space-controls">
-      <button>-</button>
-      <div class="space-value">24 sqm</div>
-      <button>+</button>
-    </div>
+<div class="space-controls">
+
+  <button class="minus-btn">
+    -
+  </button>
+
+  <div class="space-value"
+       data-value="24">
+
+    24 sqm
+
+  </div>
+
+  <button class="plus-btn">
+    +
+  </button>
+
+</div>
 
   </div>
 
   <!-- BEDROOM -->
-  <div class="space-card">
+    <div class="space-card"
+     data-floor="second"
+     data-space="bedroom">
 
     <div class="space-card-top">
 
@@ -2873,11 +2988,24 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
     </div>
 
-    <div class="space-controls">
-      <button>-</button>
-      <div class="space-value">16 sqm</div>
-      <button>+</button>
-    </div>
+<div class="space-controls">
+
+  <button class="minus-btn">
+    -
+  </button>
+
+  <div class="space-value"
+       data-value="16">
+
+    16 sqm
+
+  </div>
+
+  <button class="plus-btn">
+    +
+  </button>
+
+</div>
 
   </div>
 
@@ -2901,23 +3029,160 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
       <!-- THIRD FLOOR (HIDDEN DEFAULT) -->
 
-<div class="builder-floor-section hidden-floor">
+<div class="planner-card hidden-floor"
+     id="thirdFloor">
 
-  <div class="builder-floor-header">
+<div class="planner-floor-header">
 
-    <div>
+  <div>
 
-      <div class="builder-floor-label">
-        Third Floor
+    <div class="planner-floor-title">
+      Third Floor
+    </div>
+
+    <div class="planner-floor-rule">
+      Additional upper floor configuration
+    </div>
+
+  </div>
+
+</div>
+
+<div class="space-card-grid">
+
+  <!-- STAIRCASE -->
+    <div class="space-card"
+     data-floor="third"
+     data-space="staircase">
+
+    <div class="space-card-top">
+
+      <div class="space-info">
+
+        <div class="space-icon">
+
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor">
+
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 18.75h15M6.75 15.75h2.25v-3h2.25v-3h2.25v-3h2.25"/>
+
+          </svg>
+
+        </div>
+
+        <div>
+
+          <div class="space-name">
+            Staircase
+          </div>
+
+          <div class="space-guide">
+            Recommended: 14–20 sqm
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="builder-floor-rule">
-        Additional upper floor configuration
+      <div class="space-toggle active">
+        ON
       </div>
 
     </div>
 
+<div class="space-controls">
+
+  <button class="minus-btn">
+    -
+  </button>
+
+  <div class="space-value"
+       data-value="18">
+
+    18 sqm
+
   </div>
+
+  <button class="plus-btn">
+    +
+  </button>
+
+</div>
+
+  </div>
+
+  <!-- BEDROOM -->
+    <div class="space-card"
+     data-floor="third"
+     data-space="bedroom">
+
+    <div class="space-card-top">
+
+      <div class="space-info">
+
+        <div class="space-icon">
+
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor">
+
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 7.5h16.5v9h-1.5v-3h-13.5v3h-1.5v-9Zm3 3h10.5"/>
+
+          </svg>
+
+        </div>
+
+        <div>
+
+          <div class="space-name">
+            Bedroom
+          </div>
+
+          <div class="space-guide">
+            Recommended: 12–20 sqm
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="space-toggle active">
+        ON
+      </div>
+
+    </div>
+
+<div class="space-controls">
+
+  <button class="minus-btn">
+    -
+  </button>
+
+  <div class="space-value"
+       data-value="16">
+
+    16 sqm
+
+  </div>
+
+  <button class="plus-btn">
+    +
+  </button>
+
+</div>
+
+  </div>
+
+</div>
 
 </div>
 
@@ -2942,7 +3207,8 @@ INTERACTIVE ARCHITECTURAL PLANNER
                 Ground Floor Area
               </div>
 
-              <div class="summary-value">
+              <div class="summary-value"
+               id="groundTotal">
                 101 sqm
               </div>
 
@@ -2958,7 +3224,8 @@ INTERACTIVE ARCHITECTURAL PLANNER
                 Second Floor Area
               </div>
 
-              <div class="summary-value">
+              <div class="summary-value"
+               id="secondTotal">
                 62 sqm
               </div>
 
@@ -2976,7 +3243,8 @@ INTERACTIVE ARCHITECTURAL PLANNER
               Estimated Total Floor Area
             </div>
 
-            <div class="summary-total">
+            <div class="summary-total"
+             id="overallTotal">
               163 sqm
             </div>
 
@@ -3123,7 +3391,8 @@ ABOVE "PRELIMINARY COST ESTIMATE"
                 Standard Finish Estimate
               </div>
 
-              <div class="cost-value">
+              <div class="cost-value"
+               id="constructionCost">
                 ₱5,542,000
               </div>
 
@@ -3135,7 +3404,8 @@ ABOVE "PRELIMINARY COST ESTIMATE"
                 Architectural & Engineering Services
               </div>
 
-              <div class="cost-value">
+              <div class="cost-value"
+               id="designFee">
                 ₱293,400
               </div>
 
@@ -3310,78 +3580,277 @@ function prevMediterraneanImage(){
   updateMediterraneanGallery();
 
 }
-</script>
 
+  /* =========================================
+FLOOR CONFIGURATOR
+========================================= */
+
+let floorCount = 2;
+
+const floorCountText =
+  document.querySelector(".floor-count");
+
+const floorButtons =
+  document.querySelectorAll(".floor-stepper button");
+
+const secondFloor =
+  document.getElementById("secondFloor");
+
+const thirdFloor =
+  document.getElementById("thirdFloor");
+
+function updateFloors(){
+
+  floorCountText.innerText =
+    floorCount + (floorCount > 1 ? " Storeys" : " Storey");
+
+  /* SECOND FLOOR */
+
+  if(floorCount >= 2){
+    secondFloor.style.display = "block";
+  }else{
+    secondFloor.style.display = "none";
+  }
+
+  /* THIRD FLOOR */
+
+  if(floorCount >= 3){
+    thirdFloor.style.display = "block";
+  }else{
+    thirdFloor.style.display = "none";
+  }
+
+}
+
+/* MINUS */
+
+floorButtons[0].addEventListener("click",()=>{
+
+  floorCount--;
+
+  if(floorCount < 1){
+    floorCount = 1;
+  }
+
+  updateFloors();
+
+});
+
+/* PLUS */
+
+floorButtons[1].addEventListener("click",()=>{
+
+  floorCount++;
+
+  if(floorCount > 3){
+    floorCount = 3;
+  }
+
+  updateFloors();
+
+});
+
+/* INIT */
+
+updateFloors();
+
+  /* =========================================
+SPACE PLANNER ENGINE
+========================================= */
+
+const allCards =
+  document.querySelectorAll(".space-card");
+
+const groundTotal =
+  document.getElementById("groundTotal");
+
+const secondTotal =
+  document.getElementById("secondTotal");
+
+const overallTotal =
+  document.getElementById("overallTotal");
+
+const constructionCost =
+  document.getElementById("constructionCost");
+
+const designFee =
+  document.getElementById("designFee");
+
+/* =========================================
+FINISH LEVELS
+========================================= */
+
+const finishCards =
+  document.querySelectorAll(".finish-card");
+
+let selectedRate = 22000;
+
+const finishRates = [
+  22000,
+  34000,
+  45000,
+  65000
+];
+
+finishCards.forEach((card,index)=>{
+
+  card.addEventListener("click",()=>{
+
+    finishCards.forEach(c=>{
+      c.classList.remove("active");
+    });
+
+    card.classList.add("active");
+
+    selectedRate = finishRates[index];
+
+    updatePlanner();
+
+  });
+
+});
+
+/* =========================================
+PLUS / MINUS
+========================================= */
+
+allCards.forEach(card=>{
+
+  const minusBtn =
+    card.querySelector(".minus-btn");
+
+  const plusBtn =
+    card.querySelector(".plus-btn");
+
+  const value =
+    card.querySelector(".space-value");
+
+  plusBtn.addEventListener("click",()=>{
+
+    let current =
+      parseInt(value.dataset.value);
+
+    current += 2;
+
+    value.dataset.value = current;
+
+    value.innerText = current + " sqm";
+
+    updatePlanner();
+
+  });
+
+  minusBtn.addEventListener("click",()=>{
+
+    let current =
+      parseInt(value.dataset.value);
+
+    current -= 2;
+
+    if(current < 0){
+      current = 0;
+    }
+
+    value.dataset.value = current;
+
+    value.innerText = current + " sqm";
+
+    updatePlanner();
+
+  });
+
+});
+
+/* =========================================
+MAIN COMPUTATION
+========================================= */
+
+function updatePlanner(){
+
+  let groundArea = 0;
+  let secondArea = 0;
+  let thirdArea = 0;
+
+  allCards.forEach(card=>{
+
+    const floor =
+      card.dataset.floor;
+
+    const value =
+      parseInt(
+        card.querySelector(".space-value")
+        .dataset.value
+      );
+
+    /* ONLY COUNT
+    VISIBLE FLOORS */
+
+    if(floor === "second"
+       && floorCount < 2){
+      return;
+    }
+
+    if(floor === "third"
+       && floorCount < 3){
+      return;
+    }
+
+    if(floor === "ground"){
+      groundArea += value;
+    }
+
+    if(floor === "second"){
+      secondArea += value;
+    }
+
+    if(floor === "third"){
+      thirdArea += value;
+    }
+
+  });
+
+  /* TOTALS */
+
+  const totalArea =
+    groundArea +
+    secondArea +
+    thirdArea;
+
+  /* UI */
+
+  groundTotal.innerText =
+    groundArea + " sqm";
+
+  secondTotal.innerText =
+    secondArea + thirdArea + " sqm";
+
+  overallTotal.innerText =
+    totalArea + " sqm";
+
+  /* COST */
+
+  const construction =
+    totalArea * selectedRate;
+
+  const professional =
+    totalArea * 1800;
+
+  constructionCost.innerText =
+    "₱" + construction.toLocaleString();
+
+  designFee.innerText =
+    "₱" + professional.toLocaleString();
+
+}
+
+/* =========================================
+INITIALIZE
+========================================= */
+
+updatePlanner();
   
-<script>
-
-let currentArea = 200;
-let currentRate = 22000;
-let currentFinish = "Bare Finish";
-
-function formatPeso(num){
-  return "₱" + num.toLocaleString();
-}
-
-function updateEstimate(){
-
-  const construction = currentArea * currentRate;
-  const designFee = currentArea * 1800;
-
-  document.getElementById("constructionCost").innerText =
-    formatPeso(construction);
-
-  document.getElementById("designFee").innerText =
-    formatPeso(designFee);
-
-  document.querySelectorAll(".estimate-computation")[0].innerText =
-    currentArea + " sqm × ₱" + currentRate.toLocaleString() + "/sqm";
-
-  document.querySelectorAll(".estimate-computation")[1].innerText =
-    currentArea + " sqm × ₱1,800/sqm";
-
-}
-
-function updateArea(val){
-
-  currentArea = parseInt(val);
-
-  document.getElementById("sqmValue").innerText = currentArea;
-
-  document.getElementById("sqmSlider").value = currentArea;
-
-  updateEstimate();
-
-}
-
-function changeArea(change){
-
-  currentArea += change;
-
-  if(currentArea < 50) currentArea = 50;
-  if(currentArea > 1000) currentArea = 1000;
-
-  updateArea(currentArea);
-
-}
-
-function selectFinish(el,rate,name){
-
-  document.querySelectorAll(".finish-card")
-    .forEach(card => card.classList.remove("active"));
-
-  el.classList.add("active");
-
-  currentRate = rate;
-  currentFinish = name;
-
-  updateEstimate();
-
-}
-
-updateEstimate();
-
 </script>
+
 
 <!-- =========================
 CTA
