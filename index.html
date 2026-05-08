@@ -1257,7 +1257,413 @@ MOBILE
   }
 
 }
+.finish-level-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
 
+.finish-card{
+  position:relative;
+
+  min-height:260px;
+
+  overflow:hidden;
+
+  cursor:pointer;
+
+  border:1px solid rgba(0,0,0,0.05);
+
+  transition:.4s ease;
+}
+
+.finish-card img{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:.6s ease;
+}
+
+/* OVERLAY */
+
+.finish-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,0.82),
+    rgba(0,0,0,0.15)
+  );
+
+  transition:.4s ease;
+}
+
+/* CONTENT */
+
+.finish-content{
+  position:relative;
+  z-index:2;
+
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  padding:26px;
+
+  color:#fff;
+}
+
+.finish-name{
+  font-size:24px;
+  font-weight:300;
+
+  margin-bottom:10px;
+}
+
+.finish-price{
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  margin-bottom:18px;
+
+  color:rgba(255,255,255,0.72);
+}
+
+.finish-content p{
+  line-height:1.8;
+
+  color:rgba(255,255,255,0.82);
+}
+
+/* HOVER */
+
+.finish-card:hover{
+  transform:translateY(-4px);
+}
+
+.finish-card:hover img{
+  transform:scale(1.04);
+}
+
+.finish-card:hover .finish-overlay{
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,0.72),
+    rgba(0,0,0,0.10)
+  );
+}
+
+/* ACTIVE */
+
+.finish-card.active{
+  border:1px solid rgba(138,106,74,0.55);
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .finish-level-grid{
+    grid-template-columns:1fr;
+  }
+
+  .finish-card{
+    min-height:220px;
+  }
+
+  .finish-name{
+    font-size:22px;
+  }
+
+}
+
+  /* =========================================
+SPACE PLANNER UI
+========================================= */
+
+.space-planner-section{
+  background:#ece7df;
+}
+
+.planner-layout{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+}
+
+.planner-card,
+.planner-summary-card{
+  background:#fff;
+
+  padding:40px;
+
+  margin-bottom:24px;
+
+  border:1px solid rgba(0,0,0,0.04);
+}
+
+/* LOT INPUT */
+
+.planner-label{
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  color:#888;
+
+  margin-bottom:18px;
+}
+
+.lot-input{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.lot-input input{
+  width:150px;
+
+  padding:16px;
+
+  border:none;
+
+  background:#f5f1eb;
+
+  font-size:20px;
+  font-weight:300;
+}
+
+.lot-input span{
+  color:#777;
+}
+
+/* FLOOR */
+
+.planner-floor-header{
+  margin-bottom:34px;
+}
+
+.planner-floor-title{
+  font-size:34px;
+  font-weight:300;
+
+  margin-bottom:10px;
+}
+
+.planner-floor-rule{
+  color:#777;
+  line-height:1.8;
+}
+
+/* SPACES */
+
+.space-grid{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.space-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding-bottom:14px;
+
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+.space-row label{
+  color:#555;
+}
+
+.space-row input{
+  width:90px;
+
+  padding:12px;
+
+  border:none;
+
+  background:#f5f1eb;
+
+  text-align:center;
+}
+
+/* BUTTONS */
+
+.planner-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+
+  margin-top:30px;
+}
+
+.ghost-button{
+  background:transparent;
+
+  border:1px solid rgba(0,0,0,0.12);
+
+  padding:14px 20px;
+
+  font-size:12px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+}
+
+.ghost-button:hover{
+  background:#1b1b1b;
+  color:#fff;
+
+  transform:translateY(-2px);
+}
+
+/* SUMMARY */
+
+.summary-heading{
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  margin-bottom:36px;
+
+  color:#8a6a4a;
+}
+
+.summary-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+
+  margin-bottom:24px;
+}
+
+.summary-item{
+  background:#f5f1eb;
+
+  padding:28px;
+}
+
+.summary-label{
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  color:#777;
+
+  margin-bottom:14px;
+}
+
+.summary-value{
+  font-size:42px;
+  font-weight:300;
+
+  margin-bottom:14px;
+}
+
+.summary-valid{
+  color:#507a56;
+  line-height:1.7;
+}
+
+.summary-total-card{
+  background:#1b1b1b;
+
+  padding:34px;
+
+  color:#fff;
+}
+
+.summary-total{
+  font-size:62px;
+  font-weight:300;
+}
+
+/* COST */
+
+.cost-grid{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.cost-item{
+  padding-bottom:22px;
+
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+.cost-label{
+  color:#777;
+
+  margin-bottom:12px;
+}
+
+.cost-value{
+  font-size:34px;
+  font-weight:300;
+}
+
+.estimator-note{
+  margin-top:28px;
+
+  color:#777;
+  line-height:1.9;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+  .planner-layout{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .summary-grid{
+    grid-template-columns:1fr;
+  }
+
+  .planner-card,
+  .planner-summary-card{
+    padding:28px;
+  }
+
+  .planner-floor-title{
+    font-size:28px;
+  }
+
+  .summary-value{
+    font-size:34px;
+  }
+
+  .summary-total{
+    font-size:46px;
+  }
+
+}
+  
 </style>
 </head>
 
@@ -1768,17 +2174,13 @@ SECOND ROW
 
 </section>
 
-<!-- =========================
-CALCULATOR
-========================= -->
 
-<!-- =========================
-ARCHITECTURAL CALCULATOR
-ADD THIS INSIDE:
-<section class="calculator-section">
-========================= -->
+  
+<!-- =========================================
+INTERACTIVE ARCHITECTURAL PLANNER
+========================================= -->
 
-<section class="calculator-section">
+<section class="space-planner-section">
 
   <div class="container">
 
@@ -1786,172 +2188,178 @@ ADD THIS INSIDE:
     <div class="section-header">
 
       <div class="section-label">
-        Preliminary Project Estimator
+        Interactive Architectural Planner
       </div>
 
       <h2 class="section-title">
-        Plan Your Project With Confidence
+        Configure Your Residential Space Requirements
       </h2>
 
       <p class="section-description">
-        Explore a preliminary estimate for construction and professional
-        design services based on your project requirements.
+        Build your preferred residential program and receive
+        a preliminary architectural area and cost estimate
+        based on your selected spaces.
       </p>
 
     </div>
 
-    <!-- CALCULATOR LAYOUT -->
-    <div class="calculator-layout">
+    <!-- MAIN GRID -->
+    <div class="planner-layout">
 
-      <!-- =========================
-      LEFT PANEL
-      ========================= -->
-      <div class="calculator-inputs">
+      <!-- =========================================
+      LEFT SIDE
+      ========================================= -->
+      <div class="planner-inputs">
 
-        <!-- FLOOR AREA -->
-        <div class="calc-card">
+        <!-- LOT AREA -->
+        <div class="planner-card">
 
-          <div class="calc-label">
-            Estimated Floor Area
+          <div class="planner-label">
+            Lot Size
           </div>
 
-          <div class="sqm-input-wrapper">
+          <div class="lot-input">
 
-            <button class="sqm-btn" onclick="changeArea(-10)">
-              −
-            </button>
+            <input type="number"
+                   value="200">
 
-            <div class="sqm-display">
-              <span id="sqmValue">200</span>
-              <small>sqm</small>
-            </div>
-
-            <button class="sqm-btn" onclick="changeArea(10)">
-              +
-            </button>
+            <span>sqm</span>
 
           </div>
-
-          <input
-            type="range"
-            min="50"
-            max="1000"
-            step="10"
-            value="200"
-            id="sqmSlider"
-            oninput="updateArea(this.value)"
-          >
 
         </div>
 
-        <!-- FINISH LEVEL -->
-        <div class="calc-card">
+        <!-- =========================================
+        GROUND FLOOR
+        ========================================= -->
+        <div class="planner-card">
 
-          <div class="calc-label">
-            Select Finish Level
+          <div class="planner-floor-header">
+
+            <div>
+
+              <div class="planner-floor-title">
+                Ground Floor
+              </div>
+
+              <div class="planner-floor-rule">
+                Maximum recommended occupancy:
+                80% of lot area
+              </div>
+
+            </div>
+
           </div>
 
-          <div class="finish-grid">
+          <div class="space-grid">
 
-            <!-- BARE -->
-            <div class="finish-card active"
-                 onclick="selectFinish(this,22000,'Bare Finish')">
+            <div class="space-row">
+              <label>Garage</label>
+              <input type="number" value="24">
+            </div>
 
-              <img src="hero.png">
+            <div class="space-row">
+              <label>Living Area</label>
+              <input type="number" value="20">
+            </div>
 
-              <div class="finish-content">
+            <div class="space-row">
+              <label>Kitchen</label>
+              <input type="number" value="14">
+            </div>
 
-                <div class="finish-name">
-                  Bare Finish
-                </div>
+            <div class="space-row">
+              <label>Dining</label>
+              <input type="number" value="12">
+            </div>
 
-                <div class="finish-price">
-                  ₱22,000/sqm
-                </div>
+            <div class="space-row">
+              <label>Bedroom</label>
+              <input type="number" value="16">
+            </div>
 
-                <div class="finish-description">
-                  Essential structural and basic finishing works
-                  prepared for future customization and phased improvements.
-                </div>
+            <div class="space-row">
+              <label>Toilet & Bath</label>
+              <input type="number" value="5">
+            </div>
 
+            <div class="space-row">
+              <label>Powder Room</label>
+              <input type="number" value="2">
+            </div>
+
+            <div class="space-row">
+              <label>Service Kitchen / Laundry</label>
+              <input type="number" value="8">
+            </div>
+
+          </div>
+
+          <div class="planner-actions">
+
+            <button class="ghost-button">
+              + Add Custom Space
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- =========================================
+        SECOND FLOOR
+        ========================================= -->
+        <div class="planner-card">
+
+          <div class="planner-floor-header">
+
+            <div>
+
+              <div class="planner-floor-title">
+                Second Floor
+              </div>
+
+              <div class="planner-floor-rule">
+                Maximum recommended occupancy:
+                90% of lot area
               </div>
 
             </div>
 
-            <!-- STANDARD -->
-            <div class="finish-card"
-                 onclick="selectFinish(this,34000,'Standard Finish')">
+          </div>
 
-              <img src="hero.png">
+          <div class="space-grid">
 
-              <div class="finish-content">
-
-                <div class="finish-name">
-                  Standard Finish
-                </div>
-
-                <div class="finish-price">
-                  ₱34,000/sqm
-                </div>
-
-                <div class="finish-description">
-                  Functional modern finishes designed for comfortable
-                  everyday residential living.
-                </div>
-
-              </div>
-
+            <div class="space-row">
+              <label>Master Bedroom</label>
+              <input type="number" value="24">
             </div>
 
-            <!-- ELEGANT -->
-            <div class="finish-card"
-                 onclick="selectFinish(this,45000,'Elegant Finish')">
-
-              <img src="hero.png">
-
-              <div class="finish-content">
-
-                <div class="finish-name">
-                  Elegant Finish
-                </div>
-
-                <div class="finish-price">
-                  ₱45,000/sqm
-                </div>
-
-                <div class="finish-description">
-                  Refined architectural detailing paired with upgraded
-                  materials and thoughtfully curated finishes.
-                </div>
-
-              </div>
-
+            <div class="space-row">
+              <label>Bedroom 1</label>
+              <input type="number" value="16">
             </div>
 
-            <!-- LUXURY -->
-            <div class="finish-card"
-                 onclick="selectFinish(this,65000,'Luxury Finish')">
-
-              <img src="hero.png">
-
-              <div class="finish-content">
-
-                <div class="finish-name">
-                  Luxury Finish
-                </div>
-
-                <div class="finish-price">
-                  ₱65,000/sqm
-                </div>
-
-                <div class="finish-description">
-                  Bespoke architectural execution featuring premium materials,
-                  custom detailing, and elevated spatial experience.
-                </div>
-
-              </div>
-
+            <div class="space-row">
+              <label>Bedroom 2</label>
+              <input type="number" value="16">
             </div>
+
+            <div class="space-row">
+              <label>Toilet & Bath</label>
+              <input type="number" value="6">
+            </div>
+
+          </div>
+
+          <div class="planner-actions">
+
+            <button class="ghost-button">
+              + Add Bedroom
+            </button>
+
+            <button class="ghost-button">
+              + Add Custom Space
+            </button>
 
           </div>
 
@@ -1959,99 +2367,111 @@ ADD THIS INSIDE:
 
       </div>
 
-      <!-- =========================
-      RIGHT PANEL
-      ========================= -->
-      <div class="estimate-panel">
+      <!-- =========================================
+      RIGHT SIDE
+      ========================================= -->
+      <div class="planner-summary-wrapper">
 
-        <!-- CONSTRUCTION COST -->
-        <div class="estimate-card">
+        <!-- SUMMARY -->
+        <div class="planner-summary-card">
 
-          <div class="estimate-label">
-            Estimated Construction Cost
+          <div class="summary-heading">
+            Preliminary Architectural Summary
           </div>
 
-          <div class="estimate-price" id="constructionCost">
-            ₱4,400,000
+          <div class="summary-grid">
+
+            <div class="summary-item">
+
+              <div class="summary-label">
+                Ground Floor Area
+              </div>
+
+              <div class="summary-value">
+                101 sqm
+              </div>
+
+              <div class="summary-valid">
+                ✓ Within recommended occupancy
+              </div>
+
+            </div>
+
+            <div class="summary-item">
+
+              <div class="summary-label">
+                Second Floor Area
+              </div>
+
+              <div class="summary-value">
+                62 sqm
+              </div>
+
+              <div class="summary-valid">
+                ✓ Within recommended occupancy
+              </div>
+
+            </div>
+
           </div>
 
-          <div class="estimate-computation">
-            200 sqm × ₱22,000/sqm
+          <div class="summary-total-card">
+
+            <div class="summary-label">
+              Estimated Total Floor Area
+            </div>
+
+            <div class="summary-total">
+              163 sqm
+            </div>
+
           </div>
-
-          <div class="estimate-divider"></div>
-
-          <div class="estimate-subtitle">
-            Includes
-          </div>
-
-          <ul class="estimate-list">
-            <li>Structural Works</li>
-            <li>Architectural Works</li>
-            <li>Standard MEPF Works</li>
-          </ul>
-
-          <div class="estimate-subtitle excluded">
-            Exclusions
-          </div>
-
-          <ul class="estimate-list muted">
-            <li>Permits & Licenses</li>
-            <li>Fence Construction</li>
-            <li>Modular Cabinetry</li>
-            <li>Furniture & Furnishing</li>
-            <li>Hardscape & Landscape</li>
-          </ul>
 
         </div>
 
-        <!-- PROFESSIONAL FEES -->
-        <div class="estimate-card">
+        <!-- FINISH LEVELS -->
+        <!-- PASTE YOUR FINISH LEVEL CODE HERE -->
 
-          <div class="estimate-label">
-            Professional Design & Engineering Services
+        <!-- COST ESTIMATE -->
+        <div class="planner-summary-card">
+
+          <div class="summary-heading">
+            Preliminary Cost Estimate
           </div>
 
-          <div class="estimate-price" id="designFee">
-            ₱360,000
+          <div class="cost-grid">
+
+            <div class="cost-item">
+
+              <div class="cost-label">
+                Standard Finish Estimate
+              </div>
+
+              <div class="cost-value">
+                ₱5,542,000
+              </div>
+
+            </div>
+
+            <div class="cost-item">
+
+              <div class="cost-label">
+                Architectural & Engineering Services
+              </div>
+
+              <div class="cost-value">
+                ₱293,400
+              </div>
+
+            </div>
+
           </div>
 
-          <div class="estimate-computation">
-            200 sqm × ₱1,800/sqm
-          </div>
+          <div class="estimator-note">
 
-          <div class="estimate-divider"></div>
-
-          <ul class="estimate-list">
-            <li>Architectural Plans</li>
-            <li>Structural Plans</li>
-            <li>Electrical Plans</li>
-            <li>Plumbing Plans</li>
-          </ul>
-
-        </div>
-
-        <!-- CTA -->
-        <div class="estimate-cta">
-
-          <h3>
-            Let’s Discuss Your Project
-          </h3>
-
-          <p>
-            Request a consultation or detailed proposal
-            based on your preliminary estimate.
-          </p>
-
-          <div class="estimate-buttons">
-
-            <a href="#contact" class="estimate-btn primary">
-              Request Consultation
-            </a>
-
-            <a href="#contact" class="estimate-btn secondary">
-              Request Proposal
-            </a>
+            Estimates exclude permits, licenses,
+            cabinetry, furnishings, fencing,
+            and site development works.
 
           </div>
 
