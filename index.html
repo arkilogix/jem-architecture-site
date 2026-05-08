@@ -571,6 +571,76 @@ AREA WARNINGS
   background:
   rgba(159,95,95,0.03);
 }
+
+  /* =========================================
+CUSTOM SPACE MODAL
+========================================= */
+
+.custom-modal{
+  position:fixed;
+
+  inset:0;
+
+  background:
+  rgba(0,0,0,.35);
+
+  display:none;
+
+  justify-content:center;
+  align-items:center;
+
+  z-index:999;
+}
+
+.custom-modal.active{
+  display:flex;
+}
+
+.custom-modal-box{
+  width:min(92%,420px);
+
+  background:#f8f5f0;
+
+  padding:36px;
+
+  border-radius:18px;
+}
+
+.custom-modal-box h3{
+  margin-bottom:18px;
+
+  font-size:20px;
+  font-weight:500;
+}
+
+.custom-modal-box input{
+  width:100%;
+
+  border:none;
+
+  background:#ece7df;
+
+  padding:16px;
+
+  margin-bottom:18px;
+
+  font-size:15px;
+
+  outline:none;
+}
+
+.custom-modal-box button{
+  width:100%;
+
+  border:none;
+
+  background:#1b1b1b;
+  color:#fff;
+
+  padding:16px;
+
+  cursor:pointer;
+}
   
 @media(max-width:768px){
 
@@ -2907,7 +2977,8 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
           <div class="planner-actions">
 
-            <button class="ghost-button">
+            <button class="ghost-button"
+            id="addCustomSpaceBtn">
               + Add Custom Space
             </button>
 
@@ -3113,7 +3184,8 @@ INTERACTIVE ARCHITECTURAL PLANNER
             
             </button>
 
-            <button class="ghost-button">
+            <button class="ghost-button"
+            id="addCustomSpaceBtn">
               + Add Custom Space
             </button>            
            </div>
@@ -4146,6 +4218,151 @@ addBedroomBtn.addEventListener("click",()=>{
   updatePlanner();
 
 });
+  /* =========================================
+CUSTOM SPACE
+========================================= */
+
+const customModal =
+  document.getElementById(
+    "customModal"
+  );
+
+const addCustomSpaceBtn =
+  document.getElementById(
+    "addCustomSpaceBtn"
+  );
+
+const customSpaceInput =
+  document.getElementById(
+    "customSpaceInput"
+  );
+
+const createCustomSpace =
+  document.getElementById(
+    "createCustomSpace"
+  );
+
+/* OPEN */
+
+addCustomSpaceBtn.addEventListener("click",()=>{
+
+  customModal.classList.add(
+    "active"
+  );
+
+});
+
+/* CLOSE OUTSIDE */
+
+customModal.addEventListener("click",(e)=>{
+
+  if(e.target === customModal){
+
+    customModal.classList.remove(
+      "active"
+    );
+
+  }
+
+});
+
+/* CREATE */
+
+createCustomSpace.addEventListener("click",()=>{
+
+  const name =
+    customSpaceInput.value.trim();
+
+  if(name === "") return;
+
+  const card =
+  document.createElement("div");
+
+  card.className =
+    "space-card";
+
+  card.dataset.floor =
+    "second";
+
+  card.dataset.space =
+    "custom";
+
+  card.innerHTML = `
+
+    <div class="space-card-top">
+
+      <div class="space-info">
+
+        <div class="space-icon">
+
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor">
+
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 4.5h16.5v15h-16.5z"/>
+
+          </svg>
+
+        </div>
+
+        <div>
+
+          <div class="space-name">
+            ${name}
+          </div>
+
+          <div class="space-guide">
+            Custom Space
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="space-toggle active">
+        ON
+      </div>
+
+    </div>
+
+    <div class="space-controls">
+
+      <button class="minus-btn">
+        -
+      </button>
+
+      <div class="space-value"
+           data-value="12">
+
+        12 sqm
+
+      </div>
+
+      <button class="plus-btn">
+        +
+      </button>
+
+    </div>
+
+  `;
+
+  extraBedrooms.appendChild(card);
+
+  initializeCard(card);
+
+  updatePlanner();
+
+  customModal.classList.remove(
+    "active"
+  );
+
+  customSpaceInput.value = "";
+
+});
   
 updatePlanner();
   
@@ -4342,6 +4559,32 @@ FOOTER
 
 </div>
 
+<!-- =========================================
+CUSTOM SPACE MODAL
+========================================= -->
+
+<div class="custom-modal"
+     id="customModal">
+
+  <div class="custom-modal-box">
+
+    <h3>
+      Add Custom Space
+    </h3>
+
+    <input type="text"
+           id="customSpaceInput"
+           placeholder="Example: Home Office">
+
+    <button id="createCustomSpace">
+
+      Add Space
+
+    </button>
+
+  </div>
+
+</div>
   
 </body>
 </html>
