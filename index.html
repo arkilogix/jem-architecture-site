@@ -2053,71 +2053,7 @@ SECTION DIVIDERS
   background:#d8d2c8;
 }
 
-  /* =========================================
-INQUIRY SYSTEM
-========================================= */
 
-.inquiry-section{
-  background:#f8f6f2;
-}
-
-.inquiry-layout{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-
-  gap:40px;
-
-  margin-top:60px;
-}
-
-.inquiry-summary,
-.inquiry-form{
-  background:#fff;
-
-  padding:40px;
-}
-
-.inquiry-table{
-  width:100%;
-
-  border-collapse:collapse;
-}
-
-.inquiry-table tr{
-  border-bottom:1px solid #ece7df;
-}
-
-.inquiry-table td{
-  padding:18px 0;
-
-  font-size:14px;
-}
-
-.inquiry-table td:last-child{
-  text-align:right;
-
-  font-weight:500;
-
-  color:#1b1b1b;
-}
-
-.space-program-title{
-  margin-top:40px;
-  margin-bottom:20px;
-
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-
-  color:#9b8d78;
-}
-
-#inqSpaceProgram{
-  display:flex;
-  flex-wrap:wrap;
-
-  gap:10px;
-}
 
 .program-pill{
   padding:10px 14px;
@@ -2777,6 +2713,65 @@ CLEAN FINAL VERSION
     font-size:24px;
   }
 
+}
+  
+  /* =========================================
+CTA REVIEW SUMMARY
+========================================= */
+
+.cta-review-table{
+  width:100%;
+
+  border-collapse:collapse;
+
+  margin-top:20px;
+}
+
+.cta-review-table tr{
+  border-bottom:
+  1px solid rgba(255,255,255,.08);
+}
+
+.cta-review-table td{
+  padding:18px 0;
+
+  font-size:14px;
+}
+
+.cta-review-table td:last-child{
+  text-align:right;
+
+  color:#fff;
+
+  font-weight:500;
+}
+
+.cta-space-program-title{
+  margin-top:36px;
+  margin-bottom:18px;
+
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.5);
+}
+
+.cta-space-program{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+.cta-space-program .program-pill{
+  background:
+  rgba(255,255,255,.06);
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  color:#fff;
 }
 </style>
 </head>
@@ -4347,95 +4342,6 @@ ABOVE "PRELIMINARY COST ESTIMATE"
 
 </section>
 
-<!-- =========================================
-ARCHITECTURAL INQUIRY
-========================================= -->
-
-<section class="inquiry-section">
-
-  <div class="container">
-
-    <div class="section-header">
-
-      <div class="section-label">
-        Consultation Inquiry
-      </div>
-
-      <h2 class="section-title">
-        Preliminary Architectural Review
-      </h2>
-
-      <p class="section-description">
-
-        Your configured project details are
-        automatically summarized below for
-        initial architectural evaluation and
-        project planning.
-
-      </p>
-
-    </div>
-
-    <div class="inquiry-layout">
-
-      <!-- SUMMARY -->
-
-      <div class="inquiry-summary">
-
-        <table class="inquiry-table">
-
-          <tbody>
-
-            <tr>
-              <td>Lot Area</td>
-              <td id="inqLotArea">200 sqm</td>
-            </tr>
-
-            <tr>
-              <td>Floor Levels</td>
-              <td id="inqFloorLevels">2 Storeys</td>
-            </tr>
-
-            <tr>
-              <td>Finish Level</td>
-              <td id="inqFinishLevel">Elegant Finish</td>
-            </tr>
-
-            <tr>
-              <td>Total Floor Area</td>
-              <td id="inqTotalArea">120 sqm</td>
-            </tr>
-
-            <tr>
-              <td>Estimated Cost</td>
-              <td id="inqConstructionCost">
-                ₱0
-              </td>
-            </tr>
-
-          </tbody>
-
-        </table>
-
-        <div class="inquiry-space-program">
-
-          <div class="space-program-title">
-            Space Program
-          </div>
-
-          <div id="inqSpaceProgram">
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
 
 <!-- =========================
 CTA
@@ -4466,39 +4372,64 @@ CTA
 
 <div>
 
-  <div class="cta-summary-note">
+<div class="cta-summary-note">
 
-    <div class="cta-summary-title">
+  <div class="cta-summary-title">
 
-      Your Project Configuration Includes
-
-    </div>
-
-    <div class="cta-summary-grid">
-
-      <div class="cta-summary-pill">
-        Lot Area
-      </div>
-
-      <div class="cta-summary-pill">
-        Floor Areas
-      </div>
-
-      <div class="cta-summary-pill">
-        Finish Level
-      </div>
-
-      <div class="cta-summary-pill">
-        Space Program
-      </div>
-
-      <div class="cta-summary-pill">
-        Estimated Cost
-      </div>
-
-    </div>
+    Preliminary Architectural Review
 
   </div>
+
+  <table class="cta-review-table">
+
+    <tbody>
+
+      <tr>
+        <td>Lot Area</td>
+        <td id="inqLotArea">200 sqm</td>
+      </tr>
+
+      <tr>
+        <td>Floor Levels</td>
+        <td id="inqFloorLevels">2 Storeys</td>
+      </tr>
+
+      <tr>
+        <td>Finish Level</td>
+        <td id="inqFinishLevel">
+          Bare Finish
+        </td>
+      </tr>
+
+      <tr>
+        <td>Total Floor Area</td>
+        <td id="inqTotalArea">
+          120 sqm
+        </td>
+      </tr>
+
+      <tr>
+        <td>Estimated Cost</td>
+        <td id="inqConstructionCost">
+          ₱0
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <div class="cta-space-program-title">
+
+    Space Program
+
+  </div>
+
+  <div id="inqSpaceProgram"
+       class="cta-space-program">
+  </div>
+
+</div>
 
   <form class="cta-form"
         id="architecturalInquiryForm">
