@@ -2196,6 +2196,71 @@ INQUIRY SYSTEM
 .submit-inquiry-btn:hover{
   background:#000;
 }
+
+  /* =========================================
+CTA FORM
+========================================= */
+
+.cta-summary-note{
+  margin-top:40px;
+  margin-bottom:40px;
+}
+
+.cta-summary-title{
+  font-size:11px;
+
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.5);
+
+  margin-bottom:18px;
+}
+
+.cta-summary-grid{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+.cta-summary-pill{
+  padding:12px 16px;
+
+  border:1px solid rgba(255,255,255,.12);
+
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+
+  color:#fff;
+}
+
+.cta-form{
+  margin-top:40px;
+}
+
+.cta-form .form-group label{
+  color:rgba(255,255,255,.6);
+}
+
+.cta-form input,
+.cta-form textarea{
+  border-bottom:
+  1px solid rgba(255,255,255,.15);
+
+  color:#fff;
+}
+
+.cta-form textarea{
+  min-height:120px;
+}
+
+.cta-form input::placeholder,
+.cta-form textarea::placeholder{
+  color:rgba(255,255,255,.35);
+}
+  
 /* =========================================
 MOBILE UI REFINEMENT
 CLEAN FINAL VERSION
@@ -4297,14 +4362,15 @@ ARCHITECTURAL INQUIRY
       </div>
 
       <h2 class="section-title">
-        Preliminary Project Inquiry
+        Preliminary Architectural Review
       </h2>
 
       <p class="section-description">
 
         Your configured project details are
         automatically summarized below for
-        preliminary architectural review.
+        initial architectural evaluation and
+        project planning.
 
       </p>
 
@@ -4364,88 +4430,11 @@ ARCHITECTURAL INQUIRY
 
       </div>
 
-      <!-- FORM -->
-
-      <form class="inquiry-form"
-            id="architecturalInquiryForm">
-
-        <div class="form-grid">
-
-          <div class="form-group">
-
-            <label>
-              Full Name
-            </label>
-
-            <input type="text"
-                   id="clientName"
-                   required>
-
-          </div>
-
-          <div class="form-group">
-
-            <label>
-              Email Address
-            </label>
-
-            <input type="email"
-                   id="clientEmail"
-                   required>
-
-          </div>
-
-          <div class="form-group">
-
-            <label>
-              Contact Number
-            </label>
-
-            <input type="text"
-                   id="clientContact">
-
-          </div>
-
-          <div class="form-group">
-
-            <label>
-              Project Location
-            </label>
-
-            <input type="text"
-                   id="projectLocation">
-
-          </div>
-
-        </div>
-
-        <div class="form-group">
-
-          <label>
-            Additional Notes
-          </label>
-
-          <textarea id="additionalNotes">
-          </textarea>
-
-        </div>
-
-        <button type="submit"
-                class="submit-inquiry-btn"
-                id="submitInquiryBtn">
-
-          Request Architectural Consultation
-
-        </button>
-
-      </form>
-
     </div>
 
   </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -4475,21 +4464,116 @@ CTA
 
       </div>
 
-      <form class="cta-form">
+<div>
 
-        <input type="text" placeholder="Full Name">
+  <div class="cta-summary-note">
 
-        <input type="email" placeholder="Email Address">
+    <div class="cta-summary-title">
 
-        <input type="text" placeholder="Project Type">
+      Your Project Configuration Includes
 
-        <textarea placeholder="Tell us about your project"></textarea>
+    </div>
 
-        <button type="submit">
-          REQUEST CONSULTATION
-        </button>
+    <div class="cta-summary-grid">
 
-      </form>
+      <div class="cta-summary-pill">
+        Lot Area
+      </div>
+
+      <div class="cta-summary-pill">
+        Floor Areas
+      </div>
+
+      <div class="cta-summary-pill">
+        Finish Level
+      </div>
+
+      <div class="cta-summary-pill">
+        Space Program
+      </div>
+
+      <div class="cta-summary-pill">
+        Estimated Cost
+      </div>
+
+    </div>
+
+  </div>
+
+  <form class="cta-form"
+        id="architecturalInquiryForm">
+
+    <div class="form-grid">
+
+      <div class="form-group">
+
+        <label>
+          Full Name
+        </label>
+
+        <input type="text"
+               id="clientName"
+               required>
+
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          Email Address
+        </label>
+
+        <input type="email"
+               id="clientEmail"
+               required>
+
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          Contact Number
+        </label>
+
+        <input type="text"
+               id="clientContact">
+
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          Project Location
+        </label>
+
+        <input type="text"
+               id="projectLocation">
+
+      </div>
+
+    </div>
+
+    <div class="form-group">
+
+      <label>
+        Additional Notes
+      </label>
+
+      <textarea id="additionalNotes"></textarea>
+
+    </div>
+
+    <button type="submit"
+            class="submit-inquiry-btn"
+            id="submitInquiryBtn">
+
+      Request Architectural Consultation
+
+    </button>
+
+  </form>
+
+</div>
 
     </div>
 
