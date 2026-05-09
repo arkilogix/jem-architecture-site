@@ -4231,7 +4231,8 @@ addBedroomBtn.addEventListener("click",()=>{
   updatePlanner();
 
 });
-/* =========================================
+
+  /* =========================================
 CUSTOM SPACE
 ========================================= */
 
@@ -4264,29 +4265,37 @@ let activeCustomFloor = "ground";
 
 /* OPEN GROUND */
 
-groundCustomBtn.addEventListener("click",()=>{
+if(groundCustomBtn){
 
-  activeCustomFloor = "ground";
+  groundCustomBtn.addEventListener("click",()=>{
 
-  customModal.classList.add(
-    "active"
-  );
+    activeCustomFloor = "ground";
 
-});
+    customModal.classList.add(
+      "active"
+    );
+
+  });
+
+}
 
 /* OPEN SECOND */
 
-secondCustomBtn.addEventListener("click",()=>{
+if(secondCustomBtn){
 
-  activeCustomFloor = "second";
+  secondCustomBtn.addEventListener("click",()=>{
 
-  customModal.classList.add(
-    "active"
-  );
+    activeCustomFloor = "second";
 
-});
+    customModal.classList.add(
+      "active"
+    );
 
-/* CLOSE OUTSIDE */
+  });
+
+}
+
+/* CLOSE */
 
 customModal.addEventListener("click",(e)=>{
 
@@ -4317,9 +4326,6 @@ createCustomSpace.addEventListener("click",()=>{
 
   card.dataset.floor =
     activeCustomFloor;
-
-  card.dataset.space =
-    "custom";
 
   card.innerHTML = `
 
@@ -4383,8 +4389,6 @@ createCustomSpace.addEventListener("click",()=>{
     </div>
 
   `;
-
-  /* TARGET FLOOR */
 
   if(activeCustomFloor === "ground"){
 
