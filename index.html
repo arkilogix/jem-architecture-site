@@ -2170,6 +2170,355 @@ SECTION DIVIDERS
 
   background:#d8d2c8;
 }
+  .section-divider::before
+  /* =========================================
+MOBILE UI REFINEMENT
+========================================= */
+
+@media(max-width:768px){
+
+  /* GLOBAL */
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .container{
+    width:92%;
+  }
+
+  section{
+    padding:72px 0;
+  }
+
+  /* HEADER */
+
+  header{
+    background:rgba(10,10,10,0.72);
+  }
+
+  .navbar{
+    padding:16px 0;
+    gap:16px;
+  }
+
+  .logo img{
+    width:36px;
+  }
+
+  .logo-text{
+    font-size:10px;
+    line-height:1.4;
+  }
+
+  .nav-links{
+    gap:14px;
+  }
+
+  .nav-links a{
+    font-size:11px;
+  }
+
+  /* HERO */
+
+  .hero{
+    min-height:auto;
+    padding:180px 0 90px;
+  }
+
+  .hero-content{
+    max-width:100%;
+  }
+
+  .hero-label{
+    font-size:10px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+  }
+
+  .hero h1{
+    font-size:42px;
+    line-height:1.08;
+    margin-bottom:24px;
+  }
+
+  .hero p{
+    font-size:14px;
+    line-height:1.8;
+    margin-bottom:32px;
+  }
+
+  .hero-buttons{
+    gap:12px;
+  }
+
+  .hero-btn{
+    width:100%;
+    text-align:center;
+    padding:16px 20px;
+  }
+
+  /* SECTION HEADERS */
+
+  .section-header{
+    margin-bottom:42px;
+  }
+
+  .section-title{
+    font-size:36px;
+    line-height:1.1;
+  }
+
+  .section-description{
+    font-size:14px;
+    line-height:1.9;
+  }
+
+  /* ABOUT */
+
+  .about-grid{
+    gap:18px;
+  }
+
+  .about-card{
+    padding:28px;
+  }
+
+  .about-card h3{
+    font-size:20px;
+  }
+
+  /* SERVICES */
+
+  .primary-services-grid{
+    gap:18px;
+    margin-bottom:70px;
+  }
+
+  .primary-service-card{
+    min-height:320px;
+    padding:30px;
+  }
+
+  .primary-service-card h3{
+    font-size:28px;
+  }
+
+  .expertise-wrapper{
+    padding-top:60px;
+  }
+
+  .expertise-grid{
+    gap:18px;
+  }
+
+  .expertise-column{
+    padding:26px;
+  }
+
+  /* PROJECTS */
+
+  .projects-grid{
+    gap:18px;
+  }
+
+  .project-large{
+    height:340px;
+  }
+
+  .project-small{
+    height:220px;
+  }
+
+  .projects-secondary-grid{
+    gap:18px;
+    margin-top:18px;
+  }
+
+  .secondary-project{
+    height:220px;
+  }
+
+  .project-overlay,
+  .secondary-overlay{
+    padding:20px;
+  }
+
+  .project-title,
+  .placeholder-title,
+  .secondary-overlay h3{
+    font-size:22px;
+  }
+
+  .project-description{
+    font-size:13px;
+    line-height:1.7;
+  }
+
+  /* SPACE PLANNER */
+
+  .planner-layout{
+    gap:20px;
+  }
+
+  .planner-card,
+  .planner-summary-card{
+    padding:22px;
+    border-radius:18px;
+  }
+
+  .planner-floor-title{
+    font-size:24px;
+  }
+
+  .lot-size-card{
+    gap:24px;
+  }
+
+  .builder-lot-input input{
+    font-size:56px;
+    width:110px;
+  }
+
+  .builder-lot-input span{
+    font-size:22px;
+  }
+
+  .space-card-grid{
+    gap:14px;
+  }
+
+  .space-card{
+    padding:18px;
+  }
+
+  .space-icon{
+    width:38px;
+    height:38px;
+  }
+
+  .space-name{
+    font-size:18px;
+  }
+
+  .space-guide{
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  .space-controls{
+    gap:12px;
+  }
+
+  .space-controls button{
+    width:38px;
+    height:38px;
+  }
+
+  .space-value{
+    font-size:18px;
+  }
+
+  .planner-actions{
+    margin-top:20px;
+  }
+
+  .add-space-btn{
+    width:100%;
+  }
+
+  /* FINISH LEVELS */
+
+  .finish-level-grid{
+    gap:14px;
+  }
+
+  .finish-card{
+    min-height:200px;
+  }
+
+  .finish-content{
+    padding:20px;
+  }
+
+  .finish-name{
+    font-size:20px;
+  }
+
+  .finish-content p{
+    font-size:13px;
+    line-height:1.7;
+  }
+
+  /* SUMMARY */
+
+  .summary-item{
+    padding:22px;
+  }
+
+  .summary-value{
+    font-size:30px;
+  }
+
+  .summary-total-card{
+    padding:26px;
+  }
+
+  .summary-total{
+    font-size:42px;
+  }
+
+  .cost-value{
+    font-size:28px;
+  }
+
+  /* CONTACT */
+
+  .cta-wrapper{
+    gap:40px;
+  }
+
+  .cta-title{
+    font-size:36px;
+  }
+
+  .contact-grid{
+    gap:18px;
+  }
+
+  .contact-card{
+    padding:28px;
+  }
+
+  /* GALLERY */
+
+  .gallery-modal img{
+    width:100%;
+    max-height:68vh;
+  }
+
+  .gallery-close{
+    top:18px;
+    right:20px;
+    font-size:30px;
+  }
+
+  .gallery-arrow{
+    font-size:28px;
+    padding:12px;
+  }
+
+  .gallery-info{
+    left:20px;
+    right:20px;
+    bottom:24px;
+  }
+
+  .gallery-info h3{
+    font-size:24px;
+  }
+
+}
 </style>
 </head>
 
