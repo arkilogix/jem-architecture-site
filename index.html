@@ -2585,28 +2585,28 @@ PROJECTS
 
 </div>
 
-    <!-- PLACEHOLDER 2 -->
-    <div class="project-small placeholder-project">
+<div class="secondary-project"
+     onclick="openWashingtonGallery(0)">
 
-      <img src="hero.png">
+  <img src="https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296488/Washington_-_Exterior_yyqfp8.png">
 
-      <div class="project-overlay">
+  <div class="secondary-overlay">
 
-        <div>
+    <div>
 
-          <div class="project-category">
-            Selected Work
-          </div>
-
-          <h3 class="placeholder-title">
-            Interior Fit-Out
-          </h3>
-
-        </div>
-
+      <div class="project-category">
+        Residential • Architectural Design
       </div>
 
+      <h3>
+        Contemporary American Residence
+      </h3>
+
     </div>
+
+  </div>
+
+</div>
 
   </div>
 
@@ -3931,7 +3931,47 @@ FOOTER
   </div>
 
 </div>
-  
+
+  <!-- WASHINGTON MODAL -->
+
+<div class="gallery-modal"
+     id="washingtonModal">
+
+  <div class="gallery-close"
+       onclick="closeWashingtonGallery()">
+    ×
+  </div>
+
+  <div class="gallery-arrow left"
+       onclick="prevWashingtonImage()">
+    ←
+  </div>
+
+  <div class="gallery-arrow right"
+       onclick="nextWashingtonImage()">
+    →
+  </div>
+
+  <img id="washingtonImage">
+
+  <div class="gallery-info">
+
+    <div class="gallery-counter"
+         id="washingtonCounter">
+      01 / 06
+    </div>
+
+    <h3>
+      Contemporary American Residence
+    </h3>
+
+    <p>
+      Residential • Architectural Design
+    </p>
+
+  </div>
+
+</div>
   
 <!-- =========================================
 CUSTOM SPACE MODAL
@@ -4179,6 +4219,83 @@ function prevTropicalImage(){
   }
 
   updateTropicalGallery();
+
+}
+
+    /* =========================
+WASHINGTON GALLERY
+========================= */
+
+const washingtonImages = [
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296488/Washington_-_Exterior_yyqfp8.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296486/Washington_-_Family_Room_c2ceyn.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296487/Washington_-_Great_Room_k4a5gk.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296487/Washington_-_Master_Bedroom_ecx4mb.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296485/Washington_-_Living_Dining_ig2oy5.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296485/Washington_-_Kitchen_acztzq.png"
+
+];
+
+let currentWashingtonIndex = 0;
+
+function updateWashingtonGallery(){
+
+  document.getElementById("washingtonImage").src =
+    washingtonImages[currentWashingtonIndex];
+
+  document.getElementById("washingtonCounter").innerText =
+    String(currentWashingtonIndex + 1).padStart(2,'0')
+    + " / " +
+    String(washingtonImages.length).padStart(2,'0');
+
+}
+
+function openWashingtonGallery(index){
+
+  currentWashingtonIndex = index;
+
+  document.getElementById("washingtonModal")
+    .classList.add("active");
+
+  updateWashingtonGallery();
+
+}
+
+function closeWashingtonGallery(){
+
+  document.getElementById("washingtonModal")
+    .classList.remove("active");
+
+}
+
+function nextWashingtonImage(){
+
+  currentWashingtonIndex++;
+
+  if(currentWashingtonIndex >= washingtonImages.length){
+    currentWashingtonIndex = 0;
+  }
+
+  updateWashingtonGallery();
+
+}
+
+function prevWashingtonImage(){
+
+  currentWashingtonIndex--;
+
+  if(currentWashingtonIndex < 0){
+    currentWashingtonIndex =
+      washingtonImages.length - 1;
+  }
+
+  updateWashingtonGallery();
 
 }
   /* =========================================
