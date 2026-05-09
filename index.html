@@ -2572,7 +2572,7 @@ PROJECTS
     <div>
 
       <div class="project-category">
-        Residential • Architectural Design
+        Residential • Design-Build
       </div>
 
       <h3 class="placeholder-title">
@@ -2595,7 +2595,7 @@ PROJECTS
     <div>
 
       <div class="project-category">
-        Residential • Architectural Design
+        Residential • Design-Build
       </div>
 
       <h3>
@@ -2641,24 +2641,28 @@ SECOND ROW
 
 </div>
 
-  <!-- PLACEHOLDER -->
-  <div class="secondary-project">
+<div class="secondary-project"
+     onclick="openBFGallery(0)">
 
-    <img src="hero.png">
+  <img src="https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778311330/BF_-_Exterior_mjs8u7.png">
 
-    <div class="secondary-overlay">
+  <div class="secondary-overlay">
+
+    <div>
 
       <div class="project-category">
-        Future Project
+        Residential • Architectural Design
       </div>
 
       <h3>
-        Modern Extension
+        Two Storey Modern Contemporary House
       </h3>
 
     </div>
 
   </div>
+
+</div>
 
   <!-- PLACEHOLDER -->
   <div class="secondary-project">
@@ -3972,7 +3976,46 @@ FOOTER
   </div>
 
 </div>
-  
+  <!-- BF MODAL -->
+
+<div class="gallery-modal"
+     id="bfModal">
+
+  <div class="gallery-close"
+       onclick="closeBFGallery()">
+    ×
+  </div>
+
+  <div class="gallery-arrow left"
+       onclick="prevBFImage()">
+    ←
+  </div>
+
+  <div class="gallery-arrow right"
+       onclick="nextBFImage()">
+    →
+  </div>
+
+  <img id="bfImage">
+
+  <div class="gallery-info">
+
+    <div class="gallery-counter"
+         id="bfCounter">
+      01 / 06
+    </div>
+
+    <h3>
+      Two Storey Modern Contemporary House
+    </h3>
+
+    <p>
+      Residential • Architectural Design
+    </p>
+
+  </div>
+
+</div>
 <!-- =========================================
 CUSTOM SPACE MODAL
 ========================================= -->
@@ -4296,6 +4339,82 @@ function prevWashingtonImage(){
   }
 
   updateWashingtonGallery();
+
+}
+    /* =========================
+BF GALLERY
+========================= */
+
+const bfImages = [
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778311330/BF_-_Exterior_mjs8u7.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778311489/Bf_-_1_q5c4ke.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312166/BF_-_2_wdcoll.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312168/BF_-_3_ga2fyn.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312169/BF_-_4_tmwgnm.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312248/BF_-_Iso_whhdpj.png"
+
+];
+
+let currentBFIndex = 0;
+
+function updateBFGallery(){
+
+  document.getElementById("bfImage").src =
+    bfImages[currentBFIndex];
+
+  document.getElementById("bfCounter").innerText =
+    String(currentBFIndex + 1).padStart(2,'0')
+    + " / " +
+    String(bfImages.length).padStart(2,'0');
+
+}
+
+function openBFGallery(index){
+
+  currentBFIndex = index;
+
+  document.getElementById("bfModal")
+    .classList.add("active");
+
+  updateBFGallery();
+
+}
+
+function closeBFGallery(){
+
+  document.getElementById("bfModal")
+    .classList.remove("active");
+
+}
+
+function nextBFImage(){
+
+  currentBFIndex++;
+
+  if(currentBFIndex >= bfImages.length){
+    currentBFIndex = 0;
+  }
+
+  updateBFGallery();
+
+}
+
+function prevBFImage(){
+
+  currentBFIndex--;
+
+  if(currentBFIndex < 0){
+    currentBFIndex =
+      bfImages.length - 1;
+  }
+
+  updateBFGallery();
 
 }
   /* =========================================
