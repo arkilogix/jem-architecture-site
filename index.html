@@ -1051,8 +1051,6 @@ MOBILE
     top:0;
   }
 
-}
-
 @media(max-width:768px){
 
   .finish-grid{
@@ -1671,13 +1669,6 @@ SPACE PLANNER UI
 
 .ghost-button:hover{
   color:#1b1b1b;
-}
-
-.ghost-button:hover{
-  background:#1b1b1b;
-  color:#fff;
-
-  transform:translateY(-2px);
 }
 
 /* SUMMARY */
@@ -3835,8 +3826,7 @@ updateFloors();
 SPACE PLANNER ENGINE
 ========================================= */
 
-const allCards =
-  document.querySelectorAll(".space-card");
+
 
 const groundTotal =
   document.getElementById("groundTotal");
@@ -4009,7 +3999,9 @@ function updatePlanner(){
   let secondArea = 0;
   let thirdArea = 0;
 
-  allCards.forEach(card=>{
+  document
+  .querySelectorAll(".space-card")
+  .forEach(card=>{
 
     const floor =
       card.dataset.floor;
