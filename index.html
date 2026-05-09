@@ -4713,13 +4713,13 @@ lotAreaInput.addEventListener("input",()=>{
     return;
   }
 
-  if(value < 80){
-    value = 80;
-  }
+if(value < 36){
+  value = 36;
+}
 
-  if(value > 600){
-    value = 600;
-  }
+if(value > 1000){
+  value = 1000;
+}
 
   lotSlider.value = value;
 
