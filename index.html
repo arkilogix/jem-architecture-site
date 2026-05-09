@@ -2071,6 +2071,53 @@ ADD SPACE BUTTON
   background:#1b1b1b;
   color:#fff;
 }
+
+  /* =========================================
+LOT INPUT
+========================================= */
+
+.builder-lot-input{
+  display:flex;
+  align-items:flex-end;
+  gap:10px;
+}
+
+.builder-lot-input input{
+  width:140px;
+
+  border:none;
+  background:transparent;
+
+  font-size:72px;
+  font-weight:300;
+  line-height:1;
+
+  color:#1b1b1b;
+
+  outline:none;
+}
+
+.builder-lot-input span{
+  font-size:26px;
+  font-weight:300;
+
+  margin-bottom:10px;
+
+  color:#444;
+}
+
+/* REMOVE ARROWS */
+
+.builder-lot-input input::-webkit-outer-spin-button,
+.builder-lot-input input::-webkit-inner-spin-button{
+  -webkit-appearance:none;
+  margin:0;
+}
+
+.builder-lot-input input[type=number]{
+  -moz-appearance:textfield;
+}
+  
 </style>
 </head>
 
@@ -2634,8 +2681,16 @@ INTERACTIVE ARCHITECTURAL PLANNER
         Lot Area
       </div>
 
-    <div class="summary-value builder-main-value">
-      200 sqm
+    <div class="builder-lot-input">
+    
+      <input type="number"
+             id="lotAreaInput"
+             value="200"
+             min="36"
+             max="1000">
+    
+      <span>sqm</span>
+    
     </div>
 
     </div>
@@ -2669,8 +2724,8 @@ INTERACTIVE ARCHITECTURAL PLANNER
       </div>
 
       <input type="range"
-             min="80"
-             max="600"
+             min="36"
+             max="1000"
              value="200"
              class="lot-slider">
 
@@ -4065,8 +4120,8 @@ const designFee =
 const lotSlider =
   document.querySelector(".lot-slider");
 
-const builderMainValue =
-  document.querySelector(".builder-main-value");
+const lotAreaInput =
+  document.getElementById("lotAreaInput");
 
     
 /* =========================================
@@ -4301,7 +4356,7 @@ secondTotal.classList.remove(
 /* LIMITS */
 
 const lotArea =
-  parseInt(lotSlider.value);
+  parseInt(lotAreaInput.value);
 
 const groundLimit =
   lotArea * 0.8;
@@ -4636,7 +4691,37 @@ createCustomSpace.addEventListener("click",()=>{
 
 });
     
+/* SLIDER → INPUT */
+
 lotSlider.addEventListener("input",()=>{
+
+  lotAreaInput.value =
+    lotSlider.value;
+
+  updatePlanner();
+
+});
+
+/* INPUT → SLIDER */
+
+lotAreaInput.addEventListener("input",()=>{
+
+  let value =
+    parseInt(lotAreaInput.value);
+
+  if(isNaN(value)){
+    return;
+  }
+
+  if(value < 80){
+    value = 80;
+  }
+
+  if(value > 600){
+    value = 600;
+  }
+
+  lotSlider.value = value;
 
   updatePlanner();
 
