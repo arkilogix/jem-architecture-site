@@ -4062,6 +4062,13 @@ const constructionCost =
 const designFee =
   document.getElementById("designFee");
 
+const lotSlider =
+  document.querySelector(".lot-slider");
+
+const builderMainValue =
+  document.querySelector(".builder-main-value");
+
+    
 /* =========================================
 FINISH LEVELS
 ========================================= */
@@ -4628,7 +4635,9 @@ createCustomSpace.addEventListener("click",()=>{
   customSpaceInput.value = "";
 
 });
-  
+
+  lotSlider.addEventListener("input",()=>{
+    
 updatePlanner();
   
 </script>
