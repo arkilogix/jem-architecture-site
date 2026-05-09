@@ -1715,8 +1715,20 @@ SPACE PLANNER UI
 }
 
 .summary-valid{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
   color:#507a56;
+
   line-height:1.7;
+}
+
+.summary-valid svg{
+  width:16px;
+  height:16px;
+
+  flex-shrink:0;
 }
 
 .summary-total-card{
@@ -3422,43 +3434,9 @@ INTERACTIVE ARCHITECTURAL PLANNER
             Preliminary Architectural Summary
           </div>
 
-          <div class="summary-grid">
-
-            <div class="summary-item">
-
-              <div class="summary-label">
-                Ground Floor Area
-              </div>
-
-              <div class="summary-value"
-               id="groundTotal">
-                101 sqm
-              </div>
-
-              <div class="summary-valid">
-                ✓ Within recommended occupancy
-              </div>
-
-            </div>
-
-            <div class="summary-item">
-
-              <div class="summary-label">
-                Second Floor Area
-              </div>
-
-              <div class="summary-value"
-               id="secondTotal">
-                62 sqm
-              </div>
-
-              <div class="summary-valid">
-                ✓ Within recommended occupancy
-              </div>
-
-            </div>
-
-          </div>
+      <div class="summary-grid"
+           id="dynamicFloorSummary">
+      </div>
 
           <div class="summary-total-card">
 
@@ -4111,12 +4089,21 @@ const secondTotal =
 const overallTotal =
   document.getElementById("overallTotal");
 
+    const dynamicFloorSummary =
+  document.getElementById(
+    "dynamicFloorSummary"
+  );
+    
 const constructionCost =
   document.getElementById("constructionCost");
 
 const designFee =
   document.getElementById("designFee");
+const groundStatus =
+  document.getElementById("groundStatus");
 
+const secondStatus =
+  document.getElementById("secondStatus");
 const lotSlider =
   document.querySelector(".lot-slider");
 
@@ -4271,119 +4258,206 @@ document
   .forEach(card=>{
   initializeCard(card);
 });
-  
-/* =========================================
-MAIN COMPUTATION
+
+
+    /* =========================================
+FLOOR CONFIG
 ========================================= */
 
+const floorConfigs = [
+
+  {
+    key:"ground",
+    title:"Ground Floor",
+    limit:.8
+  },
+
+  {
+    key:"second",
+    title:"Second Floor",
+    limit:.9
+  },
+
+  {
+    key:"third",
+    title:"Third Floor",
+    limit:.9
+  }
+
+];
+
+    
 function updatePlanner(){
 
-  let groundArea = 0;
-  let secondArea = 0;
-  let thirdArea = 0;
+  const lotArea =
+    parseInt(lotAreaInput.value);
+
+  let floorAreas = {
+    ground:0,
+    second:0,
+    third:0
+  };
+
+  /* =========================================
+  COMPUTE AREAS
+  ========================================= */
 
   document
-  .querySelectorAll(".space-card")
-  .forEach(card=>{
+    .querySelectorAll(".space-card")
+    .forEach(card=>{
 
-    const floor =
-      card.dataset.floor;
+      const floor =
+        card.dataset.floor;
 
-    const value =
-      parseInt(
-        card.querySelector(".space-value")
-        .dataset.value
-      );
+      const value =
+        parseInt(
+          card.querySelector(".space-value")
+          .dataset.value
+        );
 
-    /* ONLY COUNT
-    VISIBLE FLOORS */
+      if(floor === "second"
+         && floorCount < 2){
+        return;
+      }
 
-    if(floor === "second"
+      if(floor === "third"
+         && floorCount < 3){
+        return;
+      }
+
+      floorAreas[floor] += value;
+
+    });
+
+  /* =========================================
+  BUILD FLOOR SUMMARY
+  ========================================= */
+
+  dynamicFloorSummary.innerHTML = "";
+
+  let totalArea = 0;
+
+  floorConfigs.forEach(config=>{
+
+    if(config.key === "second"
        && floorCount < 2){
       return;
     }
 
-    if(floor === "third"
+    if(config.key === "third"
        && floorCount < 3){
       return;
     }
 
-    if(floor === "ground"){
-      groundArea += value;
-    }
+    const area =
+      floorAreas[config.key];
 
-    if(floor === "second"){
-      secondArea += value;
-    }
+    totalArea += area;
 
-    if(floor === "third"){
-      thirdArea += value;
-    }
+    const limit =
+      lotArea * config.limit;
+
+    const exceeded =
+      area > limit;
+
+    const card =
+      document.createElement("div");
+
+    card.className =
+      "summary-item";
+
+    card.innerHTML = `
+
+      <div class="summary-label">
+        ${config.title} Area
+      </div>
+
+      <div class="summary-value
+           ${exceeded ? "warning-area" : ""}">
+
+        ${area} sqm
+
+      </div>
+
+      <div class="summary-valid">
+
+        ${
+          exceeded
+
+          ?
+
+          `
+
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="16"
+               height="16"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.8"
+               stroke="currentColor">
+
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 9v3.75m0 3.75h.007v.008H12v-.008z"/>
+
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M10.29 3.86 1.82 18a2.25 2.25 0 0 0 1.93 3.375h16.5A2.25 2.25 0 0 0 22.18 18L13.71 3.86a2.25 2.25 0 0 0-3.42 0Z"/>
+
+          </svg>
+
+          <span>
+            Exceeds recommended occupancy
+          </span>
+
+          `
+
+          :
+
+          `
+
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="16"
+               height="16"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.8"
+               stroke="currentColor">
+
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"/>
+
+          </svg>
+
+          <span>
+            Within recommended occupancy
+          </span>
+
+          `
+
+        }
+
+      </div>
+
+    `;
+
+    dynamicFloorSummary.appendChild(
+      card
+    );
 
   });
 
-  /* TOTALS */
-
-  const totalArea =
-    groundArea +
-    secondArea +
-    thirdArea;
-
-  /* UI */
-
-  groundTotal.innerText =
-    groundArea + " sqm";
-
-  secondTotal.innerText =
-    secondArea + thirdArea + " sqm";
+  /* =========================================
+  TOTALS
+  ========================================= */
 
   overallTotal.innerText =
     totalArea + " sqm";
-/* =========================================
-VALIDATION UI
-========================================= */
 
-/* RESET */
-
-groundTotal.classList.remove(
-  "warning-area"
-);
-
-secondTotal.classList.remove(
-  "warning-area"
-);
-
-/* LIMITS */
-
-const lotArea =
-  parseInt(lotAreaInput.value);
-
-const groundLimit =
-  lotArea * 0.8;
-
-const upperLimit =
-  lotArea * 0.9;
-
-/* GROUND */
-
-if(groundArea > groundLimit){
-
-  groundTotal.classList.add(
-    "warning-area"
-  );
-
-}
-
-/* UPPER */
-
-if(secondArea > upperLimit){
-
-  secondTotal.classList.add(
-    "warning-area"
-  );
-
-}
-  /* COST */
+  /* =========================================
+  COST
+  ========================================= */
 
   const construction =
     totalArea * selectedRate;
@@ -4392,10 +4466,12 @@ if(secondArea > upperLimit){
     totalArea * 1800;
 
   constructionCost.innerText =
-    "₱" + construction.toLocaleString();
+    "₱" +
+    construction.toLocaleString();
 
   designFee.innerText =
-    "₱" + professional.toLocaleString();
+    "₱" +
+    professional.toLocaleString();
 
 }
 
