@@ -1813,10 +1813,14 @@ SPACE CARD TOP
 
 .space-card-top{
   display:flex;
+
   justify-content:space-between;
+
   align-items:flex-start;
 
-  margin-bottom:24px;
+  gap:12px;
+
+  flex-wrap:wrap;
 }
 
 /* =========================================
@@ -1862,6 +1866,8 @@ SPACE ICONS
   display:flex;
   align-items:flex-start;
   gap:16px;
+  flex:1;
+  min-width:0;
 }
 
 .space-icon{
@@ -1918,6 +1924,7 @@ SPACE TOGGLE
   text-transform:uppercase;
 
   color:#555;
+  flex-shrink:0;
 }
 
 .space-toggle.active{
@@ -2984,7 +2991,7 @@ INTERACTIVE ARCHITECTURAL PLANNER
           <div class="planner-actions">
 
             <button class="ghost-button"
-            id="addCustomSpaceBtn">
+            id="addGroundCustomBtn">
               + Add Custom Space
             </button>
 
@@ -3191,7 +3198,7 @@ INTERACTIVE ARCHITECTURAL PLANNER
             </button>
 
             <button class="ghost-button"
-            id="addCustomSpaceBtn">
+            id="addSecondCustomBtn">
               + Add Custom Space
             </button>            
            </div>
@@ -4224,7 +4231,7 @@ addBedroomBtn.addEventListener("click",()=>{
   updatePlanner();
 
 });
-  /* =========================================
+/* =========================================
 CUSTOM SPACE
 ========================================= */
 
@@ -4233,9 +4240,14 @@ const customModal =
     "customModal"
   );
 
-const addCustomSpaceBtn =
+const groundCustomBtn =
   document.getElementById(
-    "addCustomSpaceBtn"
+    "addGroundCustomBtn"
+  );
+
+const secondCustomBtn =
+  document.getElementById(
+    "addSecondCustomBtn"
   );
 
 const customSpaceInput =
@@ -4248,9 +4260,25 @@ const createCustomSpace =
     "createCustomSpace"
   );
 
-/* OPEN */
+let activeCustomFloor = "ground";
 
-addCustomSpaceBtn.addEventListener("click",()=>{
+/* OPEN GROUND */
+
+groundCustomBtn.addEventListener("click",()=>{
+
+  activeCustomFloor = "ground";
+
+  customModal.classList.add(
+    "active"
+  );
+
+});
+
+/* OPEN SECOND */
+
+secondCustomBtn.addEventListener("click",()=>{
+
+  activeCustomFloor = "second";
 
   customModal.classList.add(
     "active"
@@ -4288,7 +4316,7 @@ createCustomSpace.addEventListener("click",()=>{
     "space-card";
 
   card.dataset.floor =
-    "second";
+    activeCustomFloor;
 
   card.dataset.space =
     "custom";
@@ -4356,7 +4384,21 @@ createCustomSpace.addEventListener("click",()=>{
 
   `;
 
-  extraBedrooms.appendChild(card);
+  /* TARGET FLOOR */
+
+  if(activeCustomFloor === "ground"){
+
+    document
+      .querySelectorAll(".space-card-grid")[0]
+      .appendChild(card);
+
+  }else{
+
+    document
+      .getElementById("secondFloorGrid")
+      .appendChild(card);
+
+  }
 
   initializeCard(card);
 
