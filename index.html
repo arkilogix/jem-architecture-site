@@ -1982,9 +1982,45 @@ SPACE CONTROLS
   color:#fff;
 }
 
+.space-value-wrapper{
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+}
+
 .space-value{
+  width:70px;
+
+  border:none;
+  background:transparent;
+
   font-size:22px;
   font-weight:300;
+
+  text-align:center;
+
+  outline:none;
+
+  color:#1b1b1b;
+}
+
+.space-value-wrapper span{
+  font-size:14px;
+  color:#666;
+
+  margin-bottom:4px;
+}
+
+/* REMOVE ARROWS */
+
+.space-value::-webkit-outer-spin-button,
+.space-value::-webkit-inner-spin-button{
+  -webkit-appearance:none;
+  margin:0;
+}
+
+.space-value[type=number]{
+  -moz-appearance:textfield;
 }
 
 /* =========================================
@@ -2516,6 +2552,166 @@ MOBILE UI REFINEMENT
 
   .gallery-info h3{
     font-size:24px;
+  }
+
+}
+  /* =========================================
+INQUIRY SYSTEM
+========================================= */
+
+.inquiry-section{
+  background:#f8f6f2;
+}
+
+.inquiry-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:40px;
+
+  margin-top:60px;
+}
+
+.inquiry-summary,
+.inquiry-form{
+  background:#fff;
+
+  padding:40px;
+}
+
+.inquiry-table{
+  width:100%;
+
+  border-collapse:collapse;
+}
+
+.inquiry-table tr{
+  border-bottom:1px solid #ece7df;
+}
+
+.inquiry-table td{
+  padding:18px 0;
+
+  font-size:14px;
+}
+
+.inquiry-table td:last-child{
+  text-align:right;
+
+  font-weight:500;
+
+  color:#1b1b1b;
+}
+
+.space-program-title{
+  margin-top:40px;
+  margin-bottom:20px;
+
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  color:#9b8d78;
+}
+
+#inqSpaceProgram{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+.program-pill{
+  padding:10px 14px;
+
+  background:#f5f1eb;
+
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:20px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+
+  gap:10px;
+
+  margin-bottom:24px;
+}
+
+.form-group label{
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  color:#8f8578;
+}
+
+.form-group input,
+.form-group textarea{
+  border:none;
+
+  border-bottom:1px solid #d9d1c6;
+
+  background:transparent;
+
+  padding:16px 0;
+
+  font-size:15px;
+
+  outline:none;
+}
+
+.form-group textarea{
+  min-height:120px;
+
+  resize:none;
+}
+
+.submit-inquiry-btn{
+  width:100%;
+
+  border:none;
+
+  background:#1b1b1b;
+  color:#fff;
+
+  padding:20px;
+
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+}
+
+.submit-inquiry-btn:hover{
+  background:#000;
+}
+
+@media(max-width:768px){
+
+  .inquiry-layout{
+    grid-template-columns:1fr;
+  }
+
+  .inquiry-summary,
+  .inquiry-form{
+    padding:28px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
   }
 
 }
@@ -3221,12 +3417,16 @@ INTERACTIVE ARCHITECTURAL PLANNER
       -
     </button>
 
-    <div class="space-value"
+<div class="space-value-wrapper">
+
+  <input type="number"
+         class="space-value"
+         value="24"
          data-value="24">
 
-      24 sqm
+  <span>sqm</span>
 
-    </div>
+</div>
 
     <button class="plus-btn">
       +
@@ -3287,12 +3487,16 @@ INTERACTIVE ARCHITECTURAL PLANNER
     -
   </button>
 
-  <div class="space-value"
-       data-value="18">
+<div class="space-value-wrapper">
 
-    18 sqm
+  <input type="number"
+         class="space-value"
+         value="18"
+         data-value="18">
 
-  </div>
+  <span>sqm</span>
+
+</div>
 
   <button class="plus-btn">
     +
@@ -3334,12 +3538,16 @@ INTERACTIVE ARCHITECTURAL PLANNER
     -
   </button>
 
-  <div class="space-value"
-       data-value="20">
+<div class="space-value-wrapper">
 
-    20 sqm
+  <input type="number"
+         class="space-value"
+         value="20"
+         data-value="20">
 
-  </div>
+  <span>sqm</span>
+
+</div>
 
   <button class="plus-btn">
     +
@@ -3381,12 +3589,16 @@ INTERACTIVE ARCHITECTURAL PLANNER
     -
   </button>
 
-  <div class="space-value"
-       data-value="14">
+<div class="space-value-wrapper">
 
-    14 sqm
+  <input type="number"
+         class="space-value"
+         value="14"
+         data-value="14">
 
-  </div>
+  <span>sqm</span>
+
+</div>
 
   <button class="plus-btn">
     +
@@ -3428,12 +3640,16 @@ INTERACTIVE ARCHITECTURAL PLANNER
     -
   </button>
 
-  <div class="space-value"
-       data-value="12">
+<div class="space-value-wrapper">
 
-    12 sqm
+  <input type="number"
+         class="space-value"
+         value="12"
+         data-value="12">
 
-  </div>
+  <span>sqm</span>
+
+</div>
 
   <button class="plus-btn">
     +
@@ -3537,12 +3753,16 @@ INTERACTIVE ARCHITECTURAL PLANNER
     -
   </button>
 
-  <div class="space-value"
-       data-value="18">
+<div class="space-value-wrapper">
 
-    18 sqm
+  <input type="number"
+         class="space-value"
+         value="28"
+         data-value="28">
 
-  </div>
+  <span>sqm</span>
+
+</div>
 
   <button class="plus-btn">
     +
@@ -3584,12 +3804,16 @@ INTERACTIVE ARCHITECTURAL PLANNER
     -
   </button>
 
-  <div class="space-value"
-       data-value="24">
+<div class="space-value-wrapper">
 
-    24 sqm
+  <input type="number"
+         class="space-value"
+         value="24"
+         data-value="24">
 
-  </div>
+  <span>sqm</span>
+
+</div>
 
   <button class="plus-btn">
     +
@@ -3631,12 +3855,16 @@ INTERACTIVE ARCHITECTURAL PLANNER
     -
   </button>
 
-  <div class="space-value"
-       data-value="16">
+<div class="space-value-wrapper">
 
-    16 sqm
+  <input type="number"
+         class="space-value"
+         value="16"
+         data-value="16">
 
-  </div>
+  <span>sqm</span>
+
+</div>
 
   <button class="plus-btn">
     +
@@ -3741,12 +3969,16 @@ INTERACTIVE ARCHITECTURAL PLANNER
     -
   </button>
 
-  <div class="space-value"
-       data-value="18">
+<div class="space-value-wrapper">
 
-    18 sqm
+  <input type="number"
+         class="space-value"
+         value="18"
+         data-value="18">
 
-  </div>
+  <span>sqm</span>
+
+</div>
 
   <button class="plus-btn">
     +
@@ -3807,12 +4039,16 @@ INTERACTIVE ARCHITECTURAL PLANNER
     -
   </button>
 
-  <div class="space-value"
-       data-value="16">
+<div class="space-value-wrapper">
 
-    16 sqm
+  <input type="number"
+         class="space-value"
+         value="16"
+         data-value="16">
 
-  </div>
+  <span>sqm</span>
+
+</div>
 
   <button class="plus-btn">
     +
@@ -4048,9 +4284,169 @@ ABOVE "PRELIMINARY COST ESTIMATE"
 
 </section>
 
-<!-- =========================
-ADD THIS CSS
-========================= -->
+<!-- =========================================
+ARCHITECTURAL INQUIRY
+========================================= -->
+
+<section class="inquiry-section">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Consultation Inquiry
+      </div>
+
+      <h2 class="section-title">
+        Preliminary Project Inquiry
+      </h2>
+
+      <p class="section-description">
+
+        Your configured project details are
+        automatically summarized below for
+        preliminary architectural review.
+
+      </p>
+
+    </div>
+
+    <div class="inquiry-layout">
+
+      <!-- SUMMARY -->
+
+      <div class="inquiry-summary">
+
+        <table class="inquiry-table">
+
+          <tbody>
+
+            <tr>
+              <td>Lot Area</td>
+              <td id="inqLotArea">200 sqm</td>
+            </tr>
+
+            <tr>
+              <td>Floor Levels</td>
+              <td id="inqFloorLevels">2 Storeys</td>
+            </tr>
+
+            <tr>
+              <td>Finish Level</td>
+              <td id="inqFinishLevel">Elegant Finish</td>
+            </tr>
+
+            <tr>
+              <td>Total Floor Area</td>
+              <td id="inqTotalArea">120 sqm</td>
+            </tr>
+
+            <tr>
+              <td>Estimated Cost</td>
+              <td id="inqConstructionCost">
+                ₱0
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+        <div class="inquiry-space-program">
+
+          <div class="space-program-title">
+            Space Program
+          </div>
+
+          <div id="inqSpaceProgram">
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FORM -->
+
+      <form class="inquiry-form"
+            id="architecturalInquiryForm">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label>
+              Full Name
+            </label>
+
+            <input type="text"
+                   id="clientName"
+                   required>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>
+              Email Address
+            </label>
+
+            <input type="email"
+                   id="clientEmail"
+                   required>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>
+              Contact Number
+            </label>
+
+            <input type="text"
+                   id="clientContact">
+
+          </div>
+
+          <div class="form-group">
+
+            <label>
+              Project Location
+            </label>
+
+            <input type="text"
+                   id="projectLocation">
+
+          </div>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>
+            Additional Notes
+          </label>
+
+          <textarea id="additionalNotes">
+          </textarea>
+
+        </div>
+
+        <button type="submit"
+                class="submit-inquiry-btn"
+                id="submitInquiryBtn">
+
+          Request Architectural Consultation
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 
@@ -4844,7 +5240,6 @@ SPACE PLANNER ENGINE
 ========================================= */
 
 
-
 const groundTotal =
   document.getElementById("groundTotal");
 
@@ -4875,6 +5270,36 @@ const lotSlider =
 const lotAreaInput =
   document.getElementById("lotAreaInput");
 
+    /* =========================================
+INQUIRY
+========================================= */
+
+const inqLotArea =
+  document.getElementById("inqLotArea");
+
+const inqFloorLevels =
+  document.getElementById("inqFloorLevels");
+
+const inqFinishLevel =
+  document.getElementById("inqFinishLevel");
+
+const inqTotalArea =
+  document.getElementById("inqTotalArea");
+
+const inqConstructionCost =
+  document.getElementById(
+    "inqConstructionCost"
+  );
+
+const inqSpaceProgram =
+  document.getElementById(
+    "inqSpaceProgram"
+  );
+
+const inquiryForm =
+  document.getElementById(
+    "architecturalInquiryForm"
+  );
     
 /* =========================================
 FINISH LEVELS
@@ -4884,7 +5309,7 @@ const finishCards =
   document.querySelectorAll(".finish-card");
 
 let selectedRate = 22000;
-
+let selectedFinish = "Bare Finish";
 const finishRates = [
   22000,
   34000,
@@ -4903,16 +5328,16 @@ finishCards.forEach((card,index)=>{
     card.classList.add("active");
 
     selectedRate = finishRates[index];
-
+  selectedFinish =
+    card.querySelector(
+      ".finish-name"
+    ).innerText;
     updatePlanner();
 
   });
 
 });
 
-/* =========================================
-ROOM TOGGLE
-========================================= */
 
 /* =========================================
 INITIALIZE CARD
@@ -4933,7 +5358,7 @@ function initializeCard(card){
     card.querySelector(".plus-btn");
 
   let original =
-    parseInt(value.dataset.value);
+    parseInt(value.value);
 
   /* TOGGLE */
 
@@ -4949,7 +5374,7 @@ function initializeCard(card){
 
       value.dataset.value = 0;
 
-      value.innerText = "0 sqm";
+      value.value = 0;
 
     }else{
 
@@ -4961,10 +5386,28 @@ function initializeCard(card){
 
       value.dataset.value = original;
 
-      value.innerText =
-        original + " sqm";
+      value.value = original;
 
     }
+
+    updatePlanner();
+
+  });
+
+  /* INPUT */
+
+  value.addEventListener("input",()=>{
+
+    let current =
+      parseInt(value.value);
+
+    if(isNaN(current)){
+      current = 0;
+    }
+
+    original = current;
+
+    value.dataset.value = current;
 
     updatePlanner();
 
@@ -4975,7 +5418,7 @@ function initializeCard(card){
   plusBtn.addEventListener("click",()=>{
 
     let current =
-      parseInt(value.dataset.value);
+      parseInt(value.value);
 
     current += 2;
 
@@ -4983,8 +5426,7 @@ function initializeCard(card){
 
     value.dataset.value = current;
 
-    value.innerText =
-      current + " sqm";
+    value.value = current;
 
     updatePlanner();
 
@@ -4995,7 +5437,7 @@ function initializeCard(card){
   minusBtn.addEventListener("click",()=>{
 
     let current =
-      parseInt(value.dataset.value);
+      parseInt(value.value);
 
     current -= 2;
 
@@ -5007,8 +5449,7 @@ function initializeCard(card){
 
     value.dataset.value = current;
 
-    value.innerText =
-      current + " sqm";
+    value.value = current;
 
     updatePlanner();
 
@@ -5063,6 +5504,7 @@ function updatePlanner(){
     third:0
   };
 
+  window.floorAreas = floorAreas;
   /* =========================================
   COMPUTE AREAS
   ========================================= */
@@ -5220,7 +5662,7 @@ function updatePlanner(){
   overallTotal.innerText =
     totalArea + " sqm";
 
-  /* =========================================
+    /* =========================================
   COST
   ========================================= */
 
@@ -5238,7 +5680,72 @@ function updatePlanner(){
     "₱" +
     professional.toLocaleString();
 
-}
+
+  
+/* =========================================
+INQUIRY AUTO FILL
+========================================= */
+
+inqLotArea.innerText =
+  lotArea + " sqm";
+
+inqFloorLevels.innerText =
+  floorCount + " Storeys";
+
+inqFinishLevel.innerText =
+  selectedFinish;
+
+inqTotalArea.innerText =
+  totalArea + " sqm";
+
+inqConstructionCost.innerText =
+  "₱" +
+  construction.toLocaleString();
+
+inqSpaceProgram.innerHTML = "";
+
+document
+  .querySelectorAll(".space-card")
+  .forEach(card=>{
+
+    const floor =
+      card.dataset.floor;
+
+    if(floor === "second"
+       && floorCount < 2){
+      return;
+    }
+
+    if(floor === "third"
+       && floorCount < 3){
+      return;
+    }
+
+    const name =
+      card.querySelector(
+        ".space-name"
+      ).innerText;
+
+    const value =
+      card.querySelector(
+        ".space-value"
+      ).dataset.value;
+
+    const pill =
+      document.createElement("div");
+
+    pill.className =
+      "program-pill";
+
+    pill.innerText =
+      name + " • " + value + " sqm";
+
+    inqSpaceProgram.appendChild(
+      pill
+    );
+
+});
+    }
 
 
 /* =========================================
@@ -5321,12 +5828,16 @@ addBedroomBtn.addEventListener("click",()=>{
         -
       </button>
 
-      <div class="space-value"
-           data-value="16">
+<div class="space-value-wrapper">
 
-        16 sqm
+  <input type="number"
+         class="space-value"
+         value="16"
+         data-value="16">
 
-      </div>
+  <span>sqm</span>
+
+</div>
 
       <button class="plus-btn">
         +
@@ -5472,12 +5983,16 @@ createCustomSpace.addEventListener("click",()=>{
         -
       </button>
 
-      <div class="space-value"
-           data-value="12">
+<div class="space-value-wrapper">
 
-        12 sqm
+  <input type="number"
+         class="space-value"
+         value="12"
+         data-value="12">
 
-      </div>
+  <span>sqm</span>
+
+</div>
 
       <button class="plus-btn">
         +
@@ -5549,8 +6064,129 @@ if(value > 1000){
 });
 
 updatePlanner();
+/* =========================================
+SEND INQUIRY
+========================================= */
 
+inquiryForm.addEventListener(
+  "submit",
+  async(e)=>{
+
+  e.preventDefault();
+
+  const submitBtn =
+    document.getElementById(
+      "submitInquiryBtn"
+    );
+
+  submitBtn.innerText =
+    "Sending Inquiry...";
+
+  /* SPACE PROGRAM */
+
+  let spaceProgram = "";
+
+  document
+    .querySelectorAll(".program-pill")
+    .forEach(pill=>{
+
+      spaceProgram +=
+        pill.innerText + "\n";
+
+  });
+
+  try{
+
+    await emailjs.send(
+
+      "service_gncl1th",
+
+      "template_osxpb9h",
+
+      {
+        client_name:
+          document.getElementById(
+            "clientName"
+          ).value,
+
+        client_email:
+          document.getElementById(
+            "clientEmail"
+          ).value,
+
+        client_contact:
+          document.getElementById(
+            "clientContact"
+          ).value,
+
+        project_location:
+          document.getElementById(
+            "projectLocation"
+          ).value,
+
+        additional_notes:
+          document.getElementById(
+            "additionalNotes"
+          ).value,
+
+        lot_area:
+          inqLotArea.innerText,
+
+        floor_levels:
+          inqFloorLevels.innerText,
+
+        finish_level:
+          inqFinishLevel.innerText,
+
+        space_program:
+          spaceProgram,
+
+        ground_area:
+          floorAreas.ground + " sqm",
+
+        second_area:
+          floorAreas.second + " sqm",
+
+        third_area:
+          floorAreas.third + " sqm",
+
+        total_area:
+          inqTotalArea.innerText,
+
+        construction_cost:
+          inqConstructionCost.innerText
+
+      }
+
+    );
+
+    submitBtn.innerText =
+      "Inquiry Sent Successfully";
+
+    inquiryForm.reset();
+
+  }catch(error){
+
+    console.error(error);
+
+    submitBtn.innerText =
+      "Failed To Send Inquiry";
+
+  }
+
+});
+    
+</script>
+<script
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
 
+<script>
+
+emailjs.init({
+  publicKey:"x0jZtaMxDESZwcl67"
+});
+
+</script>
 </body>
 </html>
