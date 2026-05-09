@@ -3985,7 +3985,9 @@ function initializeCard(card){
 
 /* INIT EXISTING */
 
-allCards.forEach(card=>{
+document
+  .querySelectorAll(".space-card")
+  .forEach(card=>{
   initializeCard(card);
 });
   
