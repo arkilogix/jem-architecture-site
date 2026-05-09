@@ -3603,7 +3603,226 @@ ABOVE "PRELIMINARY COST ESTIMATE"
 ADD THIS CSS
 ========================= -->
 
-<script>
+
+
+<!-- =========================
+CTA
+========================= -->
+
+<section class="cta-section" id="contact">
+
+  <div class="container">
+
+    <div class="cta-wrapper">
+
+      <div>
+
+        <div class="section-label">
+          Start Your Project
+        </div>
+
+        <h2 class="cta-title">
+          Let’s Build Something Meaningful.
+        </h2>
+
+        <p class="cta-description">
+          Tell us about your project and let’s discuss
+          how we can bring your vision to life.
+        </p>
+
+      </div>
+
+      <form class="cta-form">
+
+        <input type="text" placeholder="Full Name">
+
+        <input type="email" placeholder="Email Address">
+
+        <input type="text" placeholder="Project Type">
+
+        <textarea placeholder="Tell us about your project"></textarea>
+
+        <button type="submit">
+          REQUEST CONSULTATION
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+CONTACT INFO
+========================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3>Office</h3>
+
+        <p>
+          Blk 22 Lot 19 Ph 2 SJV6,<br>
+          Brgy. Butong,<br>
+          Cabuyao, Laguna
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Contact</h3>
+
+        <p>
+          +63 936 896 9969<br>
+          ar.edxer@gmail.com
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Hours</h3>
+
+        <p>
+          Monday – Saturday<br>
+          8:00 AM – 5:00 PM
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+  © 2022 JE Magpantay Architecture + Engineering
+</footer>
+<!-- FULLSCREEN PROJECT MODAL -->
+
+<div class="gallery-modal" id="galleryModal">
+
+  <!-- CLOSE -->
+  <div class="gallery-close"
+       onclick="closeGallery()">
+    ×
+  </div>
+
+  <!-- PREV -->
+  <div class="gallery-arrow left"
+       onclick="prevImage()">
+    ←
+  </div>
+
+  <!-- NEXT -->
+  <div class="gallery-arrow right"
+       onclick="nextImage()">
+    →
+  </div>
+
+  <!-- IMAGE -->
+  <img id="galleryImage">
+
+  <!-- INFO -->
+  <div class="gallery-info">
+
+    <div class="gallery-counter" id="galleryCounter">
+      01 / 05
+    </div>
+
+    <h3>
+      One Storey with Loft Residence
+    </h3>
+
+    <p>
+      Residential • Design-Build
+    </p>
+
+  </div>
+
+</div>
+
+  <!-- MEDITERRANEAN MODAL -->
+
+<div class="gallery-modal"
+     id="mediterraneanModal">
+
+  <!-- CLOSE -->
+  <div class="gallery-close"
+       onclick="closeMediterraneanGallery()">
+    ×
+  </div>
+
+  <!-- PREV -->
+  <div class="gallery-arrow left"
+       onclick="prevMediterraneanImage()">
+    ←
+  </div>
+
+  <!-- NEXT -->
+  <div class="gallery-arrow right"
+       onclick="nextMediterraneanImage()">
+    →
+  </div>
+
+  <!-- IMAGE -->
+  <img id="mediterraneanImage">
+
+  <!-- INFO -->
+  <div class="gallery-info">
+
+    <div class="gallery-counter"
+         id="mediterraneanCounter">
+      01 / 05
+    </div>
+
+    <h3>
+      Modern Mediterranean Residence
+    </h3>
+
+    <p>
+      Residential • Architectural Design
+    </p>
+
+  </div>
+
+</div>
+
+<!-- =========================================
+CUSTOM SPACE MODAL
+========================================= -->
+
+<div class="custom-modal"
+     id="customModal">
+
+  <div class="custom-modal-box">
+
+    <h3>
+      Add Custom Space
+    </h3>
+
+    <input type="text"
+           id="customSpaceInput"
+           placeholder="Example: Home Office">
+
+    <button id="createCustomSpace">
+
+      Add Space
+
+    </button>
+
+  </div>
+
+</div>
+  
+  <script>
 
 const galleryImages = [
 
@@ -4414,223 +4633,5 @@ updatePlanner();
   
 </script>
 
-
-<!-- =========================
-CTA
-========================= -->
-
-<section class="cta-section" id="contact">
-
-  <div class="container">
-
-    <div class="cta-wrapper">
-
-      <div>
-
-        <div class="section-label">
-          Start Your Project
-        </div>
-
-        <h2 class="cta-title">
-          Let’s Build Something Meaningful.
-        </h2>
-
-        <p class="cta-description">
-          Tell us about your project and let’s discuss
-          how we can bring your vision to life.
-        </p>
-
-      </div>
-
-      <form class="cta-form">
-
-        <input type="text" placeholder="Full Name">
-
-        <input type="email" placeholder="Email Address">
-
-        <input type="text" placeholder="Project Type">
-
-        <textarea placeholder="Tell us about your project"></textarea>
-
-        <button type="submit">
-          REQUEST CONSULTATION
-        </button>
-
-      </form>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- =========================
-CONTACT INFO
-========================= -->
-
-<section>
-
-  <div class="container">
-
-    <div class="contact-grid">
-
-      <div class="contact-card">
-        <h3>Office</h3>
-
-        <p>
-          Blk 22 Lot 19 Ph 2 SJV6,<br>
-          Brgy. Butong,<br>
-          Cabuyao, Laguna
-        </p>
-      </div>
-
-      <div class="contact-card">
-        <h3>Contact</h3>
-
-        <p>
-          +63 936 896 9969<br>
-          ar.edxer@gmail.com
-        </p>
-      </div>
-
-      <div class="contact-card">
-        <h3>Hours</h3>
-
-        <p>
-          Monday – Saturday<br>
-          8:00 AM – 5:00 PM
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- =========================
-FOOTER
-========================= -->
-
-<footer>
-  © 2022 JE Magpantay Architecture + Engineering
-</footer>
-<!-- FULLSCREEN PROJECT MODAL -->
-
-<div class="gallery-modal" id="galleryModal">
-
-  <!-- CLOSE -->
-  <div class="gallery-close"
-       onclick="closeGallery()">
-    ×
-  </div>
-
-  <!-- PREV -->
-  <div class="gallery-arrow left"
-       onclick="prevImage()">
-    ←
-  </div>
-
-  <!-- NEXT -->
-  <div class="gallery-arrow right"
-       onclick="nextImage()">
-    →
-  </div>
-
-  <!-- IMAGE -->
-  <img id="galleryImage">
-
-  <!-- INFO -->
-  <div class="gallery-info">
-
-    <div class="gallery-counter" id="galleryCounter">
-      01 / 05
-    </div>
-
-    <h3>
-      One Storey with Loft Residence
-    </h3>
-
-    <p>
-      Residential • Design-Build
-    </p>
-
-  </div>
-
-</div>
-
-  <!-- MEDITERRANEAN MODAL -->
-
-<div class="gallery-modal"
-     id="mediterraneanModal">
-
-  <!-- CLOSE -->
-  <div class="gallery-close"
-       onclick="closeMediterraneanGallery()">
-    ×
-  </div>
-
-  <!-- PREV -->
-  <div class="gallery-arrow left"
-       onclick="prevMediterraneanImage()">
-    ←
-  </div>
-
-  <!-- NEXT -->
-  <div class="gallery-arrow right"
-       onclick="nextMediterraneanImage()">
-    →
-  </div>
-
-  <!-- IMAGE -->
-  <img id="mediterraneanImage">
-
-  <!-- INFO -->
-  <div class="gallery-info">
-
-    <div class="gallery-counter"
-         id="mediterraneanCounter">
-      01 / 05
-    </div>
-
-    <h3>
-      Modern Mediterranean Residence
-    </h3>
-
-    <p>
-      Residential • Architectural Design
-    </p>
-
-  </div>
-
-</div>
-
-<!-- =========================================
-CUSTOM SPACE MODAL
-========================================= -->
-
-<div class="custom-modal"
-     id="customModal">
-
-  <div class="custom-modal-box">
-
-    <h3>
-      Add Custom Space
-    </h3>
-
-    <input type="text"
-           id="customSpaceInput"
-           placeholder="Example: Home Office">
-
-    <button id="createCustomSpace">
-
-      Add Space
-
-    </button>
-
-  </div>
-
-</div>
-  
 </body>
 </html>
