@@ -4105,7 +4105,82 @@ function prevMediterraneanImage(){
   updateMediterraneanGallery();
 
 }
+/* =========================
+TROPICAL GALLERY
+========================= */
 
+const tropicalImages = [
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294476/wide_exterior_architectural_rendering_photorealist_xtmdz0.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294457/a_photorealistic_architectural_exterior_scene_of_a_phdyad.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294480/wide_photorealistic_architectural_interior_exterio_uarlho.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294484/a_photorealistic_architectural_exterior_scene_at_g_z58dxz.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294488/a_wide_angle_photorealistic_architectural_exterio_amtfr8.png",
+
+  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294491/wide_realistic_interior_architectural_render_phot_nzrjbk.png"
+
+];
+
+let currentTropicalIndex = 0;
+
+function updateTropicalGallery(){
+
+  document.getElementById("tropicalImage").src =
+    tropicalImages[currentTropicalIndex];
+
+  document.getElementById("tropicalCounter").innerText =
+    String(currentTropicalIndex + 1).padStart(2,'0')
+    + " / " +
+    String(tropicalImages.length).padStart(2,'0');
+
+}
+
+function openTropicalGallery(index){
+
+  currentTropicalIndex = index;
+
+  document.getElementById("tropicalModal")
+    .classList.add("active");
+
+  updateTropicalGallery();
+
+}
+
+function closeTropicalGallery(){
+
+  document.getElementById("tropicalModal")
+    .classList.remove("active");
+
+}
+
+function nextTropicalImage(){
+
+  currentTropicalIndex++;
+
+  if(currentTropicalIndex >= tropicalImages.length){
+    currentTropicalIndex = 0;
+  }
+
+  updateTropicalGallery();
+
+}
+
+function prevTropicalImage(){
+
+  currentTropicalIndex--;
+
+  if(currentTropicalIndex < 0){
+    currentTropicalIndex =
+      tropicalImages.length - 1;
+  }
+
+  updateTropicalGallery();
+
+}
   /* =========================================
 FLOOR CONFIGURATOR
 ========================================= */
