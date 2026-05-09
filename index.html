@@ -4475,9 +4475,7 @@ function updatePlanner(){
 
 }
 
-/* =========================================
-INITIALIZE
-========================================= */
+
 /* =========================================
 ADD BEDROOM
 ========================================= */
@@ -4583,7 +4581,7 @@ addBedroomBtn.addEventListener("click",()=>{
 
 });
 
-  /* =========================================
+/* =========================================
 CUSTOM SPACE
 ========================================= */
 
@@ -4592,14 +4590,9 @@ const customModal =
     "customModal"
   );
 
-const groundCustomBtn =
-  document.getElementById(
-    "addGroundCustomBtn"
-  );
-
-const secondCustomBtn =
-  document.getElementById(
-    "addSecondCustomBtn"
+const customButtons =
+  document.querySelectorAll(
+    ".add-custom-space-btn"
   );
 
 const customSpaceInput =
@@ -4614,29 +4607,14 @@ const createCustomSpace =
 
 let activeCustomFloor = "ground";
 
-/* OPEN GROUND */
+/* OPEN */
 
-if(groundCustomBtn){
+customButtons.forEach(button=>{
 
-  groundCustomBtn.addEventListener("click",()=>{
+  button.addEventListener("click",()=>{
 
-    activeCustomFloor = "ground";
-
-    customModal.classList.add(
-      "active"
-    );
-
-  });
-
-}
-
-/* OPEN SECOND */
-
-if(secondCustomBtn){
-
-  secondCustomBtn.addEventListener("click",()=>{
-
-    activeCustomFloor = "second";
+    activeCustomFloor =
+      button.dataset.floor;
 
     customModal.classList.add(
       "active"
@@ -4644,7 +4622,7 @@ if(secondCustomBtn){
 
   });
 
-}
+});
 
 /* CLOSE */
 
@@ -4670,13 +4648,16 @@ createCustomSpace.addEventListener("click",()=>{
   if(name === "") return;
 
   const card =
-  document.createElement("div");
+    document.createElement("div");
 
   card.className =
     "space-card";
 
   card.dataset.floor =
     activeCustomFloor;
+
+  card.dataset.space =
+    "custom";
 
   card.innerHTML = `
 
@@ -4741,17 +4722,16 @@ createCustomSpace.addEventListener("click",()=>{
 
   `;
 
-  if(activeCustomFloor === "ground"){
+  /* TARGET GRID */
 
-    document
-      .querySelectorAll(".space-card-grid")[0]
-      .appendChild(card);
+  const targetGrid =
+    document.querySelector(
+      `.space-card-grid[data-floor="${activeCustomFloor}"]`
+    );
 
-  }else{
+  if(targetGrid){
 
-    document
-      .getElementById("secondFloorGrid")
-      .appendChild(card);
+    targetGrid.appendChild(card);
 
   }
 
