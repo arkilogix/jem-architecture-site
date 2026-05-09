@@ -2618,24 +2618,28 @@ SECOND ROW
 
 <div class="projects-secondary-grid">
 
-  <!-- PLACEHOLDER -->
-  <div class="secondary-project">
+<div class="secondary-project"
+     onclick="openTropicalGallery(0)">
 
-    <img src="hero.png">
+  <img src="https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294476/wide_exterior_architectural_rendering_photorealist_xtmdz0.png">
 
-    <div class="secondary-overlay">
+  <div class="secondary-overlay">
+
+    <div>
 
       <div class="project-category">
-        Residential Project
+        Residential • Architectural Design
       </div>
 
       <h3>
-        Courtyard House
+        Modern Tropical Residence
       </h3>
 
     </div>
 
   </div>
+
+</div>
 
   <!-- PLACEHOLDER -->
   <div class="secondary-project">
@@ -3887,6 +3891,48 @@ FOOTER
 
 </div>
 
+<!-- TROPICAL MODAL -->
+
+<div class="gallery-modal"
+     id="tropicalModal">
+
+  <div class="gallery-close"
+       onclick="closeTropicalGallery()">
+    ×
+  </div>
+
+  <div class="gallery-arrow left"
+       onclick="prevTropicalImage()">
+    ←
+  </div>
+
+  <div class="gallery-arrow right"
+       onclick="nextTropicalImage()">
+    →
+  </div>
+
+  <img id="tropicalImage">
+
+  <div class="gallery-info">
+
+    <div class="gallery-counter"
+         id="tropicalCounter">
+      01 / 05
+    </div>
+
+    <h3>
+      Modern Tropical Residence
+    </h3>
+
+    <p>
+      Residential • Architectural Design
+    </p>
+
+  </div>
+
+</div>
+  
+  
 <!-- =========================================
 CUSTOM SPACE MODAL
 ========================================= -->
