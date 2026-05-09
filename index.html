@@ -2146,7 +2146,30 @@ LOT INPUT
 .builder-lot-input input[type=number]{
   -moz-appearance:textfield;
 }
-  
+
+  /* =========================================
+SECTION DIVIDERS
+========================================= */
+
+.section-divider{
+  position:relative;
+}
+
+.section-divider::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:120px;
+  height:1px;
+
+  background:#d8d2c8;
+}
 </style>
 </head>
 
@@ -2481,7 +2504,8 @@ style="background-image:url('https://res.cloudinary.com/dwvl1wbp4/image/upload/v
 PROJECTS
 ========================= -->
 
-<section id="projects">
+<section id="projects"
+         class="section-divider">
 
   <div class="container">
 
