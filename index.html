@@ -642,58 +642,7 @@ CUSTOM SPACE MODAL
   cursor:pointer;
 }
   
-@media(max-width:768px){
 
-  section{
-    padding:90px 0;
-  }
-
-  .navbar{
-    height:auto;
-
-    padding:20px 0;
-
-    flex-direction:column;
-    gap:20px;
-  }
-
-  .nav-links{
-    gap:18px;
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  .hero{
-    padding:150px 0 100px;
-  }
-
-  .hero h1{
-    font-size:48px;
-  }
-
-  .section-title{
-    font-size:40px;
-  }
-
-  .cta-title{
-    font-size:42px;
-  }
-
-  .about-card,
-  .service-card,
-  .calculator-box,
-  .contact-card{
-    padding:32px;
-  }
-
-  .floor-stepper{
-  width:100%;
-}
-  .lot-size-card{
-  grid-template-columns:1fr;
-  gap:28px;
-}
-}
 /* =========================
 GALLERY MODAL
 ========================= */
@@ -797,9 +746,6 @@ GALLERY MODAL
   color:rgba(255,255,255,0.72);
 }
   
-.calculator-section{
-  background:#ece7df;
-}
 
 .calculator-layout{
   display:grid;
@@ -1042,36 +988,7 @@ MOBILE
 
 }
   
-  .calculator-layout{
-    grid-template-columns:1fr;
-  }
 
-  .estimate-panel{
-    position:relative;
-    top:0;
-  }
-
-@media(max-width:768px){
-
-  .finish-grid{
-    grid-template-columns:1fr;
-  }
-
-  .calc-card,
-  .estimate-card,
-  .estimate-cta{
-    padding:28px;
-  }
-
-  .estimate-price{
-    font-size:38px;
-  }
-
-  .sqm-display span{
-    font-size:44px;
-  }
-
-}
 /* =========================
 PROJECT PLACEHOLDERS
 ========================= */
@@ -1161,17 +1078,6 @@ MOBILE
 
 }
 
-@media(max-width:768px){
-
-  .secondary-project{
-    height:240px;
-  }
-
-  .placeholder-title{
-    font-size:22px;
-  }
-
-}
 
   
 /* =========================
@@ -1351,26 +1257,6 @@ MOBILE
   }
 
 }
-
-@media(max-width:768px){
-
-  .primary-service-card{
-    padding:34px;
-  }
-
-  .primary-service-card h3{
-    font-size:28px;
-  }
-
-  .expertise-title{
-    font-size:34px;
-  }
-
-  .expertise-column{
-    padding:30px;
-  }
-
-}
 .finish-level-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -1487,24 +1373,6 @@ MOBILE
   0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-  .finish-level-grid{
-    grid-template-columns:1fr;
-  }
-
-  .finish-card{
-    min-height:220px;
-  }
-
-  .finish-name{
-    font-size:22px;
-  }
-
-}
-
   /* =========================================
 SPACE PLANNER UI
 ========================================= */
@@ -1536,8 +1404,7 @@ SPACE PLANNER UI
   gap:24px;
 }
   
-.space-planner-section,
-.container{
+ .space-planner-section{
   overflow:visible;
 }
   
@@ -1678,11 +1545,6 @@ SPACE PLANNER UI
   white-space:nowrap;
 }
 
-
-.ghost-button:hover{
-  color:#1b1b1b;
-}
-
 .ghost-button:hover{
   background:#1b1b1b;
   color:#fff;
@@ -1802,31 +1664,6 @@ SPACE PLANNER UI
   }
 
 }
-
-@media(max-width:768px){
-
-  .summary-grid{
-    grid-template-columns:1fr;
-  }
-
-  .planner-card,
-  .planner-summary-card{
-    padding:28px;
-  }
-
-  .planner-floor-title{
-    font-size:28px;
-  }
-
-  .summary-value{
-    font-size:34px;
-  }
-
-  .summary-total{
-    font-size:46px;
-  }
-
-}
   /* =========================================
 SPACE CARD TOP
 ========================================= */
@@ -1869,6 +1706,9 @@ SPACE CARD
   border:1px solid rgba(0,0,0,0.05);
 
   transition:.3s ease;
+  width:100%;
+  overflow:hidden;
+  
 }
 
 .space-card:hover{
@@ -2024,17 +1864,6 @@ SPACE CONTROLS
 }
 
 /* =========================================
-MOBILE
-========================================= */
-
-@media(max-width:768px){
-
-  .space-card-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-/* =========================================
 LOT CONFIG
 ========================================= */
 
@@ -2050,16 +1879,33 @@ LOT CONFIG
 
   align-items:center;
 }
+  
+/* LOT SLIDER */
 
-.lot-block,
-.floor-config,
 .lot-slider-wrapper{
   width:100%;
+  overflow:hidden;
 }
 
 .lot-slider{
   width:100%;
-  accent-color:#1b1b1b;
+  min-width:0;
+}
+
+.builder-lot-input{
+  width:100%;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+}
+
+.builder-lot-input input{
+  min-width:0;
+
+  width:90px;
+
+  font-size:44px;
 }
   /* =========================================
 FLOOR CONFIG
@@ -2206,355 +2052,7 @@ SECTION DIVIDERS
 
   background:#d8d2c8;
 }
-  .section-divider::before
-  /* =========================================
-MOBILE UI REFINEMENT
-========================================= */
 
-@media(max-width:768px){
-
-  /* GLOBAL */
-
-  body{
-    overflow-x:hidden;
-  }
-
-  .container{
-    width:92%;
-  }
-
-  section{
-    padding:72px 0;
-  }
-
-  /* HEADER */
-
-  header{
-    background:rgba(10,10,10,0.72);
-  }
-
-  .navbar{
-    padding:16px 0;
-    gap:16px;
-  }
-
-  .logo img{
-    width:36px;
-  }
-
-  .logo-text{
-    font-size:10px;
-    line-height:1.4;
-  }
-
-  .nav-links{
-    gap:14px;
-  }
-
-  .nav-links a{
-    font-size:11px;
-  }
-
-  /* HERO */
-
-  .hero{
-    min-height:auto;
-    padding:180px 0 90px;
-  }
-
-  .hero-content{
-    max-width:100%;
-  }
-
-  .hero-label{
-    font-size:10px;
-    letter-spacing:3px;
-    margin-bottom:20px;
-  }
-
-  .hero h1{
-    font-size:42px;
-    line-height:1.08;
-    margin-bottom:24px;
-  }
-
-  .hero p{
-    font-size:14px;
-    line-height:1.8;
-    margin-bottom:32px;
-  }
-
-  .hero-buttons{
-    gap:12px;
-  }
-
-  .hero-btn{
-    width:100%;
-    text-align:center;
-    padding:16px 20px;
-  }
-
-  /* SECTION HEADERS */
-
-  .section-header{
-    margin-bottom:42px;
-  }
-
-  .section-title{
-    font-size:36px;
-    line-height:1.1;
-  }
-
-  .section-description{
-    font-size:14px;
-    line-height:1.9;
-  }
-
-  /* ABOUT */
-
-  .about-grid{
-    gap:18px;
-  }
-
-  .about-card{
-    padding:28px;
-  }
-
-  .about-card h3{
-    font-size:20px;
-  }
-
-  /* SERVICES */
-
-  .primary-services-grid{
-    gap:18px;
-    margin-bottom:70px;
-  }
-
-  .primary-service-card{
-    min-height:320px;
-    padding:30px;
-  }
-
-  .primary-service-card h3{
-    font-size:28px;
-  }
-
-  .expertise-wrapper{
-    padding-top:60px;
-  }
-
-  .expertise-grid{
-    gap:18px;
-  }
-
-  .expertise-column{
-    padding:26px;
-  }
-
-  /* PROJECTS */
-
-  .projects-grid{
-    gap:18px;
-  }
-
-  .project-large{
-    height:340px;
-  }
-
-  .project-small{
-    height:220px;
-  }
-
-  .projects-secondary-grid{
-    gap:18px;
-    margin-top:18px;
-  }
-
-  .secondary-project{
-    height:220px;
-  }
-
-  .project-overlay,
-  .secondary-overlay{
-    padding:20px;
-  }
-
-  .project-title,
-  .placeholder-title,
-  .secondary-overlay h3{
-    font-size:22px;
-  }
-
-  .project-description{
-    font-size:13px;
-    line-height:1.7;
-  }
-
-  /* SPACE PLANNER */
-
-  .planner-layout{
-    gap:20px;
-  }
-
-  .planner-card,
-  .planner-summary-card{
-    padding:22px;
-    border-radius:18px;
-  }
-
-  .planner-floor-title{
-    font-size:24px;
-  }
-
-  .lot-size-card{
-    gap:24px;
-  }
-
-  .builder-lot-input input{
-    font-size:56px;
-    width:110px;
-  }
-
-  .builder-lot-input span{
-    font-size:22px;
-  }
-
-  .space-card-grid{
-    gap:14px;
-  }
-
-  .space-card{
-    padding:18px;
-  }
-
-  .space-icon{
-    width:38px;
-    height:38px;
-  }
-
-  .space-name{
-    font-size:18px;
-  }
-
-  .space-guide{
-    font-size:13px;
-    line-height:1.6;
-  }
-
-  .space-controls{
-    gap:12px;
-  }
-
-  .space-controls button{
-    width:38px;
-    height:38px;
-  }
-
-  .space-value{
-    font-size:18px;
-  }
-
-  .planner-actions{
-    margin-top:20px;
-  }
-
-  .add-space-btn{
-    width:100%;
-  }
-
-  /* FINISH LEVELS */
-
-  .finish-level-grid{
-    gap:14px;
-  }
-
-  .finish-card{
-    min-height:200px;
-  }
-
-  .finish-content{
-    padding:20px;
-  }
-
-  .finish-name{
-    font-size:20px;
-  }
-
-  .finish-content p{
-    font-size:13px;
-    line-height:1.7;
-  }
-
-  /* SUMMARY */
-
-  .summary-item{
-    padding:22px;
-  }
-
-  .summary-value{
-    font-size:30px;
-  }
-
-  .summary-total-card{
-    padding:26px;
-  }
-
-  .summary-total{
-    font-size:42px;
-  }
-
-  .cost-value{
-    font-size:28px;
-  }
-
-  /* CONTACT */
-
-  .cta-wrapper{
-    gap:40px;
-  }
-
-  .cta-title{
-    font-size:36px;
-  }
-
-  .contact-grid{
-    gap:18px;
-  }
-
-  .contact-card{
-    padding:28px;
-  }
-
-  /* GALLERY */
-
-  .gallery-modal img{
-    width:100%;
-    max-height:68vh;
-  }
-
-  .gallery-close{
-    top:18px;
-    right:20px;
-    font-size:30px;
-  }
-
-  .gallery-arrow{
-    font-size:28px;
-    padding:12px;
-  }
-
-  .gallery-info{
-    left:20px;
-    right:20px;
-    bottom:24px;
-  }
-
-  .gallery-info h3{
-    font-size:24px;
-  }
-
-}
   /* =========================================
 INQUIRY SYSTEM
 ========================================= */
@@ -2698,20 +2196,520 @@ INQUIRY SYSTEM
 .submit-inquiry-btn:hover{
   background:#000;
 }
+/* =========================================
+MOBILE UI REFINEMENT
+CLEAN FINAL VERSION
+========================================= */
 
 @media(max-width:768px){
 
+  /* GLOBAL */
+
+  html,
+  body{
+    overflow-x:hidden;
+  }
+
+  body{
+    width:100%;
+  }
+
+  .container{
+    width:92%;
+    max-width:100%;
+  }
+
+  section{
+    padding:72px 0;
+  }
+
+  /* HEADER */
+
+  header{
+    background:rgba(10,10,10,.72);
+    backdrop-filter:blur(10px);
+  }
+
+  .navbar{
+    padding:16px 0;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .logo{
+    gap:10px;
+  }
+
+  .logo img{
+    width:36px;
+  }
+
+  .logo-text{
+    font-size:10px;
+    line-height:1.4;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  /* HERO */
+
+  .hero{
+    min-height:auto;
+    padding:140px 0 72px;
+  }
+
+  .hero-content{
+    max-width:100%;
+  }
+
+  .hero-label{
+    font-size:10px;
+    letter-spacing:3px;
+
+    margin-bottom:18px;
+  }
+
+  .hero h1{
+    font-size:42px;
+    line-height:1.08;
+
+    margin-bottom:24px;
+  }
+
+  .hero p{
+    font-size:14px;
+    line-height:1.8;
+
+    margin-bottom:30px;
+  }
+
+  .hero-buttons{
+    display:flex;
+    flex-direction:column;
+
+    gap:12px;
+  }
+
+  .hero-btn{
+    width:100%;
+    justify-content:center;
+
+    text-align:center;
+  }
+
+  /* SECTION HEADERS */
+
+  .section-header{
+    margin-bottom:42px;
+  }
+
+  .section-title{
+    font-size:36px;
+    line-height:1.1;
+  }
+
+  .section-description{
+    font-size:14px;
+    line-height:1.9;
+  }
+
+  /* ABOUT */
+
+  .about-grid{
+    grid-template-columns:1fr;
+
+    gap:18px;
+  }
+
+  .about-card{
+    padding:28px;
+
+    border-radius:18px;
+  }
+
+  /* SERVICES */
+
+  .primary-services-grid{
+    grid-template-columns:1fr;
+
+    gap:18px;
+
+    margin-bottom:70px;
+  }
+
+  .primary-service-card{
+    min-height:320px;
+
+    padding:28px;
+
+    border-radius:18px;
+  }
+
+  .primary-service-card h3{
+    font-size:28px;
+  }
+
+  .expertise-wrapper{
+    padding-top:60px;
+  }
+
+  .expertise-grid{
+    grid-template-columns:1fr;
+
+    gap:18px;
+  }
+
+  .expertise-column{
+    padding:28px;
+
+    border-radius:18px;
+  }
+
+  /* PROJECTS */
+
+  .projects-grid{
+    grid-template-columns:1fr;
+
+    gap:18px;
+  }
+
+  .project-large{
+    height:340px;
+  }
+
+  .project-small{
+    height:220px;
+  }
+
+  .projects-secondary-grid{
+    grid-template-columns:1fr;
+
+    gap:18px;
+
+    margin-top:18px;
+  }
+
+  .secondary-project{
+    height:220px;
+  }
+
+  .project-overlay,
+  .secondary-overlay{
+    padding:16px;
+  }
+
+  .project-title,
+  .placeholder-title,
+  .secondary-overlay h3{
+    font-size:20px;
+  }
+
+  .project-description{
+    font-size:13px;
+    line-height:1.7;
+  }
+
+  /* PLANNER */
+
+  .planner-layout{
+    grid-template-columns:1fr;
+
+    gap:20px;
+  }
+
+  .planner-card,
+  .planner-summary-card{
+    padding:24px;
+
+    border-radius:18px;
+  }
+
+  .planner-floor-title{
+    font-size:24px;
+  }
+
+  /* LOT SIZE */
+
+  .lot-size-card{
+    grid-template-columns:1fr;
+
+    gap:20px;
+  }
+
+  .lot-slider-wrapper{
+    width:100%;
+
+    overflow:hidden;
+  }
+
+  .lot-slider{
+    width:100%;
+    min-width:0;
+  }
+
+  .builder-lot-input{
+    width:100%;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+  }
+
+  .builder-lot-input input{
+    width:90px;
+    min-width:0;
+
+    font-size:44px;
+  }
+
+  .builder-lot-input span{
+    font-size:22px;
+  }
+
+  /* SPACE GRID */
+
+  .space-card-grid{
+    grid-template-columns:1fr;
+
+    gap:14px;
+  }
+
+  .space-card{
+    width:100%;
+
+    padding:18px;
+
+    overflow:hidden;
+
+    border-radius:18px;
+  }
+
+  .space-card-top{
+    display:flex;
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:18px;
+  }
+
+  .space-info{
+    width:100%;
+    min-width:0;
+  }
+
+  .space-name,
+  .space-guide{
+    overflow-wrap:break-word;
+    word-break:break-word;
+  }
+
+  .space-icon{
+    width:38px;
+    height:38px;
+  }
+
+  .space-name{
+    font-size:18px;
+  }
+
+  .space-guide{
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  /* CONTROLS */
+
+  .space-controls{
+    width:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:8px;
+  }
+
+  .space-controls button{
+    width:38px;
+    height:38px;
+
+    flex-shrink:0;
+  }
+
+  .space-value-wrapper{
+    flex:1;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+
+    min-width:0;
+  }
+
+  .space-value{
+    width:100%;
+    max-width:70px;
+    min-width:0;
+
+    text-align:center;
+  }
+
+  /* ACTIONS */
+
+  .planner-actions{
+    display:flex;
+    flex-direction:column;
+
+    align-items:stretch;
+
+    gap:12px;
+
+    margin-top:20px;
+  }
+
+  .add-space-btn,
+  .ghost-button{
+    width:100%;
+
+    justify-content:center;
+  }
+
+  /* FINISH LEVELS */
+
+  .finish-level-grid{
+    grid-template-columns:1fr;
+
+    gap:14px;
+  }
+
+  .finish-card{
+    min-height:220px;
+
+    border-radius:18px;
+  }
+
+  .finish-content{
+    padding:20px;
+  }
+
+  .finish-name{
+    font-size:20px;
+  }
+
+  .finish-content p{
+    font-size:13px;
+    line-height:1.7;
+  }
+
+  /* SUMMARY */
+
+  .summary-grid{
+    grid-template-columns:1fr;
+
+    gap:18px;
+  }
+
+  .summary-item{
+    padding:22px;
+
+    border-radius:18px;
+  }
+
+  .summary-value{
+    font-size:30px;
+  }
+
+  .summary-total-card{
+    padding:26px;
+
+    border-radius:18px;
+  }
+
+  .summary-total{
+    font-size:42px;
+  }
+
+  .cost-value{
+    font-size:28px;
+  }
+
+  /* INQUIRY */
+
   .inquiry-layout{
     grid-template-columns:1fr;
+
+    gap:20px;
   }
 
   .inquiry-summary,
   .inquiry-form{
     padding:28px;
+
+    border-radius:18px;
   }
 
   .form-grid{
     grid-template-columns:1fr;
+  }
+
+  /* CONTACT */
+
+  .cta-wrapper{
+    gap:40px;
+  }
+
+  .cta-title{
+    font-size:36px;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+
+    gap:18px;
+  }
+
+  .contact-card{
+    padding:28px;
+
+    border-radius:18px;
+  }
+
+  /* GALLERY */
+
+  .gallery-modal img{
+    width:100%;
+
+    max-height:68vh;
+  }
+
+  .gallery-close{
+    top:18px;
+    right:20px;
+
+    font-size:30px;
+  }
+
+  .gallery-arrow{
+    font-size:28px;
+
+    padding:12px;
+  }
+
+  .gallery-info{
+    left:20px;
+    right:20px;
+    bottom:24px;
+  }
+
+  .gallery-info h3{
+    font-size:24px;
   }
 
 }
@@ -5238,13 +5236,6 @@ updateFloors();
   /* =========================================
 SPACE PLANNER ENGINE
 ========================================= */
-
-
-const groundTotal =
-  document.getElementById("groundTotal");
-
-const secondTotal =
-  document.getElementById("secondTotal");
 
 const overallTotal =
   document.getElementById("overallTotal");
