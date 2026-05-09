@@ -2769,7 +2769,8 @@ INTERACTIVE ARCHITECTURAL PLANNER
           </div>
 
 <!-- SPACE CARDS -->
-<div class="space-card-grid">
+<div class="space-card-grid"
+     data-floor="ground">
 
   <!-- GARAGE -->
 <div class="space-card"
@@ -3048,10 +3049,12 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
           <div class="planner-actions">
 
-            <button class="ghost-button"
-            id="addGroundCustomBtn">
-              + Add Custom Space
-            </button>
+    <button class="ghost-button add-custom-space-btn"
+            data-floor="ground">
+    
+      + Add Custom Space
+    
+    </button>
 
           </div>
 
@@ -3082,7 +3085,8 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
 <!-- SPACE CARDS -->
 <div class="space-card-grid"
-     id="secondFloorGrid">
+     id="secondFloorGrid"
+     data-floor="second">
 
   <!-- STAIRCASE -->
   <div class="space-card"
@@ -3255,10 +3259,12 @@ INTERACTIVE ARCHITECTURAL PLANNER
             
             </button>
 
-            <button class="ghost-button"
-            id="addSecondCustomBtn">
-              + Add Custom Space
-            </button>            
+          <button class="ghost-button add-custom-space-btn"
+                  data-floor="second">
+          
+            + Add Custom Space
+          
+          </button>          
            </div>
           </div>
 
@@ -3283,7 +3289,8 @@ INTERACTIVE ARCHITECTURAL PLANNER
 
 </div>
 
-<div class="space-card-grid">
+<div class="space-card-grid"
+     data-floor="third">
 
   <!-- STAIRCASE -->
     <div class="space-card"
@@ -3418,7 +3425,18 @@ INTERACTIVE ARCHITECTURAL PLANNER
   </div>
 
 </div>
+  
+<div class="planner-actions">
 
+  <button class="ghost-button add-custom-space-btn"
+          data-floor="third">
+
+    + Add Custom Space
+
+  </button>
+
+</div>
+  
 </div>
 </div>
       
