@@ -2312,8 +2312,13 @@ PREMIUM MOBILE NAVIGATION
   z-index:12000;
 
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:center;
+
+  padding:
+  120px 24px 48px;
+
+  overflow-y:auto;
 
   opacity:0;
   visibility:hidden;
@@ -2339,13 +2344,25 @@ PREMIUM MOBILE NAVIGATION
   flex-direction:column;
   align-items:center;
 
-  gap:22px;
+  gap:18px;
 
-  transform:translateY(30px);
+  transform:translateY(16px);
 
   transition:transform .45s ease;
 }
 
+  @media(max-height:700px){
+
+  .mobile-menu{
+    padding-top:100px;
+  }
+
+  .mobile-link{
+    font-size:14px;
+  }
+
+}
+  
 .mobile-menu.active .mobile-menu-inner{
   transform:translateY(0);
 }
@@ -2355,7 +2372,7 @@ PREMIUM MOBILE NAVIGATION
 .mobile-link{
   color:#fff;
 
-  font-size:18px;
+  font-size:15px;
   font-weight:400;
 
   letter-spacing:1.5px;
