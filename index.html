@@ -96,9 +96,9 @@ header{
   position:fixed;
   top:0;
   width:100%;
-  z-index:1000;
+  z-index:11000;
 
-  background:rgba(10,10,10,0.18);
+  background:rgba(10,10,10,0.82);
 
   backdrop-filter:blur(10px);
 
@@ -2417,13 +2417,22 @@ CLEAN FINAL VERSION
     backdrop-filter:blur(10px);
   }
 
-  .navbar{
-    padding:16px 0;
+.navbar{
+  height:82px;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  transition:
+  height .4s ease;
+}
+
+/* SCROLLED MOBILE */
+
+header.scrolled .navbar{
+  height:68px;
+}
 
   .logo{
     gap:10px;
