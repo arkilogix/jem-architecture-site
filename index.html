@@ -98,10 +98,33 @@ header{
   width:100%;
   z-index:1000;
 
-  background:rgba(10,10,10,0.35);
-  backdrop-filter:blur(14px);
+  background:rgba(10,10,10,0.18);
 
-  transition:.3s;
+  backdrop-filter:blur(10px);
+
+  transition:
+  background .45s ease,
+  backdrop-filter .45s ease,
+  border-color .45s ease,
+  transform .45s ease;
+
+  border-bottom:
+  1px solid transparent;
+}
+
+/* =========================================
+SCROLLED STATE
+========================================= */
+
+header.scrolled{
+
+  background:
+  rgba(10,10,10,0.82);
+
+  backdrop-filter:blur(16px);
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.06);
 }
 
 .navbar{
@@ -110,6 +133,18 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
+
+  transition:
+  height .4s ease,
+  padding .4s ease;
+}
+
+/* =========================================
+SCROLLED NAVBAR
+========================================= */
+
+header.scrolled .navbar{
+  height:74px;
 }
 
 .logo{
@@ -2378,7 +2413,7 @@ CLEAN FINAL VERSION
   /* HEADER */
 
   header{
-    background:rgba(10,10,10,.72);
+    background:rgba(10,10,10,.42);
     backdrop-filter:blur(10px);
   }
 
@@ -2994,7 +3029,7 @@ CTA CONTACTS
 HEADER
 ========================= -->
 
-<header>
+<header id="mainHeader">
 
   <div class="container navbar">
 
@@ -6471,7 +6506,42 @@ if(value > 1000){
 
 });
 
-updatePlanner();
+    
+/* =========================================
+PREMIUM HEADER SCROLL
+========================================= */
+
+const mainHeader =
+  document.getElementById(
+    "mainHeader"
+  );
+
+function updateHeader(){
+
+  if(window.scrollY > 40){
+
+    mainHeader.classList.add(
+      "scrolled"
+    );
+
+  }else{
+
+    mainHeader.classList.remove(
+      "scrolled"
+    );
+
+  }
+
+}
+
+window.addEventListener(
+  "scroll",
+  updateHeader
+);
+
+updateHeader();
+
+    
 /* =========================================
 SEND INQUIRY
 ========================================= */
