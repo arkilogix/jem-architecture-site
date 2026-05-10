@@ -3488,7 +3488,7 @@ PROJECTS
   ========================= -->
 
   <div class="project-large project-placeholder"
-       onclick="openGallery(0)">
+       onclick="openProjectGallery('loft',0)">
 
     <img src="https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138822/a_hyper_realistic_high_resolution_exterior_archit_sgflw6.png">
 
@@ -3523,7 +3523,7 @@ PROJECTS
 
 <!-- MEDITERRANEAN PROJECT -->
 <div class="project-small project-placeholder"
-     onclick="openMediterraneanGallery(0)">
+     onclick="openProjectGallery('mediterranean',0)">
 
   <img src="https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213706/Masilang_-_Exterior_qaawtd.png">
 
@@ -3546,7 +3546,7 @@ PROJECTS
 </div>
 
 <div class="secondary-project"
-     onclick="openWashingtonGallery(0)">
+     onclick="openProjectGallery('washington',0)">
 
   <img src="https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296488/Washington_-_Exterior_yyqfp8.png">
 
@@ -3579,7 +3579,7 @@ SECOND ROW
 <div class="projects-secondary-grid">
 
 <div class="secondary-project"
-     onclick="openTropicalGallery(0)">
+     onclick="openProjectGallery('tropical',0)">
 
   <img src="https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294476/wide_exterior_architectural_rendering_photorealist_xtmdz0.png">
 
@@ -3602,7 +3602,7 @@ SECOND ROW
 </div>
 
 <div class="secondary-project"
-     onclick="openBFGallery(0)">
+     onclick="openProjectGallery('bf',0)">
 
   <img src="https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778311330/BF_-_Exterior_mjs8u7.png">
 
@@ -5073,9 +5073,12 @@ FOOTER
 </p>
   
 </footer>
-<!-- FULLSCREEN PROJECT MODAL -->
+<!-- =========================================
+UNIFIED GALLERY MODAL
+========================================= -->
 
-<div class="gallery-modal" id="galleryModal">
+<div class="gallery-modal"
+     id="galleryModal">
 
   <!-- CLOSE -->
   <div class="gallery-close"
@@ -5101,189 +5104,24 @@ FOOTER
   <!-- INFO -->
   <div class="gallery-info">
 
-    <div class="gallery-counter" id="galleryCounter">
+    <div class="gallery-counter"
+         id="galleryCounter">
       01 / 05
     </div>
 
-    <h3>
-      One Storey with Loft Residence
+    <h3 id="galleryTitle">
+      Project Title
     </h3>
 
-    <p>
-      Residential • Design-Build
+    <p id="galleryCategory">
+      Residential • Architecture
     </p>
 
   </div>
 
 </div>
 
-  <!-- MEDITERRANEAN MODAL -->
-
-<div class="gallery-modal"
-     id="mediterraneanModal">
-
-  <!-- CLOSE -->
-  <div class="gallery-close"
-       onclick="closeMediterraneanGallery()">
-    ×
-  </div>
-
-  <!-- PREV -->
-  <div class="gallery-arrow left"
-       onclick="prevMediterraneanImage()">
-    ←
-  </div>
-
-  <!-- NEXT -->
-  <div class="gallery-arrow right"
-       onclick="nextMediterraneanImage()">
-    →
-  </div>
-
-  <!-- IMAGE -->
-  <img id="mediterraneanImage">
-
-  <!-- INFO -->
-  <div class="gallery-info">
-
-    <div class="gallery-counter"
-         id="mediterraneanCounter">
-      01 / 05
-    </div>
-
-    <h3>
-      Modern Mediterranean Residence
-    </h3>
-
-    <p>
-      Residential • Architectural Design
-    </p>
-
-  </div>
-
-</div>
-
-<!-- TROPICAL MODAL -->
-
-<div class="gallery-modal"
-     id="tropicalModal">
-
-  <div class="gallery-close"
-       onclick="closeTropicalGallery()">
-    ×
-  </div>
-
-  <div class="gallery-arrow left"
-       onclick="prevTropicalImage()">
-    ←
-  </div>
-
-  <div class="gallery-arrow right"
-       onclick="nextTropicalImage()">
-    →
-  </div>
-
-  <img id="tropicalImage">
-
-  <div class="gallery-info">
-
-    <div class="gallery-counter"
-         id="tropicalCounter">
-      01 / 05
-    </div>
-
-    <h3>
-      Modern Tropical Residence
-    </h3>
-
-    <p>
-      Residential • Architectural Design
-    </p>
-
-  </div>
-
-</div>
-
-  <!-- WASHINGTON MODAL -->
-
-<div class="gallery-modal"
-     id="washingtonModal">
-
-  <div class="gallery-close"
-       onclick="closeWashingtonGallery()">
-    ×
-  </div>
-
-  <div class="gallery-arrow left"
-       onclick="prevWashingtonImage()">
-    ←
-  </div>
-
-  <div class="gallery-arrow right"
-       onclick="nextWashingtonImage()">
-    →
-  </div>
-
-  <img id="washingtonImage">
-
-  <div class="gallery-info">
-
-    <div class="gallery-counter"
-         id="washingtonCounter">
-      01 / 06
-    </div>
-
-    <h3>
-      Contemporary American Residence
-    </h3>
-
-    <p>
-      Residential • Architectural Design
-    </p>
-
-  </div>
-
-</div>
-  <!-- BF MODAL -->
-
-<div class="gallery-modal"
-     id="bfModal">
-
-  <div class="gallery-close"
-       onclick="closeBFGallery()">
-    ×
-  </div>
-
-  <div class="gallery-arrow left"
-       onclick="prevBFImage()">
-    ←
-  </div>
-
-  <div class="gallery-arrow right"
-       onclick="nextBFImage()">
-    →
-  </div>
-
-  <img id="bfImage">
-
-  <div class="gallery-info">
-
-    <div class="gallery-counter"
-         id="bfCounter">
-      01 / 06
-    </div>
-
-    <h3>
-      Two Storey Modern Contemporary House
-    </h3>
-
-    <p>
-      Residential • Architectural Design
-    </p>
-
-  </div>
-
-</div>
+  
 <!-- =========================================
 CUSTOM SPACE MODAL
 ========================================= -->
@@ -5313,55 +5151,214 @@ CUSTOM SPACE MODAL
   
   <script>
 
-const galleryImages = [
+/* =========================================
+UNIFIED GALLERY ENGINE
+========================================= */
 
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138822/a_hyper_realistic_high_resolution_exterior_archit_sgflw6.png",
+const projectGalleries = {
 
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138827/a_wide_angle_photorealistic_interior_of_a_modern_ihxqvy.png",
+  loft:{
 
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138826/a_photorealistic_modern_industrial_minimal_bedroom_usdgwo.png",
+    title:
+      "One Storey with Loft Residence",
 
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138821/a_photorealistic_modern_minimalist_bedroom_interi_es1uy2.png",
+    category:
+      "Residential • Design-Build",
 
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138822/a_clean_detailed_isometric_3d_architectural_rende_kwybqq.png"
+    images:[
 
-];
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138822/a_hyper_realistic_high_resolution_exterior_archit_sgflw6.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138827/a_wide_angle_photorealistic_interior_of_a_modern_ihxqvy.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138826/a_photorealistic_modern_industrial_minimal_bedroom_usdgwo.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138821/a_photorealistic_modern_minimalist_bedroom_interi_es1uy2.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778138822/a_clean_detailed_isometric_3d_architectural_rende_kwybqq.png"
+
+    ]
+
+  },
+
+  mediterranean:{
+
+    title:
+      "Modern Mediterranean Residence",
+
+    category:
+      "Residential • Design-Build",
+
+    images:[
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213706/Masilang_-_Exterior_qaawtd.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213697/Masilang_-_Living_Area_fnzxih.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213695/Masilang_-Kitchen_obf2kb.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213696/Masilang_-_Family_Den_vrltbu.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213690/Masilang_-_Master_Bdrm_prabei.png"
+
+    ]
+
+  },
+
+  tropical:{
+
+    title:
+      "Modern Tropical Residence",
+
+    category:
+      "Residential • Architectural Design",
+
+    images:[
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294476/wide_exterior_architectural_rendering_photorealist_xtmdz0.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294457/a_photorealistic_architectural_exterior_scene_of_a_phdyad.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294480/wide_photorealistic_architectural_interior_exterio_uarlho.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294484/a_photorealistic_architectural_exterior_scene_at_g_z58dxz.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294488/a_wide_angle_photorealistic_architectural_exterio_amtfr8.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294491/wide_realistic_interior_architectural_render_phot_nzrjbk.png"
+
+    ]
+
+  },
+
+  washington:{
+
+    title:
+      "Contemporary American Residence",
+
+    category:
+      "Residential • Architectural Design",
+
+    images:[
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296488/Washington_-_Exterior_yyqfp8.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296486/Washington_-_Family_Room_c2ceyn.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296487/Washington_-_Great_Room_k4a5gk.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296487/Washington_-_Master_Bedroom_ecx4mb.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296485/Washington_-_Living_Dining_ig2oy5.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296485/Washington_-_Kitchen_acztzq.png"
+
+    ]
+
+  },
+
+  bf:{
+
+    title:
+      "Two Storey Modern Contemporary House",
+
+    category:
+      "Residential • Architectural Design",
+
+    images:[
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778311330/BF_-_Exterior_mjs8u7.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778311489/Bf_-_1_q5c4ke.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312166/BF_-_2_wdcoll.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312168/BF_-_3_ga2fyn.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312169/BF_-_4_tmwgnm.png",
+
+      "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312248/BF_-_Iso_whhdpj.png"
+
+    ]
+
+  }
+
+};
 
 let activeGallery = null;
+let currentGallery = null;
+let currentGalleryIndex = 0;
+
+/* UPDATE */
 
 function updateGallery(){
 
-  document.getElementById("galleryImage").src =
-    galleryImages[currentGalleryIndex];
+  const gallery =
+    projectGalleries[currentGallery];
 
-  document.getElementById("galleryCounter").innerText =
-    String(currentGalleryIndex + 1).padStart(2,'0')
+  document.getElementById(
+    "galleryImage"
+  ).src =
+    gallery.images[currentGalleryIndex];
+
+  document.getElementById(
+    "galleryTitle"
+  ).innerText =
+    gallery.title;
+
+  document.getElementById(
+    "galleryCategory"
+  ).innerText =
+    gallery.category;
+
+  document.getElementById(
+    "galleryCounter"
+  ).innerText =
+
+    String(currentGalleryIndex + 1)
+    .padStart(2,"0")
+
     + " / " +
-    String(galleryImages.length).padStart(2,'0');
+
+    String(gallery.images.length)
+    .padStart(2,"0");
 
 }
 
-function openGallery(index){
+/* OPEN */
 
-  currentGalleryIndex = index;
+function openProjectGallery(
+  galleryName,
+  index
+){
 
-  document.getElementById("galleryModal")
-    .classList.add("active");
+  currentGallery =
+    galleryName;
+
+  currentGalleryIndex =
+    index;
+
+  activeGallery = true;
+
+  document.getElementById(
+    "galleryModal"
+  ).classList.add("active");
 
   document.body.classList.add(
     "gallery-open"
   );
 
-  activeGallery = "main";
-
   updateGallery();
 
 }
 
+/* CLOSE */
+
 function closeGallery(){
 
-  document.getElementById("galleryModal")
-    .classList.remove("active");
+  document.getElementById(
+    "galleryModal"
+  ).classList.remove("active");
 
   document.body.classList.remove(
     "gallery-open"
@@ -5371,11 +5368,19 @@ function closeGallery(){
 
 }
 
+/* NEXT */
+
 function nextImage(){
+
+  const gallery =
+    projectGalleries[currentGallery];
 
   currentGalleryIndex++;
 
-  if(currentGalleryIndex >= galleryImages.length){
+  if(
+    currentGalleryIndex
+    >= gallery.images.length
+  ){
     currentGalleryIndex = 0;
   }
 
@@ -5383,318 +5388,23 @@ function nextImage(){
 
 }
 
+/* PREVIOUS */
+
 function prevImage(){
+
+  const gallery =
+    projectGalleries[currentGallery];
 
   currentGalleryIndex--;
 
   if(currentGalleryIndex < 0){
-    currentGalleryIndex = galleryImages.length - 1;
+
+    currentGalleryIndex =
+      gallery.images.length - 1;
+
   }
 
   updateGallery();
-
-}
-/* =========================
-MEDITERRANEAN GALLERY
-========================= */
-
-const mediterraneanImages = [
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213706/Masilang_-_Exterior_qaawtd.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213697/Masilang_-_Living_Area_fnzxih.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213695/Masilang_-Kitchen_obf2kb.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213696/Masilang_-_Family_Den_vrltbu.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778213690/Masilang_-_Master_Bdrm_prabei.png"
-
-];
-
-let currentMediterraneanIndex = 0;
-
-function updateMediterraneanGallery(){
-
-  document.getElementById("mediterraneanImage").src =
-    mediterraneanImages[currentMediterraneanIndex];
-
-  document.getElementById("mediterraneanCounter").innerText =
-    String(currentMediterraneanIndex + 1).padStart(2,'0')
-    + " / " +
-    String(mediterraneanImages.length).padStart(2,'0');
-
-}
-
-function openMediterraneanGallery(index){
-
-  currentMediterraneanIndex = index;
-
-  document.getElementById("mediterraneanModal")
-    .classList.add("active");
-
-  updateMediterraneanGallery();
-
-}
-
-function closeMediterraneanGallery(){
-
-  document.getElementById("mediterraneanModal")
-    .classList.remove("active");
-
-}
-
-function nextMediterraneanImage(){
-
-  currentMediterraneanIndex++;
-
-  if(currentMediterraneanIndex >= mediterraneanImages.length){
-    currentMediterraneanIndex = 0;
-  }
-
-  updateMediterraneanGallery();
-
-}
-
-function prevMediterraneanImage(){
-
-  currentMediterraneanIndex--;
-
-  if(currentMediterraneanIndex < 0){
-    currentMediterraneanIndex =
-      mediterraneanImages.length - 1;
-  }
-
-  updateMediterraneanGallery();
-
-}
-/* =========================
-TROPICAL GALLERY
-========================= */
-
-const tropicalImages = [
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294476/wide_exterior_architectural_rendering_photorealist_xtmdz0.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294457/a_photorealistic_architectural_exterior_scene_of_a_phdyad.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294480/wide_photorealistic_architectural_interior_exterio_uarlho.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294484/a_photorealistic_architectural_exterior_scene_at_g_z58dxz.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294488/a_wide_angle_photorealistic_architectural_exterio_amtfr8.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778294491/wide_realistic_interior_architectural_render_phot_nzrjbk.png"
-
-];
-
-let currentTropicalIndex = 0;
-
-function updateTropicalGallery(){
-
-  document.getElementById("tropicalImage").src =
-    tropicalImages[currentTropicalIndex];
-
-  document.getElementById("tropicalCounter").innerText =
-    String(currentTropicalIndex + 1).padStart(2,'0')
-    + " / " +
-    String(tropicalImages.length).padStart(2,'0');
-
-}
-
-function openTropicalGallery(index){
-
-  currentTropicalIndex = index;
-
-  document.getElementById("tropicalModal")
-    .classList.add("active");
-
-  updateTropicalGallery();
-
-}
-
-function closeTropicalGallery(){
-
-  document.getElementById("tropicalModal")
-    .classList.remove("active");
-
-}
-
-function nextTropicalImage(){
-
-  currentTropicalIndex++;
-
-  if(currentTropicalIndex >= tropicalImages.length){
-    currentTropicalIndex = 0;
-  }
-
-  updateTropicalGallery();
-
-}
-
-function prevTropicalImage(){
-
-  currentTropicalIndex--;
-
-  if(currentTropicalIndex < 0){
-    currentTropicalIndex =
-      tropicalImages.length - 1;
-  }
-
-  updateTropicalGallery();
-
-}
-
-    /* =========================
-WASHINGTON GALLERY
-========================= */
-
-const washingtonImages = [
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296488/Washington_-_Exterior_yyqfp8.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296486/Washington_-_Family_Room_c2ceyn.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296487/Washington_-_Great_Room_k4a5gk.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296487/Washington_-_Master_Bedroom_ecx4mb.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296485/Washington_-_Living_Dining_ig2oy5.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778296485/Washington_-_Kitchen_acztzq.png"
-
-];
-
-let currentWashingtonIndex = 0;
-
-function updateWashingtonGallery(){
-
-  document.getElementById("washingtonImage").src =
-    washingtonImages[currentWashingtonIndex];
-
-  document.getElementById("washingtonCounter").innerText =
-    String(currentWashingtonIndex + 1).padStart(2,'0')
-    + " / " +
-    String(washingtonImages.length).padStart(2,'0');
-
-}
-
-function openWashingtonGallery(index){
-
-  currentWashingtonIndex = index;
-
-  document.getElementById("washingtonModal")
-    .classList.add("active");
-
-  updateWashingtonGallery();
-
-}
-
-function closeWashingtonGallery(){
-
-  document.getElementById("washingtonModal")
-    .classList.remove("active");
-
-}
-
-function nextWashingtonImage(){
-
-  currentWashingtonIndex++;
-
-  if(currentWashingtonIndex >= washingtonImages.length){
-    currentWashingtonIndex = 0;
-  }
-
-  updateWashingtonGallery();
-
-}
-
-function prevWashingtonImage(){
-
-  currentWashingtonIndex--;
-
-  if(currentWashingtonIndex < 0){
-    currentWashingtonIndex =
-      washingtonImages.length - 1;
-  }
-
-  updateWashingtonGallery();
-
-}
-    /* =========================
-BF GALLERY
-========================= */
-
-const bfImages = [
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778311330/BF_-_Exterior_mjs8u7.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778311489/Bf_-_1_q5c4ke.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312166/BF_-_2_wdcoll.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312168/BF_-_3_ga2fyn.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312169/BF_-_4_tmwgnm.png",
-
-  "https://res.cloudinary.com/dwvl1wbp4/image/upload/v1778312248/BF_-_Iso_whhdpj.png"
-
-];
-
-let currentBFIndex = 0;
-
-function updateBFGallery(){
-
-  document.getElementById("bfImage").src =
-    bfImages[currentBFIndex];
-
-  document.getElementById("bfCounter").innerText =
-    String(currentBFIndex + 1).padStart(2,'0')
-    + " / " +
-    String(bfImages.length).padStart(2,'0');
-
-}
-
-function openBFGallery(index){
-
-  currentBFIndex = index;
-
-  document.getElementById("bfModal")
-    .classList.add("active");
-
-  updateBFGallery();
-
-}
-
-function closeBFGallery(){
-
-  document.getElementById("bfModal")
-    .classList.remove("active");
-
-}
-
-function nextBFImage(){
-
-  currentBFIndex++;
-
-  if(currentBFIndex >= bfImages.length){
-    currentBFIndex = 0;
-  }
-
-  updateBFGallery();
-
-}
-
-function prevBFImage(){
-
-  currentBFIndex--;
-
-  if(currentBFIndex < 0){
-    currentBFIndex =
-      bfImages.length - 1;
-  }
-
-  updateBFGallery();
 
 }
   /* =========================================
