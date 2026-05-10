@@ -170,16 +170,64 @@ header.scrolled .navbar{
 }
 
 .nav-links a{
+  position:relative;
+
   color:#ddd;
   font-size:13px;
   letter-spacing:1px;
-  transition:.25s;
+
+  transition:
+  color .25s ease;
 }
 
 .nav-links a:hover{
   color:#fff;
 }
 
+  /* =========================================
+ACTIVE NAVIGATION
+========================================= */
+
+.nav-links a::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-8px;
+
+  width:0%;
+  height:1px;
+
+  background:
+  rgba(255,255,255,.75);
+
+  opacity:0;
+
+  transition:
+  width .35s ease,
+  opacity .35s ease;
+}
+
+/* ACTIVE */
+
+.nav-links a.active{
+  color:#fff;
+}
+
+.nav-links a.active::after{
+
+  width:100%;
+  opacity:1;
+}
+
+/* MOBILE ACTIVE */
+
+.mobile-link.active{
+  opacity:.55;
+}
+  
 /* =========================
 HERO
 ========================= */
@@ -3113,12 +3161,29 @@ HEADER
       </div>
     </div>
 
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
+<div class="nav-links">
+
+  <a href="#about">
+    About
+  </a>
+
+  <a href="#services">
+    Services
+  </a>
+
+  <a href="#projects">
+    Projects
+  </a>
+
+  <a href="#planner">
+    Estimate Your Project
+  </a>
+
+  <a href="#contact">
+    Contact
+  </a>
+
+</div>
     
     <button class="hamburger" id="hamburgerBtn">
     
@@ -6508,6 +6573,71 @@ mobileLinks.forEach(link=>{
 
 });
 
+    /* =========================================
+ACTIVE NAVIGATION
+========================================= */
+
+const allNavLinks =
+  document.querySelectorAll(
+    '.nav-links a, .mobile-link'
+  );
+
+const trackedSections =
+  document.querySelectorAll(
+    'section[id]'
+  );
+
+window.addEventListener(
+  'scroll',
+  ()=>{
+
+    let currentSection = '';
+
+    trackedSections.forEach(section=>{
+
+      const sectionTop =
+        section.offsetTop - 160;
+
+      const sectionHeight =
+        section.offsetHeight;
+
+      if(
+        window.scrollY >= sectionTop &&
+        window.scrollY <
+        sectionTop + sectionHeight
+      ){
+
+        currentSection =
+          section.getAttribute('id');
+
+      }
+
+    });
+
+    allNavLinks.forEach(link=>{
+
+      link.classList.remove(
+        'active'
+      );
+
+      const href =
+        link.getAttribute('href');
+
+      if(
+        href ===
+        `#${currentSection}`
+      ){
+
+        link.classList.add(
+          'active'
+        );
+
+      }
+
+    });
+
+});
+    
     /* =========================================
 SECTION REVEAL
 ========================================= */
