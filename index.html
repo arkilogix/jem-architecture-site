@@ -775,19 +775,25 @@ GALLERY MODAL
 }
 
 .gallery-modal img{
-  width:88%;
-  max-width:1500px;
-  max-height:82vh;
+
+  max-width:92%;
+  max-height:88%;
 
   object-fit:contain;
 
-  animation:galleryFade .4s ease;
-  
   touch-action:none;
 
+  opacity:1;
+
+  transform:translateY(0);
+
   transition:
-  transform .28s ease,
-  opacity .28s ease;
+  opacity .32s ease,
+  transform .32s ease;
+
+  will-change:
+  transform,
+  opacity;
 }
 
 @keyframes galleryFade{
@@ -5430,17 +5436,82 @@ let activeGallery = null;
 let currentGallery = null;
 let currentGalleryIndex = 0;
 
+    /* =========================================
+GLOBAL IMAGE PRELOAD
+========================================= */
+
+function preloadAllGalleryImages(){
+
+  Object.values(projectGalleries)
+    .forEach(gallery=>{
+
+      gallery.images.forEach(src=>{
+
+        const img = new Image();
+
+        img.src = src;
+
+      });
+
+    });
+
+}
+    
+
 /* UPDATE */
 
 function updateGallery(){
 
   const gallery =
     projectGalleries[currentGallery];
+/* =========================================
+PRELOAD ADJACENT IMAGES
+========================================= */
 
+const nextIndex =
+
+  (currentGalleryIndex + 1)
+  % gallery.images.length;
+
+const prevIndex =
+
+  (currentGalleryIndex - 1
+  + gallery.images.length)
+
+  % gallery.images.length;
+
+/* PRELOAD NEXT */
+
+const nextImg = new Image();
+
+nextImg.src =
+  gallery.images[nextIndex];
+
+/* PRELOAD PREVIOUS */
+
+const prevImg = new Image();
+
+prevImg.src =
+  gallery.images[prevIndex];
+const galleryImage =
   document.getElementById(
     "galleryImage"
-  ).src =
+  );
+
+/* FADE OUT */
+
+galleryImage.style.opacity = 0;
+
+clearTimeout(window.gallerySwapTimeout);
+  
+window.gallerySwapTimeout = setTimeout(()=>{
+
+  galleryImage.src =
     gallery.images[currentGalleryIndex];
+
+  galleryImage.style.opacity = 1;
+
+},120);
 
   document.getElementById(
     "galleryTitle"
@@ -6437,7 +6508,7 @@ if(value > 1000){
 }
 
   lotSlider.value = value;
-
+  
   updatePlanner();
 
 });
@@ -6476,7 +6547,7 @@ window.addEventListener(
 );
 
 updateHeader();
-
+preloadAllGalleryImages();
     
 /* =========================================
 SEND INQUIRY
