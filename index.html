@@ -2995,6 +2995,34 @@ CTA REVIEW SUMMARY
 }
 
   /* =========================================
+SECTION REVEAL ANIMATIONS
+========================================= */
+
+.reveal{
+
+  opacity:0;
+
+  transform:
+  translateY(50px);
+
+  transition:
+  opacity 1.1s ease,
+  transform 1.1s ease;
+
+  will-change:
+  opacity,
+  transform;
+}
+
+.reveal.active{
+
+  opacity:1;
+
+  transform:
+  translateY(0);
+}
+  
+  /* =========================================
 CTA CONTACTS
 ========================================= */
 
@@ -3171,8 +3199,8 @@ HERO
 ABOUT
 ========================= -->
 
-<section id="about">
-
+<section id="about"
+         class="reveal">
   <div class="container">
 
     <div class="section-header">
@@ -3233,7 +3261,8 @@ REPLACE YOUR ENTIRE OLD
 SERVICES SECTION WITH THIS
 ========================= -->
 
-<section id="services">
+<section id="services"
+         class="reveal">
 
   <div class="container">
 
@@ -3427,7 +3456,7 @@ PROJECTS
 ========================= -->
 
 <section id="projects"
-         class="section-divider">
+         class="section-divider reveal">
 
   <div class="container">
 
@@ -3617,7 +3646,7 @@ SECOND ROW
 INTERACTIVE ARCHITECTURAL PLANNER
 ========================================= -->
 
-<section class="space-planner-section"
+<section class="space-planner-section reveal"
          id="planner">
 
   <div class="container">
@@ -4667,7 +4696,8 @@ ABOVE "PRELIMINARY COST ESTIMATE"
 CTA
 ========================= -->
 
-<section class="cta-section" id="contact">
+<section class="cta-section reveal"
+         id="contact">
 
   <div class="container">
 
@@ -6747,6 +6777,46 @@ mobileLinks.forEach(link=>{
 
 });
 
+    /* =========================================
+SECTION REVEAL
+========================================= */
+
+const revealSections =
+  document.querySelectorAll(
+    ".reveal"
+  );
+
+const revealObserver =
+  new IntersectionObserver(
+
+    (entries)=>{
+
+      entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add(
+            "active"
+          );
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold:0.12
+    }
+
+);
+
+revealSections.forEach(section=>{
+
+  revealObserver.observe(section);
+
+});
+    
 /* ESC CLOSE */
 
 document.addEventListener(
