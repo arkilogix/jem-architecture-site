@@ -704,6 +704,9 @@ GALLERY MODAL
   opacity:1;
   visibility:visible;
 }
+  body.gallery-open{
+  overflow:hidden;
+}
 
 .gallery-modal img{
   width:88%;
@@ -713,6 +716,12 @@ GALLERY MODAL
   object-fit:contain;
 
   animation:galleryFade .4s ease;
+  
+  touch-action:none;
+
+  transition:
+  transform .28s ease,
+  opacity .28s ease;
 }
 
 @keyframes galleryFade{
@@ -5318,7 +5327,7 @@ const galleryImages = [
 
 ];
 
-let currentGalleryIndex = 0;
+let activeGallery = null;
 
 function updateGallery(){
 
@@ -5339,6 +5348,12 @@ function openGallery(index){
   document.getElementById("galleryModal")
     .classList.add("active");
 
+  document.body.classList.add(
+    "gallery-open"
+  );
+
+  activeGallery = "main";
+
   updateGallery();
 
 }
@@ -5347,6 +5362,12 @@ function closeGallery(){
 
   document.getElementById("galleryModal")
     .classList.remove("active");
+
+  document.body.classList.remove(
+    "gallery-open"
+  );
+
+  activeGallery = null;
 
 }
 
@@ -6814,6 +6835,130 @@ const revealObserver =
 revealSections.forEach(section=>{
 
   revealObserver.observe(section);
+
+});
+
+    /* =========================================
+KEYBOARD GALLERY CONTROLS
+========================================= */
+
+document.addEventListener(
+  "keydown",
+  (e)=>{
+
+    if(!activeGallery) return;
+
+    /* NEXT */
+
+    if(e.key === "ArrowRight"){
+
+      if(activeGallery === "main"){
+        nextImage();
+      }
+
+    }
+
+    /* PREVIOUS */
+
+    if(e.key === "ArrowLeft"){
+
+      if(activeGallery === "main"){
+        prevImage();
+      }
+
+    }
+
+    /* CLOSE */
+
+    if(e.key === "Escape"){
+
+      if(activeGallery === "main"){
+        closeGallery();
+      }
+
+    }
+
+});
+
+    /* =========================================
+MOBILE DRAG TO CLOSE
+========================================= */
+
+const galleryImage =
+  document.getElementById(
+    "galleryImage"
+  );
+
+let touchStartY = 0;
+let currentDragY = 0;
+let isDraggingGallery = false;
+
+galleryImage.addEventListener(
+  "touchstart",
+  (e)=>{
+
+    touchStartY =
+      e.touches[0].clientY;
+
+    isDraggingGallery = true;
+
+  },
+  { passive:true }
+);
+
+galleryImage.addEventListener(
+  "touchmove",
+  (e)=>{
+
+    if(!isDraggingGallery) return;
+
+    currentDragY =
+      e.touches[0].clientY
+      - touchStartY;
+
+    galleryImage.style.transform =
+      `translateY(${currentDragY}px)`;
+
+    galleryImage.style.opacity =
+      1 - Math.abs(currentDragY) / 400;
+
+  },
+  { passive:true }
+);
+
+galleryImage.addEventListener(
+  "touchend",
+  ()=>{
+
+    isDraggingGallery = false;
+
+    /* HARD DRAG CLOSE */
+
+    if(Math.abs(currentDragY) > 140){
+
+      closeGallery();
+
+      galleryImage.style.transform =
+        "";
+
+      galleryImage.style.opacity =
+        "";
+
+      currentDragY = 0;
+
+      return;
+
+    }
+
+    /* SNAP BACK */
+
+    galleryImage.style.transform =
+      "";
+
+    galleryImage.style.opacity =
+      "";
+
+    currentDragY = 0;
 
 });
     
