@@ -2196,6 +2196,157 @@ CTA FORM
 .cta-form textarea::placeholder{
   color:rgba(255,255,255,.35);
 }
+
+  /* =========================================
+PREMIUM MOBILE NAVIGATION
+========================================= */
+
+.hamburger{
+  display:none;
+
+  width:52px;
+  height:52px;
+
+  border:none;
+  background:transparent;
+
+  position:relative;
+
+  cursor:pointer;
+
+  z-index:12001;
+}
+
+/* LINES */
+
+.hamburger span{
+  position:absolute;
+
+  left:14px;
+
+  width:24px;
+  height:1.5px;
+
+  background:#fff;
+
+  transition:
+  transform .4s ease,
+  opacity .3s ease,
+  top .4s ease;
+}
+
+.hamburger span:nth-child(1){
+  top:18px;
+}
+
+.hamburger span:nth-child(2){
+  top:25px;
+}
+
+.hamburger span:nth-child(3){
+  top:32px;
+}
+
+/* ACTIVE ICON */
+
+.hamburger.active span:nth-child(1){
+  top:25px;
+  transform:rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+  top:25px;
+  transform:rotate(-45deg);
+}
+
+/* MENU */
+
+.mobile-menu{
+  position:fixed;
+  inset:0;
+
+  background:
+  rgba(10,10,10,.96);
+
+  backdrop-filter:blur(18px);
+
+  z-index:12000;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:
+  opacity .45s ease,
+  visibility .45s ease;
+}
+
+/* ACTIVE */
+
+.mobile-menu.active{
+  opacity:1;
+  visibility:visible;
+}
+
+/* INNER */
+
+.mobile-menu-inner{
+  width:100%;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  gap:28px;
+
+  transform:translateY(30px);
+
+  transition:transform .45s ease;
+}
+
+.mobile-menu.active .mobile-menu-inner{
+  transform:translateY(0);
+}
+
+/* LINKS */
+
+.mobile-link{
+  color:#fff;
+
+  font-size:28px;
+  font-weight:300;
+
+  letter-spacing:2px;
+
+  transition:.3s ease;
+}
+
+.mobile-link:hover{
+  opacity:.6;
+}
+
+/* BODY LOCK */
+
+body.menu-open{
+  overflow:hidden;
+}
+
+/* MOBILE ONLY */
+
+@media(max-width:768px){
+
+  .hamburger{
+    display:block;
+  }
+
+}
   
 /* =========================================
 MOBILE UI REFINEMENT
@@ -2862,9 +3013,47 @@ HEADER
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
+    
+    <button class="hamburger" id="hamburgerBtn">
+    
+      <span></span>
+      <span></span>
+      <span></span>
+    
+    </button>
+
+  </div>
+<!-- =========================
+MOBILE MENU
+========================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+  <div class="mobile-menu-inner">
+
+    <a href="#about" class="mobile-link">
+      About
+    </a>
+
+    <a href="#services" class="mobile-link">
+      Services
+    </a>
+
+    <a href="#projects" class="mobile-link">
+      Projects
+    </a>
+
+    <a href="#planner" class="mobile-link">
+      Planner
+    </a>
+
+    <a href="#contact" class="mobile-link">
+      Contact
+    </a>
 
   </div>
 
+</div>
 </header>
 
 <!-- =========================
@@ -3359,7 +3548,8 @@ SECOND ROW
 INTERACTIVE ARCHITECTURAL PLANNER
 ========================================= -->
 
-<section class="space-planner-section">
+<section class="space-planner-section"
+         id="planner">
 
   <div class="container">
 
@@ -6393,8 +6583,93 @@ inquiryForm.addEventListener(
   }
 
 });
+
+    /* =========================================
+PREMIUM MOBILE MENU
+========================================= */
+
+const hamburgerBtn =
+  document.getElementById(
+    "hamburgerBtn"
+  );
+
+const mobileMenu =
+  document.getElementById(
+    "mobileMenu"
+  );
+
+const mobileLinks =
+  document.querySelectorAll(
+    ".mobile-link"
+  );
+
+/* TOGGLE */
+
+hamburgerBtn.addEventListener("click",()=>{
+
+  hamburgerBtn.classList.toggle(
+    "active"
+  );
+
+  mobileMenu.classList.toggle(
+    "active"
+  );
+
+  document.body.classList.toggle(
+    "menu-open"
+  );
+
+});
+
+/* CLOSE ON LINK CLICK */
+
+mobileLinks.forEach(link=>{
+
+  link.addEventListener("click",()=>{
+
+    hamburgerBtn.classList.remove(
+      "active"
+    );
+
+    mobileMenu.classList.remove(
+      "active"
+    );
+
+    document.body.classList.remove(
+      "menu-open"
+    );
+
+  });
+
+});
+
+/* ESC CLOSE */
+
+document.addEventListener(
+  "keydown",
+  (e)=>{
+
+    if(e.key === "Escape"){
+
+      hamburgerBtn.classList.remove(
+        "active"
+      );
+
+      mobileMenu.classList.remove(
+        "active"
+      );
+
+      document.body.classList.remove(
+        "menu-open"
+      );
+
+    }
+
+});
     
 </script>
+  
+  
 <script
 src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
